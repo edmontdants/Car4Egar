@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "wQVbhuIbM4AIqDG+1GpV8LHbS64qYF2EVgJm0g/PaKQ=",
+  "Source": "Car4EgarAPI",
+  "BasePath": "_content/Car4EgarAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Car4EgarAPI\\wwwroot",
+      "Source": "Car4EgarAPI",
+      "ContentRoot": "E:\\ITI\\_Car4Egar\\Car4EgarAPI\\wwwroot\\",
+      "BasePath": "_content/Car4EgarAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}
