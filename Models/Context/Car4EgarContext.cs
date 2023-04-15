@@ -1,5 +1,6 @@
 ﻿using Car4EgarAPI.Models.Configurations;
 using Car4EgarAPI.Models.Entities;
+using Car4EgarAPI.Models.ViewModels;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -41,6 +42,7 @@ namespace Car4EgarAPI.Models.Context
         public virtual DbSet<Admin> Admins { get; set; }
         public virtual DbSet<AdminRequest> AdminRequests { get; set; }
         public virtual DbSet<RentRequest> RentRequests { get; set; }
+        public virtual DbSet<CarVM> CarsVM { get; set; }
 
 
     }
