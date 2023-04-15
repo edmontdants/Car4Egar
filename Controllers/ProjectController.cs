@@ -74,7 +74,7 @@ namespace Car4EgarAPI.Controllers
             SystemUser user = db.SystemUsers.Find(NID);
             if ( IsNameValid(name) && IsBankCardNumberValid(bank_Card_Number) && bank_EX_date != null & IsBankCSCValid(bank_csc))
             {
-                Owner owner = new Owner();
+                SystemUser owner = new SystemUser();
                 owner.Name = name;
                 owner.Address = address;
                 owner.NID = user.NID;
@@ -87,7 +87,7 @@ namespace Car4EgarAPI.Controllers
                 owner.Photo = photo;
                 owner.IsActivated = false;
 
-                db.Owners.Add(owner);
+                db.SystemUsers.Add(owner);
                 db.SaveChanges();
                 return Ok(owner);
             }
@@ -111,9 +111,9 @@ namespace Car4EgarAPI.Controllers
 
         [HttpPost]
         [Route("/Owner/RegisterNewCar")]
-        public IActionResult RegisterNewCar(string NID, string color, string LicenseNumber, int Seats, double Mailage, string CarType, DateTime LicenseEXDate, string Year, bool AvailableForRent, string ModelName, string BrandName, string LocationOfRent, double CostPerDay, string Image, bool Insurance, string GearBoxType)
+        public IActionResult RegisterNewCar(string NID, string color, string LicenseNumber, int Seats, double Mailage, string CarType, DateTime LicenseEXDate, int Year, bool AvailableForRent, string ModelName, string BrandName, string LocationOfRent, double CostPerDay, string Image, bool Insurance, string GearBoxType)
         {
-            Owner owner = db.Owners.Find(NID);
+            SystemUser owner = db.SystemUsers.Find(NID);
             if (owner.IsActivated)
             {
                 Car car = new Car();
@@ -169,7 +169,7 @@ namespace Car4EgarAPI.Controllers
         {
             if ( IsEmailValid(newEmail) && IsMobileValid(newPhone) && IsPasswordValid(newPassword) && IsBankCardNumberValid(bank_Card_Number) && bank_EX_date != null && IsBankCSCValid(bank_csc) && newAddress!=null)
             {
-                Owner owner = db.Owners.Find(NID);
+                SystemUser owner = db.SystemUsers.Find(NID);
                 owner.Password = newPassword;
                 owner.Email = newEmail;
                 owner.Address = newAddress;
@@ -178,7 +178,7 @@ namespace Car4EgarAPI.Controllers
                 owner.Bank_CSC = bank_csc;
                 owner.Bank_ExpireDate = bank_EX_date;
                 owner.PhoneNumber = newPhone;
-                db.Owners.Update(owner);
+                db.SystemUsers.Update(owner);
                 db.SaveChanges();
                 return Ok();
             }
@@ -190,8 +190,8 @@ namespace Car4EgarAPI.Controllers
         [Route("/Owner/DeleteOwnerAccount")]
         public IActionResult DeleteOwnerAccount(string NID)
         {
-            Owner owner = db.Owners.Find(NID);
-            db.Owners.Remove(owner);
+            SystemUser owner = db.SystemUsers.Find(NID);
+            db.SystemUsers.Remove(owner);
             db.SaveChanges();
             return Ok();
         }
@@ -203,7 +203,7 @@ namespace Car4EgarAPI.Controllers
         {
             RentRequest ownerRequest = db.RentRequests.Find(id);
             Car car = db.Cars.Where(c => c.VIN == ownerRequest.RequestedCarVIN).FirstOrDefault();
-            Borrower borrower = db.Borrowers.Where(b => b.NID == ownerRequest.BorrowerId).FirstOrDefault();
+            SystemUser borrower = db.SystemUsers.Where(b => b.NID == ownerRequest.BorrowerId).FirstOrDefault();
             ownerRequest.RequestAcceptance = true;
 
             Notification notification = new Notification();
@@ -236,7 +236,7 @@ namespace Car4EgarAPI.Controllers
         [Route("/Owner/RatingTheBorrowers")]
         public IActionResult RatingTheBorrowers (string id, double RateDegree)
         {
-            Borrower borrower = db.Borrowers.Find(id);
+            SystemUser borrower = db.SystemUsers.Find(id);
             if (RateDegree <= 5)
             {
                 borrower.RatedPeople += 1;
@@ -258,10 +258,18 @@ namespace Car4EgarAPI.Controllers
         [Route("/Owner/GetAllOwnerFines")]
         public IActionResult GetAllOwnerFines(string id)
         {
-            Owner owner = db.Owners.Find(id);
+            SystemUser owner = db.SystemUsers.Find(id);
             return Ok(owner.Fine);
         }
 
+
+        [HttpGet]
+        [Route("/Owner/GetAllOwnerCars")]
+        public IActionResult GetAllOwnerCars(string id)
+        {
+            SystemUser owner = db.SystemUsers.Find(id);
+            return Ok(owner.Cars);
+        }
 
         /// <summary>
         /// //////////////////////////////////////////////////////////////////////////////////////////////
@@ -278,7 +286,7 @@ namespace Car4EgarAPI.Controllers
             SystemUser user = db.SystemUsers.Find(NID);
             if ( IsNameValid(name) && IsBankCardNumberValid(bank_Card_Number) && bank_EX_date != null & IsBankCSCValid(bank_csc))
             {
-                Borrower borrower = new Borrower();
+                SystemUser borrower = new SystemUser();
 
                 borrower.Name = name;
                 borrower.Address = address;
@@ -292,7 +300,7 @@ namespace Car4EgarAPI.Controllers
                 borrower.Photo = photo;
                 borrower.IsActivated = false;
 
-                db.Borrowers.Add(borrower);
+                db.SystemUsers.Add(borrower);
                 db.SaveChanges();
                 return Ok(borrower);
             }
@@ -305,7 +313,7 @@ namespace Car4EgarAPI.Controllers
         {
             if (IsEmailValid(newEmail) && IsMobileValid(newPhone) && IsPasswordValid(newPassword) && IsBankCardNumberValid(bank_Card_Number) && bank_EX_date != null && IsBankCSCValid(bank_csc) && newAddress != null)
             {
-                Borrower borrower = db.Borrowers.Find(NID);
+                SystemUser borrower = db.SystemUsers.Find(NID);
                 borrower.Password = newPassword;
                 borrower.Email = newEmail;
                 borrower.Address = newAddress;
@@ -314,7 +322,7 @@ namespace Car4EgarAPI.Controllers
                 borrower.Bank_CSC = bank_csc;
                 borrower.Bank_ExpireDate = bank_EX_date;
                 borrower.PhoneNumber = newPhone;
-                db.Borrowers.Update(borrower);
+                db.SystemUsers.Update(borrower);
                 db.SaveChanges();
                 return Ok();
             }
@@ -327,8 +335,8 @@ namespace Car4EgarAPI.Controllers
         [Route("/Borrower/DeleteBorrowerAccount")]
         public IActionResult DeleteBorrowerAccount(string NID)
         {
-            Borrower borrower = db.Borrowers.Find(NID);
-            db.Borrowers.Remove(borrower);
+            SystemUser borrower = db.SystemUsers.Find(NID);
+            db.SystemUsers.Remove(borrower);
             db.SaveChanges();
             return Ok();
         }
@@ -337,16 +345,16 @@ namespace Car4EgarAPI.Controllers
         [Route("/Borrower/CarRentalRequest")]
         public IActionResult CarRentalRequest(string id,string carVin,int Days)
         {
-            Borrower borrower = db.Borrowers.Find(id);
+            SystemUser borrower = db.SystemUsers.Find(id);
             if (borrower.IsActivated)
             {
                 Car car = db.Cars.Find(carVin);
-                Owner carOwner = db.Owners.Where(o => o.Cars.Contains(car)).FirstOrDefault();
+                SystemUser carOwner = db.SystemUsers.Where(o => o.Cars.Contains(car)).FirstOrDefault();
                 RentRequest ownerRequest = new RentRequest();
                 ownerRequest.RequestedCarVIN = carVin;
                 ownerRequest.BorrowerId = id;
-                ownerRequest.BorrowerName = db.Borrowers.Find(id).Name;
-                ownerRequest.BorrowerAddress = db.Borrowers.Find(id).Address;
+                ownerRequest.BorrowerName = db.SystemUsers.Find(id).Name;
+                ownerRequest.BorrowerAddress = db.SystemUsers.Find(id).Address;
                 ownerRequest.RentDays = Days;
                 Notification notification = new Notification();
                 notification.UserId = carOwner.NID;
@@ -406,7 +414,7 @@ namespace Car4EgarAPI.Controllers
         [Route("/Borrower/GetAllBorroweFines")]
         public IActionResult GetAllBorroweFines(string id)
         {
-            Borrower borrower = db.Borrowers.Find(id);
+            SystemUser borrower = db.SystemUsers.Find(id);
             return Ok(borrower.Fine);
         }
 
@@ -490,10 +498,10 @@ namespace Car4EgarAPI.Controllers
         [Route("/Admin/FineApplication")]
         public IActionResult FineApplication(string id, double fineAmount)
         {
-            Borrower borrower = db.Borrowers.Find(id);
+            SystemUser borrower = db.SystemUsers.Find(id);
             if (borrower == null)
             {
-                Owner owner = db.Owners.Find(id);
+                SystemUser owner = db.SystemUsers.Find(id);
                 owner.Fine += fineAmount;
                 db.SaveChanges();
             }
@@ -516,11 +524,11 @@ namespace Car4EgarAPI.Controllers
         [Route("/Admin/RemoveUser")]
         public IActionResult RemoveUser(string id )
         {
-            Borrower borrower = db.Borrowers.Find(id);
+            SystemUser borrower = db.SystemUsers.Find(id);
             if (borrower == null)
             {
-                Owner owner = db.Owners.Find(id);
-                db.Owners.Remove(owner);
+                SystemUser owner = db.SystemUsers.Find(id);
+                db.SystemUsers.Remove(owner);
                 db.SaveChanges();
             }
             else

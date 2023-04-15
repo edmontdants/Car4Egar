@@ -25,8 +25,6 @@ namespace Car4EgarAPI.Models.Context
         {
             modelBuilder.ApplyConfiguration(new RentConfigration());
             modelBuilder.ApplyConfiguration(new CarConfigration());
-            modelBuilder.ApplyConfiguration(new OwnerConfigration());
-            modelBuilder.ApplyConfiguration(new BorrowerConfigration());
             modelBuilder.ApplyConfiguration(new CostesConfigration());
             modelBuilder.ApplyConfiguration(new SysteUsersConfigration());
             modelBuilder.ApplyConfiguration(new TransactionConfigration());
@@ -34,9 +32,7 @@ namespace Car4EgarAPI.Models.Context
 
             base.OnModelCreating(modelBuilder);
         }
-        public virtual DbSet<Borrower>Borrowers { get; set; }
         public virtual DbSet<Car> Cars { get; set; }
-        public virtual DbSet<Owner> Owners { get; set; }
         public virtual DbSet<Rent>  Rents { get; set; }
         public virtual DbSet<Costes> Costes { get; set; }
         public virtual DbSet<SystemUser> SystemUsers { get; set; }

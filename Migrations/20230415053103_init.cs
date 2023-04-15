@@ -40,29 +40,6 @@ namespace Car4EgarAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Owners",
-                columns: table => new
-                {
-                    NID = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Bank_CardNumber = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
-                    Bank_ExpireDate = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
-                    Bank_CSC = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
-                    Photo = table.Column<string>(type: "nvarchar(max)", maxLength: 20480, nullable: true),
-                    Balance = table.Column<decimal>(type: "money", maxLength: 10, nullable: false, defaultValue: 0m),
-                    Fine = table.Column<decimal>(type: "money", maxLength: 10, nullable: false, defaultValue: 0m),
-                    IsActivated = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Owners", x => x.NID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Rents",
                 columns: table => new
                 {
@@ -79,23 +56,6 @@ namespace Car4EgarAPI.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Rents", x => x.RentID);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "SystemUsers",
-                columns: table => new
-                {
-                    NID = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    UserName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Role = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    IsActivated = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_SystemUsers", x => x.NID);
                 });
 
             migrationBuilder.CreateTable(
@@ -137,39 +97,18 @@ namespace Car4EgarAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "RentRequests",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    OwnerId = table.Column<string>(type: "nvarchar(20)", nullable: false),
-                    BorrowerId = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    BorrowerName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    BorrowerAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    RequestedCarVIN = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    RentDays = table.Column<int>(type: "int", nullable: false),
-                    RequestAcceptance = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_RentRequests", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_RentRequests_Owners_OwnerId",
-                        column: x => x.OwnerId,
-                        principalTable: "Owners",
-                        principalColumn: "NID",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Borrowers",
+                name: "SystemUsers",
                 columns: table => new
                 {
                     NID = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    UserName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Role = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    IsActivated = table.Column<bool>(type: "bit", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     Address = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     Bank_CardNumber = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
                     Bank_ExpireDate = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
@@ -177,16 +116,15 @@ namespace Car4EgarAPI.Migrations
                     Photo = table.Column<string>(type: "nvarchar(max)", maxLength: 20480, nullable: true),
                     Balance = table.Column<decimal>(type: "money", maxLength: 10, nullable: false, defaultValue: 0m),
                     Fine = table.Column<decimal>(type: "money", maxLength: 10, nullable: false, defaultValue: 0m),
-                    Rate = table.Column<double>(type: "float", maxLength: 10, nullable: false, defaultValue: 5.0),
+                    Rate = table.Column<double>(type: "float", nullable: false),
                     RatedPeople = table.Column<int>(type: "int", nullable: false),
-                    IsActivated = table.Column<bool>(type: "bit", nullable: false),
                     RentID = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Borrowers", x => x.NID);
+                    table.PrimaryKey("PK_SystemUsers", x => x.NID);
                     table.ForeignKey(
-                        name: "FK_Borrowers_Rents_RentID",
+                        name: "FK_SystemUsers_Rents_RentID",
                         column: x => x.RentID,
                         principalTable: "Rents",
                         principalColumn: "RentID");
@@ -205,7 +143,7 @@ namespace Car4EgarAPI.Migrations
                     Mailage = table.Column<double>(type: "float", maxLength: 20, nullable: false, defaultValue: 0.0),
                     CarType = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
                     LicenseEXDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Year = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Year = table.Column<int>(type: "int", maxLength: 20, nullable: false),
                     AvailableForRent = table.Column<bool>(type: "bit", nullable: false),
                     ModelName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     BrandName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
@@ -216,23 +154,23 @@ namespace Car4EgarAPI.Migrations
                     Insurance = table.Column<bool>(type: "bit", maxLength: 20, nullable: false),
                     GearBoxType = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     IsActivated = table.Column<bool>(type: "bit", nullable: false),
-                    OwnerNID = table.Column<string>(type: "nvarchar(20)", nullable: false),
+                    OwnerId = table.Column<string>(type: "nvarchar(20)", nullable: false),
                     RentID = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Cars", x => x.VIN);
                     table.ForeignKey(
-                        name: "FK_Cars_Owners_OwnerNID",
-                        column: x => x.OwnerNID,
-                        principalTable: "Owners",
-                        principalColumn: "NID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
                         name: "FK_Cars_Rents_RentID",
                         column: x => x.RentID,
                         principalTable: "Rents",
                         principalColumn: "RentID");
+                    table.ForeignKey(
+                        name: "FK_Cars_SystemUsers_OwnerId",
+                        column: x => x.OwnerId,
+                        principalTable: "SystemUsers",
+                        principalColumn: "NID",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -243,9 +181,9 @@ namespace Car4EgarAPI.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Readed = table.Column<bool>(type: "bit", nullable: false),
                     AdminID = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    BorrowerNID = table.Column<string>(type: "nvarchar(20)", nullable: true),
-                    OwnerNID = table.Column<string>(type: "nvarchar(20)", nullable: true)
+                    SystemUserNID = table.Column<string>(type: "nvarchar(20)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -256,14 +194,34 @@ namespace Car4EgarAPI.Migrations
                         principalTable: "Admins",
                         principalColumn: "AdminID");
                     table.ForeignKey(
-                        name: "FK_Notifications_Borrowers_BorrowerNID",
-                        column: x => x.BorrowerNID,
-                        principalTable: "Borrowers",
+                        name: "FK_Notifications_SystemUsers_SystemUserNID",
+                        column: x => x.SystemUserNID,
+                        principalTable: "SystemUsers",
                         principalColumn: "NID");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "RentRequests",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    OwnerId = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    BorrowerId = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    BorrowerName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    BorrowerAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RequestedCarVIN = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RentDays = table.Column<int>(type: "int", nullable: false),
+                    RequestAcceptance = table.Column<bool>(type: "bit", nullable: false),
+                    SystemUserNID = table.Column<string>(type: "nvarchar(20)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RentRequests", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Notifications_Owners_OwnerNID",
-                        column: x => x.OwnerNID,
-                        principalTable: "Owners",
+                        name: "FK_RentRequests_SystemUsers_SystemUserNID",
+                        column: x => x.SystemUserNID,
+                        principalTable: "SystemUsers",
                         principalColumn: "NID");
                 });
 
@@ -273,14 +231,9 @@ namespace Car4EgarAPI.Migrations
                 column: "AdminID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Borrowers_RentID",
-                table: "Borrowers",
-                column: "RentID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Cars_OwnerNID",
+                name: "IX_Cars_OwnerId",
                 table: "Cars",
-                column: "OwnerNID");
+                column: "OwnerId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Cars_RentID",
@@ -293,19 +246,19 @@ namespace Car4EgarAPI.Migrations
                 column: "AdminID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Notifications_BorrowerNID",
+                name: "IX_Notifications_SystemUserNID",
                 table: "Notifications",
-                column: "BorrowerNID");
+                column: "SystemUserNID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Notifications_OwnerNID",
-                table: "Notifications",
-                column: "OwnerNID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_RentRequests_OwnerId",
+                name: "IX_RentRequests_SystemUserNID",
                 table: "RentRequests",
-                column: "OwnerId");
+                column: "SystemUserNID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SystemUsers_RentID",
+                table: "SystemUsers",
+                column: "RentID");
         }
 
         /// <inheritdoc />
@@ -327,19 +280,13 @@ namespace Car4EgarAPI.Migrations
                 name: "RentRequests");
 
             migrationBuilder.DropTable(
-                name: "SystemUsers");
-
-            migrationBuilder.DropTable(
                 name: "Transactions");
 
             migrationBuilder.DropTable(
                 name: "Admins");
 
             migrationBuilder.DropTable(
-                name: "Borrowers");
-
-            migrationBuilder.DropTable(
-                name: "Owners");
+                name: "SystemUsers");
 
             migrationBuilder.DropTable(
                 name: "Rents");

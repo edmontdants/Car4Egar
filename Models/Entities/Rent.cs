@@ -17,7 +17,7 @@
         public double MeterEnd { get; set; }
         //public double PromoDiscount { get; set; }
         public virtual ICollection<Car> Cars { get; set; } = new HashSet<Car>();
-        public virtual ICollection<Borrower> Borrower { get; set; } = new HashSet<Borrower>();
+        public virtual ICollection<SystemUser> Users { get; set; } = new HashSet<SystemUser>();
 
     }
 }

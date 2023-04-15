@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+hXkMquJWcdBXxcaWeDJux/NSQd02kOrlXPI+aUZYi4ggZa9yFtFtOGeDINKPEUrQIXIj1xFfB6vUIq9S31y2A==",
+  "dgSpecHash": "zTsqomJOEjDG7+0aRMDdx5jGRFHz9+YxaNUXb6fKCxB+H2iTOZ73CwZ0TaaAdscthcE2b5p6TxMQIyCBXdhNpg==",
   "success": true,
-  "projectFilePath": "E:\\ITI\\_Car4Egar\\Car4EgarAPI\\Car4EgarAPI.csproj",
+  "projectFilePath": "E:\\ITI\\_Car4Egar\\APISide\\Car4Egar\\Car4EgarAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DELL\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

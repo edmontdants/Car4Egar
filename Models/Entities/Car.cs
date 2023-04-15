@@ -11,7 +11,7 @@
         public double Mailage { get; set; }
         public string CarType { get; set; }
         public DateTime LicenseEXDate { get; set; }
-        public string Year { get; set; }
+        public int Year { get; set; }
         public bool AvailableForRent { get; set; }
         public string ModelName { get; set; }
         public string BrandName { get; set; }
@@ -22,7 +22,8 @@
         public bool Insurance { get; set; }
         public string GearBoxType { get; set; }
         public bool IsActivated { get; set; }
-        public virtual Owner Owner { get; set; }
+        public string OwnerId { get; set; }
+        public virtual SystemUser Owner { get; set; }
         public virtual Rent? Rent { get; set; }
 
     }
