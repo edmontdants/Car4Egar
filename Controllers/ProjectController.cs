@@ -1,5 +1,6 @@
 ﻿using Car4EgarAPI.Models.Context;
 using Car4EgarAPI.Models.Entities;
+using Car4EgarAPI.Models.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Numerics;
@@ -458,6 +459,37 @@ namespace Car4EgarAPI.Controllers
         {
             var ActivatedUsers = db.SystemUsers.Where(u => u.IsActivated == true).ToList();
             return Ok(ActivatedUsers);
+        }
+
+        [HttpGet]
+        [Route("/Admin/GetAllCars")]
+        public IActionResult GetAllCars()
+        {
+            foreach (var item in db.Cars.ToList())
+            {
+                CarVM car = new CarVM();
+                car.CostPerDay = item.CostPerDay;
+                car.VIN = item.VIN;
+                car.IsActivated = item.IsActivated;
+                car.OwnerId = item.OwnerId;
+                car.Color = item.Color;
+                car.RatedPeople = item.RatedPeople;
+                car.Rate = item.Rate;
+                car.Available = item.AvailableForRent;
+                car.Image= item.Image;
+                car.Year = item.Year;
+                car.BrandName = item.BrandName;
+                car.ModelName = item.ModelName;
+                car.GearBoxType = item.GearBoxType;
+                car.Insurance = item.Insurance;
+                car.LocationOfRent = item.LocationOfRent;
+                car.CarType = item.CarType;
+                car.Mailage = item.Mailage;
+                db.CarsVM.Add(car);
+
+            }
+
+            return Ok(db.CarsVM.ToList());
         }
 
         [HttpGet]
