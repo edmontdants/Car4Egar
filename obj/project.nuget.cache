@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zTsqomJOEjDG7+0aRMDdx5jGRFHz9+YxaNUXb6fKCxB+H2iTOZ73CwZ0TaaAdscthcE2b5p6TxMQIyCBXdhNpg==",
+  "dgSpecHash": "EvOWzJITutSRHO6Gv251onq9Jfcar2Xp+ujY3yiQZZ6eI24EtAN8C90EoIwD06v0x8DiwtHYQz9djWy9Ch/z/Q==",
   "success": true,
   "projectFilePath": "E:\\ITI\\_Car4Egar\\APISide\\Car4Egar\\Car4EgarAPI.csproj",
   "expectedPackageFiles": [
@@ -38,6 +38,7 @@
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.identitymodel.protocols\\6.21.0\\microsoft.identitymodel.protocols.6.21.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.21.0\\microsoft.identitymodel.protocols.openidconnect.6.21.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.21.0\\microsoft.identitymodel.tokens.6.21.0.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.net.sdk.razor\\3.1.32\\microsoft.net.sdk.razor.3.1.32.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
