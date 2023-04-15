@@ -31,6 +31,9 @@ namespace Car4EgarAPI.Models.Configurations
 
             EntityBuilder.Property(B => B.Name).IsRequired(true)
                 .HasMaxLength(20).IsUnicode();
+            EntityBuilder.Property(B => B.Gender).IsRequired(true)
+                .HasMaxLength(20).IsUnicode();
+            EntityBuilder.Property(B => B.BirthDate).IsRequired(false);
 
             EntityBuilder.Property(B => B.Address).IsRequired(true)
                 .HasMaxLength(20).IsUnicode();
