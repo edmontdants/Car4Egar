@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Car4EgarAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class sysuser : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -104,19 +104,28 @@ namespace Car4EgarAPI.Migrations
                     UserName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     Password = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Role = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    IsActivated = table.Column<bool>(type: "bit", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Bank_CardNumber = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
-                    Bank_ExpireDate = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
-                    Bank_CSC = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
-                    Photo = table.Column<string>(type: "nvarchar(max)", maxLength: 20480, nullable: true),
-                    Balance = table.Column<decimal>(type: "money", maxLength: 10, nullable: false, defaultValue: 0m),
-                    Fine = table.Column<decimal>(type: "money", maxLength: 10, nullable: false, defaultValue: 0m),
-                    Rate = table.Column<double>(type: "float", nullable: false),
+                    Role = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    IsActivated = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
+                    Address = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    Gender = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    BirthDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Photo = table.Column<string>(type: "nvarchar(400)", maxLength: 400, nullable: true),
+                    IdentityPhoto = table.Column<string>(type: "nvarchar(400)", maxLength: 400, nullable: true),
+                    DriverLicencePhoto = table.Column<string>(type: "nvarchar(400)", maxLength: 400, nullable: true),
+                    DriverLicenceNumber = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    DriverLicenceEXDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Bank_AccountNumber = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    Bank_NID = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    Bank_Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    Bank_Branch = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    Card_EXDate = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    Card_Number = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    Card_CVC = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Card_HolderName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    Balance = table.Column<decimal>(type: "money", maxLength: 10, nullable: true, defaultValue: 0m),
+                    Fine = table.Column<decimal>(type: "money", maxLength: 10, nullable: true, defaultValue: 0m),
+                    Rate = table.Column<decimal>(type: "money", maxLength: 10, nullable: true, defaultValue: 0m),
                     RatedPeople = table.Column<int>(type: "int", nullable: false),
                     RentID = table.Column<int>(type: "int", nullable: true)
                 },
@@ -155,6 +164,8 @@ namespace Car4EgarAPI.Migrations
                     GearBoxType = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     IsActivated = table.Column<bool>(type: "bit", nullable: false),
                     OwnerId = table.Column<string>(type: "nvarchar(20)", nullable: false),
+                    OwnerName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    OwnerPhoto = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     RentID = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>

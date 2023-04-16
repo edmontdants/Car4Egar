@@ -348,28 +348,32 @@ namespace Car4EgarAPI.Migrations
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasMaxLength(20)
                         .IsUnicode(true)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<decimal>("Balance")
+                    b.Property<decimal?>("Balance")
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(10)
                         .HasColumnType("money")
                         .HasDefaultValue(0m);
 
-                    b.Property<string>("Bank_CSC")
+                    b.Property<string>("Bank_AccountNumber")
                         .HasMaxLength(20)
                         .IsUnicode(true)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<string>("Bank_CardNumber")
+                    b.Property<string>("Bank_Branch")
                         .HasMaxLength(20)
                         .IsUnicode(true)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<string>("Bank_ExpireDate")
+                    b.Property<string>("Bank_NID")
+                        .HasMaxLength(20)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("Bank_Name")
                         .HasMaxLength(20)
                         .IsUnicode(true)
                         .HasColumnType("nvarchar(20)");
@@ -377,26 +381,63 @@ namespace Car4EgarAPI.Migrations
                     b.Property<DateTime?>("BirthDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
+                    b.Property<string>("Card_CVC")
                         .HasMaxLength(20)
                         .IsUnicode(true)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<decimal>("Fine")
+                    b.Property<string>("Card_EXDate")
+                        .HasMaxLength(20)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("Card_HolderName")
+                        .HasMaxLength(20)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("Card_Number")
+                        .HasMaxLength(20)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<DateTime?>("DriverLicenceEXDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DriverLicenceNumber")
+                        .HasMaxLength(20)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("DriverLicencePhoto")
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<decimal?>("Fine")
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(10)
                         .HasColumnType("money")
                         .HasDefaultValue(0m);
 
                     b.Property<string>("Gender")
-                        .IsRequired()
                         .HasMaxLength(20)
                         .IsUnicode(true)
                         .HasColumnType("nvarchar(20)");
 
+                    b.Property<string>("IdentityPhoto")
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
+
                     b.Property<bool>("IsActivated")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
 
                     b.Property<string>("Password")
                         .IsRequired()
@@ -405,17 +446,19 @@ namespace Car4EgarAPI.Migrations
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("PhoneNumber")
-                        .IsRequired()
                         .HasMaxLength(20)
                         .IsUnicode(true)
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Photo")
-                        .HasMaxLength(20480)
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
 
-                    b.Property<double>("Rate")
-                        .HasColumnType("float");
+                    b.Property<decimal?>("Rate")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(10)
+                        .HasColumnType("money")
+                        .HasDefaultValue(0m);
 
                     b.Property<int>("RatedPeople")
                         .HasColumnType("int");
@@ -424,7 +467,6 @@ namespace Car4EgarAPI.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Role")
-                        .IsRequired()
                         .HasMaxLength(20)
                         .IsUnicode(true)
                         .HasColumnType("nvarchar(20)");
