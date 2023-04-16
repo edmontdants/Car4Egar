@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Numerics;
 using System.Security.Cryptography;
 using static Car4EgarAPI.BL.Validations;
+using static Car4EgarAPI.BL.JWTFunction;//JWT -------------
 using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 
 namespace Car4EgarAPI.Controllers
