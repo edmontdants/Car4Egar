@@ -3,9 +3,12 @@ using Car4EgarAPI.Models.Entities;
 using Car4EgarAPI.Models.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ServiceStack;
 using System.Numerics;
 using System.Security.Cryptography;
 using static Car4EgarAPI.BL.Validations;
+using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
+
 namespace Car4EgarAPI.Controllers
 {
 
@@ -348,28 +351,30 @@ namespace Car4EgarAPI.Controllers
 
         [HttpPost]
         [Route("/Borrower/CarRentalRequest")]
-        public IActionResult CarRentalRequest(string id,string carVin,int Days)
+        public IActionResult CarRentalRequest([FromHeader]string id, [FromHeader] string carVin, [FromHeader] int Days)
         {
             SystemUser borrower = db.SystemUsers.Find(id);
-            if (borrower.IsActivated)
-            {
+
                 Car car = db.Cars.Find(carVin);
                 SystemUser carOwner = db.SystemUsers.Where(o => o.Cars.Contains(car)).FirstOrDefault();
                 RentRequest ownerRequest = new RentRequest();
+                ownerRequest.OwnerId = carOwner.NID;
                 ownerRequest.RequestedCarVIN = carVin;
                 ownerRequest.BorrowerId = id;
                 ownerRequest.BorrowerName = db.SystemUsers.Find(id).Name;
                 ownerRequest.BorrowerAddress = db.SystemUsers.Find(id).Address;
                 ownerRequest.RentDays = Days;
-                Notification notification = new Notification();
-                notification.UserId = carOwner.NID;
-                notification.Content = "You Have a New car rental request made by " + ownerRequest.BorrowerName+ " on your car";
                 db.RentRequests.Add(ownerRequest);
-                db.Notifications.Add(notification);
+                
+                //Notification notification = new Notification();
+                //notification.UserId = carOwner.NID;
+                //notification.Content = "You Have a New car rental request made by " + ownerRequest.BorrowerName+ " on your car";
+
+                //db.Notifications.Add(notification);
                 db.SaveChanges();
                 return Ok("Request Sent");
-            }
-            return BadRequest();
+            
+
 
         }
 
