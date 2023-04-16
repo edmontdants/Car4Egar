@@ -396,7 +396,7 @@ namespace Car4EgarAPI.Controllers
 
                 //db.Notifications.Add(notification);
                 db.SaveChanges();
-                return Ok("Request Sent");
+                return Ok();
             
 
         }
