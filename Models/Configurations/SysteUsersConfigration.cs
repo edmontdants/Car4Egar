@@ -10,8 +10,6 @@ namespace Car4EgarAPI.Models.Configurations
         {
             EntityBuilder.HasKey(B => B.NID);
 
-            EntityBuilder.Property(B => B.Name).IsRequired(true)
-                .HasMaxLength(20).IsUnicode();
 
             EntityBuilder.Property(B => B.Email).IsRequired(true)
                 .HasMaxLength(20).IsUnicode();
@@ -29,8 +27,7 @@ namespace Car4EgarAPI.Models.Configurations
             EntityBuilder.Property(B => B.NID).IsRequired(true)
                 .HasMaxLength(20).IsUnicode();
 
-            EntityBuilder.Property(B => B.Name).IsRequired(true)
-                .HasMaxLength(20).IsUnicode();
+            
             EntityBuilder.Property(B => B.Gender).IsRequired(true)
                 .HasMaxLength(20).IsUnicode();
             EntityBuilder.Property(B => B.BirthDate).IsRequired(false);

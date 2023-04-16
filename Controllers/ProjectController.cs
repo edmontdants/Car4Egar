@@ -30,7 +30,7 @@ namespace Car4EgarAPI.Controllers
         public IActionResult RegisterNewUser(SystemUser user)
         {
 
-            if (IsNIDalid(user.NID)&&IsEmailValid(user.Email) && IsMobileValid(user.Phone) && IsPasswordValid(user.Password) && IsUserNameValid(user.UserName) && user.Role != null)
+            if (IsNIDalid(user.NID)&&IsEmailValid(user.Email) && IsMobileValid(user.PhoneNumber) && IsPasswordValid(user.Password) && IsUserNameValid(user.UserName) && user.Role != null)
             {
                 user.IsActivated = false;
                 db.SystemUsers.Add(user);
@@ -70,18 +70,18 @@ namespace Car4EgarAPI.Controllers
 
         [HttpPost]
         [Route("/Owner/Register")]
-        public IActionResult RegNewOwner(string NID, string name, string address, string bank_Card_Number, string bank_csc, string bank_EX_date , string photo)
+        public IActionResult RegNewOwner(string NID, string userName, string address, string bank_Card_Number, string bank_csc, string bank_EX_date , string photo)
         {
             SystemUser user = db.SystemUsers.Find(NID);
-            if ( IsNameValid(name) && IsBankCardNumberValid(bank_Card_Number) && bank_EX_date != null & IsBankCSCValid(bank_csc))
+            if ( IsNameValid(userName) && IsBankCardNumberValid(bank_Card_Number) && bank_EX_date != null & IsBankCSCValid(bank_csc))
             {
                 SystemUser owner = new SystemUser();
-                owner.Name = name;
+                owner.UserName = userName;
                 owner.Address = address;
                 owner.NID = user.NID;
                 owner.Email = user.Email;
                 owner.Password = user.Password;
-                owner.PhoneNumber = user.Phone;
+                owner.PhoneNumber = user.PhoneNumber;
                 owner.Bank_CardNumber = bank_Card_Number;
                 owner.Bank_CSC = bank_csc;
                 owner.Bank_ExpireDate = bank_EX_date;
@@ -282,19 +282,19 @@ namespace Car4EgarAPI.Controllers
 
         [HttpPost]
         [Route("/Borrower/Register")]
-        public IActionResult RegNewBorrower(string NID, string name, string address, string bank_Card_Number, string bank_csc, string bank_EX_date, string photo)
+        public IActionResult RegNewBorrower(string NID, string userName, string address, string bank_Card_Number, string bank_csc, string bank_EX_date, string photo)
         {
             SystemUser user = db.SystemUsers.Find(NID);
-            if ( IsNameValid(name) && IsBankCardNumberValid(bank_Card_Number) && bank_EX_date != null & IsBankCSCValid(bank_csc))
+            if ( IsNameValid(userName) && IsBankCardNumberValid(bank_Card_Number) && bank_EX_date != null & IsBankCSCValid(bank_csc))
             {
                 SystemUser borrower = new SystemUser();
 
-                borrower.Name = name;
+                borrower.UserName = userName;
                 borrower.Address = address;
                 borrower.NID = user.NID;
                 borrower.Email = user.Email;
                 borrower.Password = user.Password;
-                borrower.PhoneNumber = user.Phone;
+                borrower.PhoneNumber = user.PhoneNumber;
                 borrower.Bank_CardNumber = bank_Card_Number;
                 borrower.Bank_CSC = bank_csc;
                 borrower.Bank_ExpireDate = bank_EX_date;
@@ -354,7 +354,7 @@ namespace Car4EgarAPI.Controllers
                 RentRequest ownerRequest = new RentRequest();
                 ownerRequest.RequestedCarVIN = carVin;
                 ownerRequest.BorrowerId = id;
-                ownerRequest.BorrowerName = db.SystemUsers.Find(id).Name;
+                ownerRequest.BorrowerName = db.SystemUsers.Find(id).UserName;
                 ownerRequest.BorrowerAddress = db.SystemUsers.Find(id).Address;
                 ownerRequest.RentDays = Days;
                 Notification notification = new Notification();
