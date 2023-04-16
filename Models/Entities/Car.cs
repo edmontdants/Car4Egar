@@ -23,6 +23,8 @@
         public string GearBoxType { get; set; }
         public bool IsActivated { get; set; }
         public string OwnerId { get; set; }
+        public string OwnerName { get; set; }
+        public string OwnerPhoto { get; set; }
         public virtual SystemUser Owner { get; set; }
         public virtual Rent? Rent { get; set; }
 

@@ -1,4 +1,6 @@
-﻿using Car4EgarAPI.Models.Entities;
+﻿using Car4EgarAPI.Models.Context;
+using Car4EgarAPI.Models.Entities;
+using Car4EgarAPI.Models.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -8,6 +10,9 @@ namespace Car4EgarAPI.Models.Configurations
     {
         public void Configure(EntityTypeBuilder<Car> EntityBuilder)
         {
+            
+
+
             EntityBuilder.HasKey(B => B.VIN);
             EntityBuilder.Property(B => B.VIN).IsRequired(true)
                 .HasMaxLength(20).IsUnicode();

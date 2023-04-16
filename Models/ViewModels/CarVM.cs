@@ -23,6 +23,8 @@ namespace Car4EgarAPI.Models.ViewModels
         public string GearBoxType { get; set; }
         public bool IsActivated { get; set; }
         public string OwnerId { get; set; }
+        public string OwnerPic { get; set; }
+        public string OwnerName { get; set; }
 
     }
 }
