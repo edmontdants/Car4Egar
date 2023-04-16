@@ -3,7 +3,6 @@ using Car4EgarAPI.Models.Entities;
 using Car4EgarAPI.Models.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using ServiceStack;
 using System.Numerics;
 using System.Security.Cryptography;
 using static Car4EgarAPI.BL.Validations;
@@ -25,8 +24,31 @@ namespace Car4EgarAPI.Controllers
             db = dataContext;
         }
 
+        //sys user sys user sys user sys user sys user sys user sys user sys user 
 
-        
+        [HttpPost]
+        [Route("/SystemUser/Register")]
+
+        public IActionResult RegNewOwner(SystemUser user)
+        {
+            SystemUser users = db.SystemUsers.Find(user.NID);
+            if (IsUserNameValid(user.UserName) && IsEmailValid(user.Email) && IsPasswordValid(user.Password) && IsNIDalid(user.NID) && users == null)
+            {
+                SystemUser NewUser = new SystemUser();
+                NewUser.NID = user.NID;
+                NewUser.UserName = user.UserName;
+                NewUser.Password = user.Password;
+                NewUser.Email = user.Email;
+
+                db.SystemUsers.Add(NewUser);
+                db.SaveChanges();
+                return Ok(NewUser);
+            }
+            else if (users != null) return BadRequest("This User Already Exist");
+            return BadRequest("Bad Data Entered");
+        }
+
+
         // SystemUser  SystemUser  SystemUser  SystemUser  SystemUser
         [Route("/SystemUser/RegisterNewUser")]
         [HttpPost]
@@ -69,34 +91,36 @@ namespace Car4EgarAPI.Controllers
         /// </summary>
 
 
+       
+
         // Owners  Owners  Owners  Owners  Owners
 
-        [HttpPost]
-        [Route("/Owner/Register")]
-        public IActionResult RegNewOwner(string NID, string name, string address, string bank_Card_Number, string bank_csc, string bank_EX_date , string photo)
-        {
-            SystemUser user = db.SystemUsers.Find(NID);
-            if ( IsNameValid(name) && IsBankCardNumberValid(bank_Card_Number) && bank_EX_date != null & IsBankCSCValid(bank_csc))
-            {
-                SystemUser owner = new SystemUser();
-                owner.Name = name;
-                owner.Address = address;
-                owner.NID = user.NID;
-                owner.Email = user.Email;
-                owner.Password = user.Password;
-                owner.PhoneNumber = user.PhoneNumber;
-                owner.Bank_CardNumber = bank_Card_Number;
-                owner.Bank_CSC = bank_csc;
-                owner.Bank_ExpireDate = bank_EX_date;
-                owner.Photo = photo;
-                owner.IsActivated = false;
+        //[HttpPost]
+        //[Route("/Owner/Register")]
+        //public IActionResult RegNewOwner(string NID, string userName, string Password, string Email, string Role, string bank_EX_date, string photo)
+        //{
+        //    SystemUser user = db.SystemUsers.Find(NID);
+        //    if (IsNameValid(userName) && IsBankCardNumberValid(bank_Card_Number) && bank_EX_date != null & IsBankCSCValid(bank_csc))
+        //    {
+        //        SystemUser owner = new SystemUser();
+        //        owner.UserName = userName;
+        //        owner.Address = address;
+        //        owner.NID = user.NID;
+        //        owner.Email = user.Email;
+        //        owner.Password = user.Password;
+        //        owner.PhoneNumber = user.PhoneNumber;
+        //        owner.Bank_CardNumber = bank_Card_Number;
+        //        owner.Bank_CSC = bank_csc;
+        //        owner.Bank_ExpireDate = bank_EX_date;
+        //        owner.Photo = photo;
+        //        owner.IsActivated = false;
 
-                db.SystemUsers.Add(owner);
-                db.SaveChanges();
-                return Ok(owner);
-            }
-            return BadRequest();
-        }
+        //        db.SystemUsers.Add(owner);
+        //        db.SaveChanges();
+        //        return Ok(owner);
+        //    }
+        //    return BadRequest();
+        //}
 
 
         [HttpPost]
@@ -140,7 +164,7 @@ namespace Car4EgarAPI.Controllers
                 car.IsActivated = false;
 
                 car.OwnerId = owner.NID;
-                car.OwnerName = owner.Name;
+                car.OwnerName = owner.UserName;
                 car.OwnerPhoto = owner.Photo;
                 owner.Cars.Add(car);
                 db.Cars.Add(car); // ?!?!?!?!?!?!
@@ -171,27 +195,27 @@ namespace Car4EgarAPI.Controllers
             return Ok();
         }
 
-        [HttpPut]
-        [Route("/Owner/EditOwnerInfo")]
-        public IActionResult EditOwnerInfo(string NID, string newPassword, string newEmail, string newPhone ,string newAddress, string newPhoto, string bank_Card_Number, string bank_csc, string bank_EX_date)
-        {
-            if ( IsEmailValid(newEmail) && IsMobileValid(newPhone) && IsPasswordValid(newPassword) && IsBankCardNumberValid(bank_Card_Number) && bank_EX_date != null && IsBankCSCValid(bank_csc) && newAddress!=null)
-            {
-                SystemUser owner = db.SystemUsers.Find(NID);
-                owner.Password = newPassword;
-                owner.Email = newEmail;
-                owner.Address = newAddress;
-                owner.Photo = newPhoto;
-                owner.Bank_CardNumber = bank_Card_Number;
-                owner.Bank_CSC = bank_csc;
-                owner.Bank_ExpireDate = bank_EX_date;
-                owner.PhoneNumber = newPhone;
-                db.SystemUsers.Update(owner);
-                db.SaveChanges();
-                return Ok();
-            }
-            return BadRequest();
-        }
+        //[HttpPut]
+        //[Route("/Owner/EditOwnerInfo")]
+        //public IActionResult EditOwnerInfo(string NID, string newPassword, string newEmail, string newPhone ,string newAddress, string newPhoto, string bank_Card_Number, string bank_csc, string bank_EX_date)
+        //{
+        //    if ( IsEmailValid(newEmail) && IsMobileValid(newPhone) && IsPasswordValid(newPassword) && IsBankCardNumberValid(bank_Card_Number) && bank_EX_date != null && IsBankCSCValid(bank_csc) && newAddress!=null)
+        //    {
+        //        SystemUser owner = db.SystemUsers.Find(NID);
+        //        owner.Password = newPassword;
+        //        owner.Email = newEmail;
+        //        owner.Address = newAddress;
+        //        owner.Photo = newPhoto;
+        //        owner.Bank_CardNumber = bank_Card_Number;
+        //        owner.Bank_CSC = bank_csc;
+        //        owner.Bank_ExpireDate = bank_EX_date;
+        //        owner.PhoneNumber = newPhone;
+        //        db.SystemUsers.Update(owner);
+        //        db.SaveChanges();
+        //        return Ok();
+        //    }
+        //    return BadRequest();
+        //}
 
 
         [HttpDelete]
@@ -287,56 +311,56 @@ namespace Car4EgarAPI.Controllers
 
         /// Borrower   Borrower   Borrower   Borrower   Borrower
 
-        [HttpPost]
-        [Route("/Borrower/Register")]
-        public IActionResult RegNewBorrower(string NID, string name, string address, string bank_Card_Number, string bank_csc, string bank_EX_date, string photo)
-        {
-            SystemUser user = db.SystemUsers.Find(NID);
-            if ( IsNameValid(name) && IsBankCardNumberValid(bank_Card_Number) && bank_EX_date != null & IsBankCSCValid(bank_csc))
-            {
-                SystemUser borrower = new SystemUser();
+        //[HttpPost]
+        //[Route("/Borrower/Register")]
+        //public IActionResult RegNewBorrower(string NID, string userName, string address, string bank_Card_Number, string bank_csc, string bank_EX_date, string photo)
+        //{
+        //    SystemUser user = db.SystemUsers.Find(NID);
+        //    if ( IsNameValid(userName) && IsBankCardNumberValid(bank_Card_Number) && bank_EX_date != null & IsBankCSCValid(bank_csc))
+        //    {
+        //        SystemUser borrower = new SystemUser();
 
-                borrower.Name = name;
-                borrower.Address = address;
-                borrower.NID = user.NID;
-                borrower.Email = user.Email;
-                borrower.Password = user.Password;
-                borrower.PhoneNumber = user.PhoneNumber;
-                borrower.Bank_CardNumber = bank_Card_Number;
-                borrower.Bank_CSC = bank_csc;
-                borrower.Bank_ExpireDate = bank_EX_date;
-                borrower.Photo = photo;
-                borrower.IsActivated = false;
+        //        borrower.UserName = userName;
+        //        borrower.Address = address;
+        //        borrower.NID = user.NID;
+        //        borrower.Email = user.Email;
+        //        borrower.Password = user.Password;
+        //        borrower.PhoneNumber = user.PhoneNumber;
+        //        borrower.Bank_CardNumber = bank_Card_Number;
+        //        borrower.Bank_CSC = bank_csc;
+        //        borrower.Bank_ExpireDate = bank_EX_date;
+        //        borrower.Photo = photo;
+        //        borrower.IsActivated = false;
 
-                db.SystemUsers.Add(borrower);
-                db.SaveChanges();
-                return Ok(borrower);
-            }
-            return BadRequest();
-        }
+        //        db.SystemUsers.Add(borrower);
+        //        db.SaveChanges();
+        //        return Ok(borrower);
+        //    }
+        //    return BadRequest();
+        //}
 
-        [HttpPut]
-        [Route("/Borrower/EditBorrowerInfo")]
-        public IActionResult EditBorrowerInfo(string NID, string newPassword, string newEmail, string newPhone, string newAddress, string newPhoto, string bank_Card_Number, string bank_csc, string bank_EX_date)
-        {
-            if (IsEmailValid(newEmail) && IsMobileValid(newPhone) && IsPasswordValid(newPassword) && IsBankCardNumberValid(bank_Card_Number) && bank_EX_date != null && IsBankCSCValid(bank_csc) && newAddress != null)
-            {
-                SystemUser borrower = db.SystemUsers.Find(NID);
-                borrower.Password = newPassword;
-                borrower.Email = newEmail;
-                borrower.Address = newAddress;
-                borrower.Photo = newPhoto;
-                borrower.Bank_CardNumber = bank_Card_Number;
-                borrower.Bank_CSC = bank_csc;
-                borrower.Bank_ExpireDate = bank_EX_date;
-                borrower.PhoneNumber = newPhone;
-                db.SystemUsers.Update(borrower);
-                db.SaveChanges();
-                return Ok();
-            }
-            return BadRequest();
+        //[HttpPut]
+        //[Route("/Borrower/EditBorrowerInfo")]
+        //public IActionResult EditBorrowerInfo(string NID, string newPassword, string newEmail, string newPhone, string newAddress, string newPhoto, string bank_Card_Number, string bank_csc, string bank_EX_date)
+        //{
+        //    if (IsEmailValid(newEmail) && IsMobileValid(newPhone) && IsPasswordValid(newPassword) && IsBankCardNumberValid(bank_Card_Number) && bank_EX_date != null && IsBankCSCValid(bank_csc) && newAddress != null)
+        //    {
+        //        SystemUser borrower = db.SystemUsers.Find(NID);
+        //        borrower.Password = newPassword;
+        //        borrower.Email = newEmail;
+        //        borrower.Address = newAddress;
+        //        borrower.Photo = newPhoto;
+        //        borrower.Bank_CardNumber = bank_Card_Number;
+        //        borrower.Bank_CSC = bank_csc;
+        //        borrower.Bank_ExpireDate = bank_EX_date;
+        //        borrower.PhoneNumber = newPhone;
+        //        db.SystemUsers.Update(borrower);
+        //        db.SaveChanges();
+        //        return Ok();
+        //    }
+        //    return BadRequest();
 
-        }
+        //}
 
 
         [HttpDelete]
@@ -361,7 +385,7 @@ namespace Car4EgarAPI.Controllers
                 ownerRequest.OwnerId = carOwner.NID;
                 ownerRequest.RequestedCarVIN = carVin;
                 ownerRequest.BorrowerId = id;
-                ownerRequest.BorrowerName = db.SystemUsers.Find(id).Name;
+                ownerRequest.BorrowerName = db.SystemUsers.Find(id).UserName;
                 ownerRequest.BorrowerAddress = db.SystemUsers.Find(id).Address;
                 ownerRequest.RentDays = Days;
                 db.RentRequests.Add(ownerRequest);
@@ -374,7 +398,6 @@ namespace Car4EgarAPI.Controllers
                 db.SaveChanges();
                 return Ok("Request Sent");
             
-
 
         }
 

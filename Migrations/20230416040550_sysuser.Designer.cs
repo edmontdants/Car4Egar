@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Car4EgarAPI.Migrations
 {
     [DbContext(typeof(Car4EgarContext))]
-    [Migration("20230415103415_CarViewModel2")]
-    partial class CarViewModel2
+    [Migration("20230416040550_sysuser")]
+    partial class sysuser
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -149,6 +149,14 @@ namespace Car4EgarAPI.Migrations
                     b.Property<string>("OwnerId")
                         .IsRequired()
                         .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("OwnerName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OwnerPhoto")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Rate")
                         .ValueGeneratedOnAdd()
@@ -343,31 +351,69 @@ namespace Car4EgarAPI.Migrations
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasMaxLength(20)
                         .IsUnicode(true)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<decimal>("Balance")
+                    b.Property<decimal?>("Balance")
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(10)
                         .HasColumnType("money")
                         .HasDefaultValue(0m);
 
-                    b.Property<string>("Bank_CSC")
+                    b.Property<string>("Bank_AccountNumber")
                         .HasMaxLength(20)
                         .IsUnicode(true)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<string>("Bank_CardNumber")
+                    b.Property<string>("Bank_Branch")
                         .HasMaxLength(20)
                         .IsUnicode(true)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<string>("Bank_ExpireDate")
+                    b.Property<string>("Bank_NID")
                         .HasMaxLength(20)
                         .IsUnicode(true)
                         .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("Bank_Name")
+                        .HasMaxLength(20)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<DateTime?>("BirthDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Card_CVC")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Card_EXDate")
+                        .HasMaxLength(20)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("Card_HolderName")
+                        .HasMaxLength(20)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("Card_Number")
+                        .HasMaxLength(20)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<DateTime?>("DriverLicenceEXDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DriverLicenceNumber")
+                        .HasMaxLength(20)
+                        .IsUnicode(true)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("DriverLicencePhoto")
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -375,20 +421,25 @@ namespace Car4EgarAPI.Migrations
                         .IsUnicode(true)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<decimal>("Fine")
+                    b.Property<decimal?>("Fine")
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(10)
                         .HasColumnType("money")
                         .HasDefaultValue(0m);
 
-                    b.Property<bool>("IsActivated")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
+                    b.Property<string>("Gender")
                         .HasMaxLength(20)
                         .IsUnicode(true)
                         .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("IdentityPhoto")
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
+
+                    b.Property<bool>("IsActivated")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
 
                     b.Property<string>("Password")
                         .IsRequired()
@@ -396,22 +447,20 @@ namespace Car4EgarAPI.Migrations
                         .IsUnicode(true)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<string>("Phone")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("PhoneNumber")
-                        .IsRequired()
                         .HasMaxLength(20)
                         .IsUnicode(true)
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Photo")
-                        .HasMaxLength(20480)
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
 
-                    b.Property<double>("Rate")
-                        .HasColumnType("float");
+                    b.Property<decimal?>("Rate")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(10)
+                        .HasColumnType("money")
+                        .HasDefaultValue(0m);
 
                     b.Property<int>("RatedPeople")
                         .HasColumnType("int");
@@ -420,7 +469,6 @@ namespace Car4EgarAPI.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Role")
-                        .IsRequired()
                         .HasMaxLength(20)
                         .IsUnicode(true)
                         .HasColumnType("nvarchar(20)");
@@ -483,72 +531,6 @@ namespace Car4EgarAPI.Migrations
                     b.HasKey("TID");
 
                     b.ToTable("Transactions");
-                });
-
-            modelBuilder.Entity("Car4EgarAPI.Models.ViewModels.CarVM", b =>
-                {
-                    b.Property<string>("VIN")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<bool>("Available")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("BrandName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CarType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Color")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("CostPerDay")
-                        .HasColumnType("float");
-
-                    b.Property<string>("GearBoxType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Image")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("Insurance")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsActivated")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("LocationOfRent")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("Mailage")
-                        .HasColumnType("float");
-
-                    b.Property<string>("ModelName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OwnerId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("Rate")
-                        .HasColumnType("float");
-
-                    b.Property<int>("RatedPeople")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Year")
-                        .HasColumnType("int");
-
-                    b.HasKey("VIN");
-
-                    b.ToTable("CarsVM");
                 });
 
             modelBuilder.Entity("Car4EgarAPI.Models.Entities.AdminRequest", b =>
