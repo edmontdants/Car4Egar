@@ -13,12 +13,12 @@ namespace Car4EgarAPI.Models.Entities
         public string Address { get; set; }
         public string PhoneNumber { get; set; }
         public string Gender { get; set; }          //
-        public DateTime? BirthDate { get; set; }
+        public string BirthDate { get; set; }
         public string Photo { get; set; } 
         public string IdentityPhoto { get; set; }    //
         public string DriverLicencePhoto { get; set; } //
         public string DriverLicenceNumber { get; set; } //
-        public DateTime? DriverLicenceEXDate { get; set; }  //
+        public string DriverLicenceEXDate { get; set; }  //
         public string Bank_AccountNumber { get; set; }  //
         public string Bank_NID { get; set; }            //
         public string Bank_Name { get; set; }           //
