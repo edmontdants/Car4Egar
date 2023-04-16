@@ -5,9 +5,9 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Car4EgarAPI", "Car4EgarAPI.csproj", "{562E12EF-7BAB-40D5-8EF2-5260ABBB4CC9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A2F980D9-E256-4B16-95C3-654841EB5BC8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{47D66E73-D455-4088-AE23-C8A4F3833D36}"
 	ProjectSection(SolutionItems) = preProject
-		.gitignore.txt = .gitignore.txt
+		.gitignore = .gitignore
 	EndProjectSection
 EndProject
 Global

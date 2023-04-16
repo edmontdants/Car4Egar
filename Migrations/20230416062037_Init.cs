@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Car4EgarAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class sysuser : Migration
+    public partial class Init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -103,7 +103,7 @@ namespace Car4EgarAPI.Migrations
                     NID = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     Password = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Role = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
                     IsActivated = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
                     Address = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
@@ -121,7 +121,7 @@ namespace Car4EgarAPI.Migrations
                     Bank_Branch = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
                     Card_EXDate = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
                     Card_Number = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
-                    Card_CVC = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Card_CVC = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
                     Card_HolderName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
                     Balance = table.Column<decimal>(type: "money", maxLength: 10, nullable: true, defaultValue: 0m),
                     Fine = table.Column<decimal>(type: "money", maxLength: 10, nullable: true, defaultValue: 0m),
