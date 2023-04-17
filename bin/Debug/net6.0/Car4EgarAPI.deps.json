@@ -34,11 +34,17 @@
     ".NETCoreApp,Version=v6.0": {
       "Car4EgarAPI/1.0.0": {
         "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "11.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.16",
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.16",
+<<<<<<< HEAD
+=======
+          "Microsoft.EntityFrameworkCore": "6.0.16",
+>>>>>>> bee57d971371742eaa9513c3f36f653fe1ed40c7
           "Microsoft.EntityFrameworkCore.Design": "6.0.16",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.16",
+          "Microsoft.EntityFrameworkCore.Tools": "6.0.16",
           "Microsoft.NET.Sdk.Razor": "3.1.32",
           "ServiceStack.Client": "6.8.0",
           "Swashbuckle.AspNetCore": "6.2.3",
@@ -332,6 +338,35 @@
         },
         "compile": {
           "Car4EgarAPI.dll": {}
+        }
+      },
+      "AutoMapper/11.0.0": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {}
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/11.0.0": {
+        "dependencies": {
+          "AutoMapper": "11.0.0",
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
       "Humanizer.Core/2.8.26": {
@@ -629,6 +664,11 @@
         },
         "compile": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Tools/6.0.16": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "6.0.16"
         }
       },
       "Microsoft.Extensions.ApiDescription.Server/3.0.0": {},
@@ -2846,6 +2886,20 @@
       "serviceable": false,
       "sha512": ""
     },
+    "AutoMapper/11.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+596AnKykYCk9RxXCEF4GYuapSebQtFVvIA1oVG1rrRkCLAC7AkWehJ0brCfYUbdDW3v1H/p0W3hob7JoXGjMw==",
+      "path": "automapper/11.0.0",
+      "hashPath": "automapper.11.0.0.nupkg.sha512"
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/11.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0asw5WxdCFh2OTi9Gv+oKyH9SzxwYQSnO8TV5Dd0GggovILzJW4UimP26JAcxc3yB5NnC5urooZ1BBs8ElpiBw==",
+      "path": "automapper.extensions.microsoft.dependencyinjection/11.0.0",
+      "hashPath": "automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512"
+    },
     "Humanizer.Core/2.8.26": {
       "type": "package",
       "serviceable": true,
@@ -3041,6 +3095,13 @@
       "sha512": "sha512-xqJXDqjq8ArJzwUZjSaBsbSFZIhsrTf1oLxoOWFN+p9itCeFJvJ0AZkbGuzKt6Vq/ZJ4YkkdIrCj451RAwM5Mw==",
       "path": "microsoft.entityframeworkcore.sqlserver/6.0.16",
       "hashPath": "microsoft.entityframeworkcore.sqlserver.6.0.16.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Tools/6.0.16": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0SGLgmBdpC8BdjlMAsnsxJUiF5+Qj9NuEE+ysA+Oau/3X1HZGpLqbIYlFPGoboBdi8uqO9CTO2KbEmVxS72Deg==",
+      "path": "microsoft.entityframeworkcore.tools/6.0.16",
+      "hashPath": "microsoft.entityframeworkcore.tools.6.0.16.nupkg.sha512"
     },
     "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
       "type": "package",
