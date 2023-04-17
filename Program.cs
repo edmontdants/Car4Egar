@@ -1,11 +1,6 @@
 using Car4EgarAPI.Models.Context;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Car4EgarAPI.Models;
-using Microsoft.Extensions.Hosting;
-using Car4EgarAPI.Models.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add configuration providers
@@ -17,14 +12,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<Car4EgarContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-builder.Services.AddIdentity<SystemUser, IdentityRole>(options =>
-{
-    options.Password.RequireDigit = false;
-    options.Password.RequireLowercase = false;
-    options.Password.RequireUppercase = false;
-    options.Password.RequireNonAlphanumeric = false;
-    options.Password.RequiredLength = 8;
-}).AddEntityFrameworkStores<Car4EgarContext>();
 
 var app = builder.Build();
 
@@ -37,7 +24,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseAuthentication();  //jwt Configration-----------------------
 app.UseAuthorization();
+app.UseCors(MyAllowSpecificOrigins);  //cors Configration--------------------
 app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 app.MapControllers();
 
