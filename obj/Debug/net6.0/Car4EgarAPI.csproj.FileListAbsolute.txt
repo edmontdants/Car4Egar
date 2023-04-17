@@ -307,6 +307,7 @@ D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\obj\Debug\n
 D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\obj\Debug\net6.0\Car4EgarAPI.genruntimeconfig.cache
 D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\obj\Debug\net6.0\ref\Car4EgarAPI.dll
 D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+<<<<<<< HEAD
 E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
 E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
@@ -314,3 +315,6 @@ E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptogr
 E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+=======
+D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+>>>>>>> afd65f371f83bcd8c34a5b622f643e433b0e7986

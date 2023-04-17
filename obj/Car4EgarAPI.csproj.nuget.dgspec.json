@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\ITI\\_Car4Egar\\APISide\\Car4Egar\\Car4EgarAPI.csproj": {}
+    "D:\\Programing\\0_ITI 3M\\courses\\00_Fainl Project\\API_Part\\V3\\Car4Egar\\Car4EgarAPI.csproj": {}
   },
   "projects": {
-    "E:\\ITI\\_Car4Egar\\APISide\\Car4Egar\\Car4EgarAPI.csproj": {
+    "D:\\Programing\\0_ITI 3M\\courses\\00_Fainl Project\\API_Part\\V3\\Car4Egar\\Car4EgarAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ITI\\_Car4Egar\\APISide\\Car4Egar\\Car4EgarAPI.csproj",
+        "projectUniqueName": "D:\\Programing\\0_ITI 3M\\courses\\00_Fainl Project\\API_Part\\V3\\Car4Egar\\Car4EgarAPI.csproj",
         "projectName": "Car4EgarAPI",
-        "projectPath": "E:\\ITI\\_Car4Egar\\APISide\\Car4Egar\\Car4EgarAPI.csproj",
-        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "E:\\ITI\\_Car4Egar\\APISide\\Car4Egar\\obj\\",
+        "projectPath": "D:\\Programing\\0_ITI 3M\\courses\\00_Fainl Project\\API_Part\\V3\\Car4Egar\\Car4EgarAPI.csproj",
+        "packagesPath": "C:\\Users\\Massoud\\.nuget\\packages\\",
+        "outputPath": "D:\\Programing\\0_ITI 3M\\courses\\00_Fainl Project\\API_Part\\V3\\Car4Egar\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Massoud\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -48,6 +44,7 @@
               "target": "Package",
               "version": "[6.0.16, )"
             },
+<<<<<<< HEAD
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",
               "version": "[2.2.0, )"
@@ -56,6 +53,8 @@
               "target": "Package",
               "version": "[6.0.16, )"
             },
+=======
+>>>>>>> afd65f371f83bcd8c34a5b622f643e433b0e7986
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -77,6 +76,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.10.0, )"
             }
           },
           "imports": [
@@ -98,7 +101,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

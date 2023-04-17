@@ -15,6 +15,7 @@
           }
         }
       },
+<<<<<<< HEAD
       "Microsoft.AspNetCore.Authentication/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -89,6 +90,8 @@
           }
         }
       },
+=======
+>>>>>>> afd65f371f83bcd8c34a5b622f643e433b0e7986
       "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.16": {
         "type": "package",
         "dependencies": {
@@ -108,6 +111,7 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+<<<<<<< HEAD
       "Microsoft.AspNetCore.Cryptography.Internal/6.0.16": {
         "type": "package",
         "compile": {
@@ -334,6 +338,8 @@
           }
         }
       },
+=======
+>>>>>>> afd65f371f83bcd8c34a5b622f643e433b0e7986
       "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "compile": {
@@ -1460,6 +1466,7 @@
         "logo.png"
       ]
     },
+<<<<<<< HEAD
     "Microsoft.AspNetCore.Authentication/2.2.0": {
       "sha512": "b0R9X7L6zMqNsssKDvhYHuNi5x0s4DyHTeXybIAyGaitKiW1Q5aAGKdV2codHPiePv9yHfC9hAMyScXQ/xXhPw==",
       "type": "package",
@@ -1512,6 +1519,8 @@
         "microsoft.aspnetcore.authentication.core.nuspec"
       ]
     },
+=======
+>>>>>>> afd65f371f83bcd8c34a5b622f643e433b0e7986
     "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.16": {
       "sha512": "T4AkjPXOYDqDnfb8PRRHNbB2ozLg9J7CsRZ+jH1MfQGshkFosdwja9c4+QVbKm+1qeLPxul+3weSz+DEvFkA5w==",
       "type": "package",
@@ -1527,6 +1536,7 @@
         "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
+<<<<<<< HEAD
     "Microsoft.AspNetCore.Cryptography.Internal/6.0.16": {
       "sha512": "cx5MKNEfssekyGhZGFXCjkTHsBe5ZxYBc0LHDKOH7GmDYsYbNg9LhqL1/nWMzf81cjVoVQq7NevunUENdrVqNA==",
       "type": "package",
@@ -1710,6 +1720,8 @@
         "microsoft.aspnetcore.webutilities.nuspec"
       ]
     },
+=======
+>>>>>>> afd65f371f83bcd8c34a5b622f643e433b0e7986
     "Microsoft.CSharp/4.7.0": {
       "sha512": "pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
       "type": "package",
@@ -3401,34 +3413,33 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.16",
+<<<<<<< HEAD
       "Microsoft.AspNetCore.Identity >= 2.2.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.16",
+=======
+>>>>>>> afd65f371f83bcd8c34a5b622f643e433b0e7986
       "Microsoft.EntityFrameworkCore.Design >= 6.0.16",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.16",
       "Microsoft.NET.Sdk.Razor >= 3.1.32",
       "ServiceStack.Client >= 6.8.0",
-      "Swashbuckle.AspNetCore >= 6.2.3"
+      "Swashbuckle.AspNetCore >= 6.2.3",
+      "System.IdentityModel.Tokens.Jwt >= 6.10.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DELL\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Massoud\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\ITI\\_Car4Egar\\APISide\\Car4Egar\\Car4EgarAPI.csproj",
+      "projectUniqueName": "D:\\Programing\\0_ITI 3M\\courses\\00_Fainl Project\\API_Part\\V3\\Car4Egar\\Car4EgarAPI.csproj",
       "projectName": "Car4EgarAPI",
-      "projectPath": "E:\\ITI\\_Car4Egar\\APISide\\Car4Egar\\Car4EgarAPI.csproj",
-      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "E:\\ITI\\_Car4Egar\\APISide\\Car4Egar\\obj\\",
+      "projectPath": "D:\\Programing\\0_ITI 3M\\courses\\00_Fainl Project\\API_Part\\V3\\Car4Egar\\Car4EgarAPI.csproj",
+      "packagesPath": "C:\\Users\\Massoud\\.nuget\\packages\\",
+      "outputPath": "D:\\Programing\\0_ITI 3M\\courses\\00_Fainl Project\\API_Part\\V3\\Car4Egar\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Massoud\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3458,6 +3469,7 @@
             "target": "Package",
             "version": "[6.0.16, )"
           },
+<<<<<<< HEAD
           "Microsoft.AspNetCore.Identity": {
             "target": "Package",
             "version": "[2.2.0, )"
@@ -3466,6 +3478,8 @@
             "target": "Package",
             "version": "[6.0.16, )"
           },
+=======
+>>>>>>> afd65f371f83bcd8c34a5b622f643e433b0e7986
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
@@ -3487,6 +3501,10 @@
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.2.3, )"
+          },
+          "System.IdentityModel.Tokens.Jwt": {
+            "target": "Package",
+            "version": "[6.10.0, )"
           }
         },
         "imports": [
@@ -3508,7 +3526,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
