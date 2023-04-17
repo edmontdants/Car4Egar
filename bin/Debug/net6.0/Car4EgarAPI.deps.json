@@ -38,10 +38,7 @@
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.16",
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.16",
-<<<<<<< HEAD
-=======
           "Microsoft.EntityFrameworkCore": "6.0.16",
->>>>>>> bee57d971371742eaa9513c3f36f653fe1ed40c7
           "Microsoft.EntityFrameworkCore.Design": "6.0.16",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.16",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.16",

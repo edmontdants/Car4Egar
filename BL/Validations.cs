@@ -27,7 +27,7 @@ namespace Car4EgarAPI.BL
 
         public static bool IsPasswordValid(string password)
         {
-            return Regex.Match(password, @"^([a-zA-Z0-9]{8,})$").Success;
+            return Regex.Match(password, @"^.{8,40}$").Success;
         }
 
         public static bool IsBankCardNumberValid(string cardNumber)
