@@ -35,17 +35,13 @@
       "Car4EgarAPI/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.16",
-<<<<<<< HEAD
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.16",
-=======
->>>>>>> afd65f371f83bcd8c34a5b622f643e433b0e7986
           "Microsoft.EntityFrameworkCore.Design": "6.0.16",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.16",
           "Microsoft.NET.Sdk.Razor": "3.1.32",
           "ServiceStack.Client": "6.8.0",
           "Swashbuckle.AspNetCore": "6.2.3",
-          "System.IdentityModel.Tokens.Jwt": "6.10.0",
           "Microsoft.AspNetCore.Antiforgery": "6.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions.Reference": "6.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies.Reference": "6.0.0.0",
@@ -196,6 +192,7 @@
           "System.Data": "4.0.0.0",
           "System.Diagnostics.Contracts": "6.0.0.0",
           "System.Diagnostics.Debug": "6.0.0.0",
+          "System.Diagnostics.DiagnosticSource.Reference": "6.0.0.0",
           "System.Diagnostics.EventLog": "6.0.0.0",
           "System.Diagnostics.FileVersionInfo": "6.0.0.0",
           "System.Diagnostics.Process": "6.0.0.0",
@@ -345,7 +342,6 @@
           }
         }
       },
-<<<<<<< HEAD
       "Microsoft.AspNetCore.Authentication/2.2.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.Core": "2.2.0",
@@ -376,8 +372,6 @@
           "Microsoft.AspNetCore.Http.Extensions": "2.2.0"
         }
       },
-=======
->>>>>>> afd65f371f83bcd8c34a5b622f643e433b0e7986
       "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.16": {
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.10.0"
@@ -392,7 +386,6 @@
           "lib/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {}
         }
       },
-<<<<<<< HEAD
       "Microsoft.AspNetCore.Cryptography.Internal/6.0.16": {
         "runtime": {
           "lib/net6.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {
@@ -502,8 +495,6 @@
           "System.Text.Encodings.Web": "4.5.0"
         }
       },
-=======
->>>>>>> afd65f371f83bcd8c34a5b622f643e433b0e7986
       "Microsoft.CSharp/4.7.0": {},
       "Microsoft.Data.SqlClient/2.1.4": {
         "dependencies": {
@@ -1001,9 +992,6 @@
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.0.1523.11507"
           }
-        },
-        "compile": {
-          "lib/net6.0/System.Diagnostics.DiagnosticSource.dll": {}
         }
       },
       "System.Drawing.Common/4.7.0": {
@@ -2046,6 +2034,12 @@
         },
         "compileOnly": true
       },
+      "System.Diagnostics.DiagnosticSource.Reference/6.0.0.0": {
+        "compile": {
+          "System.Diagnostics.DiagnosticSource.dll": {}
+        },
+        "compileOnly": true
+      },
       "System.Diagnostics.EventLog/6.0.0.0": {
         "compile": {
           "System.Diagnostics.EventLog.dll": {}
@@ -2859,7 +2853,6 @@
       "path": "humanizer.core/2.8.26",
       "hashPath": "humanizer.core.2.8.26.nupkg.sha512"
     },
-<<<<<<< HEAD
     "Microsoft.AspNetCore.Authentication/2.2.0": {
       "type": "package",
       "serviceable": true,
@@ -2888,8 +2881,6 @@
       "path": "microsoft.aspnetcore.authentication.core/2.2.0",
       "hashPath": "microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512"
     },
-=======
->>>>>>> afd65f371f83bcd8c34a5b622f643e433b0e7986
     "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.16": {
       "type": "package",
       "serviceable": true,
@@ -2897,7 +2888,6 @@
       "path": "microsoft.aspnetcore.authentication.jwtbearer/6.0.16",
       "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.6.0.16.nupkg.sha512"
     },
-<<<<<<< HEAD
     "Microsoft.AspNetCore.Cryptography.Internal/6.0.16": {
       "type": "package",
       "serviceable": true,
@@ -2989,8 +2979,6 @@
       "path": "microsoft.aspnetcore.webutilities/2.2.0",
       "hashPath": "microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512"
     },
-=======
->>>>>>> afd65f371f83bcd8c34a5b622f643e433b0e7986
     "Microsoft.CSharp/4.7.0": {
       "type": "package",
       "serviceable": true,
@@ -3214,7 +3202,6 @@
       "sha512": "sha512-qbf1NslutDB4oLrriYTJpy7oB1pbh2ej2lEHd2IPDQH9C74ysOdhU5wAC7KoXblldbo7YsNR2QYFOqQM/b0Rsg==",
       "path": "microsoft.identitymodel.tokens/6.10.0",
       "hashPath": "microsoft.identitymodel.tokens.6.10.0.nupkg.sha512"
-<<<<<<< HEAD
     },
     "Microsoft.Net.Http.Headers/2.2.0": {
       "type": "package",
@@ -3222,8 +3209,6 @@
       "sha512": "sha512-iZNkjYqlo8sIOI0bQfpsSoMTmB/kyvmV2h225ihyZT33aTp48ZpF6qYnXxzSXmHt8DpBAwBTX+1s1UFLbYfZKg==",
       "path": "microsoft.net.http.headers/2.2.0",
       "hashPath": "microsoft.net.http.headers.2.2.0.nupkg.sha512"
-=======
->>>>>>> afd65f371f83bcd8c34a5b622f643e433b0e7986
     },
     "Microsoft.NET.Sdk.Razor/3.1.32": {
       "type": "package",
@@ -4188,6 +4173,11 @@
       "sha512": ""
     },
     "System.Diagnostics.Debug/6.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Diagnostics.DiagnosticSource.Reference/6.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""

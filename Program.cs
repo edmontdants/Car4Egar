@@ -26,7 +26,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAuthentication();  //jwt Configration-----------------------
 app.UseAuthorization();
-app.UseCors(MyAllowSpecificOrigins);  //cors Configration--------------------
+//app.UseCors(MyAllowSpecificOrigins);  //cors Configration--------------------
 app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 app.MapControllers();
 

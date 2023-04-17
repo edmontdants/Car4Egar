@@ -31,14 +31,14 @@ namespace Car4EgarAPI.Controllers
             db = dataContext;
         }
 
-        //sys user sys user sys user sys user sys user sys user sys user sys user 
+        //--------------------Masssssssssssssssssssssssssssssssoud--------------------
 
+        //sys user sys user sys user sys user sys user sys user sys user sys user [Registration]
         [HttpPost]
         [Route("/SystemUser/Register")]
-
         public IActionResult RegNewOwner(SystemUser user)
         {
-            SystemUser users = db.SystemUsers.Find(user.NID);
+            SystemUser users = db.SystemUsers.Where(a=>a.NID==user.NID|| a.Email == user.Email).FirstOrDefault();
             if (IsUserNameValid(user.UserName) && IsEmailValid(user.Email) && IsPasswordValid(user.Password) && IsNIDalid(user.NID) && users == null)
             {
                 SystemUser NewUser = new SystemUser();
@@ -46,6 +46,7 @@ namespace Car4EgarAPI.Controllers
                 NewUser.UserName = user.UserName;
                 NewUser.Password = user.Password;
                 NewUser.Email = user.Email;
+                NewUser.Role = user.Role;
 
                 db.SystemUsers.Add(NewUser);
                 db.SaveChanges();
@@ -54,6 +55,49 @@ namespace Car4EgarAPI.Controllers
             else if (users != null) return BadRequest("This User Already Exist");
             return BadRequest("Bad Data Entered");
         }
+
+        //sys user sys user sys user sys user sys user sys user sys user sys user [Login]
+
+        [HttpGet]
+        [Route("/SystemUser/AllUsers")]
+        public IActionResult GetAllSystemUsers()
+        {
+            return Ok(db.SystemUsers.ToList());
+        }
+
+        [HttpPost]
+        [Route("/SystemUser/UsersEmail")]
+        public IActionResult GetSystemUserByEmail([FromBody]string EmailInput) {
+            SystemUser Sysuser = db.SystemUsers.FirstOrDefault(a=>a.Email==EmailInput);
+            if (Sysuser != null)
+            {
+                return Ok(Sysuser);
+            }
+            else return BadRequest("Not Register User");
+        }
+
+        [HttpGet]
+        [Route("/SystemUser/UsersNID")]
+        public IActionResult GetSystemUserByNID(string nid)
+        {
+            SystemUser Sysuser = db.SystemUsers.Find(nid);
+            if (Sysuser != null)
+            {
+                return Ok(Sysuser);
+            }
+            else return BadRequest("Not Register User");
+        }
+
+
+
+
+        //------------------------------------------------
+
+
+
+
+
+
 
 
         // SystemUser  SystemUser  SystemUser  SystemUser  SystemUser

@@ -1,246 +1,3 @@
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\appsettings.Development.json
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\appsettings.json
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Car4EgarAPI.exe
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Car4EgarAPI.deps.json
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Car4EgarAPI.runtimeconfig.json
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Car4EgarAPI.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Car4EgarAPI.pdb
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\obj\Debug\net6.0\Car4EgarAPI.csproj.AssemblyReference.cache
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\obj\Debug\net6.0\Car4EgarAPI.GeneratedMSBuildEditorConfig.editorconfig
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\obj\Debug\net6.0\Car4EgarAPI.AssemblyInfoInputs.cache
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\obj\Debug\net6.0\Car4EgarAPI.AssemblyInfo.cs
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\obj\Debug\net6.0\Car4EgarAPI.csproj.CoreCompileInputs.cache
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\obj\Debug\net6.0\Car4EgarAPI.MvcApplicationPartsAssemblyInfo.cs
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\obj\Debug\net6.0\Car4EgarAPI.MvcApplicationPartsAssemblyInfo.cache
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\obj\Debug\net6.0\staticwebassets\msbuild.Car4EgarAPI.Microsoft.AspNetCore.StaticWebAssets.props
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\obj\Debug\net6.0\staticwebassets\msbuild.build.Car4EgarAPI.props
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Car4EgarAPI.props
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Car4EgarAPI.props
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\obj\Debug\net6.0\staticwebassets.pack.json
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\obj\Debug\net6.0\staticwebassets.build.json
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\obj\Debug\net6.0\staticwebassets.development.json
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\obj\Debug\net6.0\scopedcss\bundle\Car4EgarAPI.styles.css
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\obj\Debug\net6.0\Car4EgarAPI.csproj.CopyComplete
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\obj\Debug\net6.0\Car4EgarAPI.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\obj\Debug\net6.0\refint\Car4EgarAPI.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\obj\Debug\net6.0\Car4EgarAPI.pdb
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\obj\Debug\net6.0\Car4EgarAPI.genruntimeconfig.cache
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\obj\Debug\net6.0\ref\Car4EgarAPI.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Azure.Core.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Azure.Identity.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Humanizer.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Identity.Client.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\Mono.TextTemplating.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\System.CodeDom.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\System.Drawing.Common.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\System.Memory.Data.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\System.Runtime.Caching.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\System.Security.Permissions.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\System.Text.Encodings.Web.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\System.Text.Json.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\System.Windows.Extensions.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
-D:\Programing\0_ITI 3M\courses\Fainl Project\Car4EgarAPI\Car4EgarAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\appsettings.Development.json
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\appsettings.json
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Car4EgarAPI.staticwebassets.runtime.json
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Car4EgarAPI.exe
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Car4EgarAPI.deps.json
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Car4EgarAPI.runtimeconfig.json
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Car4EgarAPI.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Car4EgarAPI.pdb
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Azure.Core.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Azure.Identity.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Humanizer.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Identity.Client.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Mono.TextTemplating.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\System.CodeDom.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\System.Drawing.Common.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\System.Memory.Data.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\System.Runtime.Caching.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\System.Security.Permissions.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\System.Text.Encodings.Web.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\System.Text.Json.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\System.Windows.Extensions.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\obj\Debug\net6.0\Car4EgarAPI.csproj.AssemblyReference.cache
-E:\ITI\_Car4Egar\Car4EgarAPI\obj\Debug\net6.0\Car4EgarAPI.GeneratedMSBuildEditorConfig.editorconfig
-E:\ITI\_Car4Egar\Car4EgarAPI\obj\Debug\net6.0\Car4EgarAPI.AssemblyInfoInputs.cache
-E:\ITI\_Car4Egar\Car4EgarAPI\obj\Debug\net6.0\Car4EgarAPI.AssemblyInfo.cs
-E:\ITI\_Car4Egar\Car4EgarAPI\obj\Debug\net6.0\Car4EgarAPI.csproj.CoreCompileInputs.cache
-E:\ITI\_Car4Egar\Car4EgarAPI\obj\Debug\net6.0\Car4EgarAPI.MvcApplicationPartsAssemblyInfo.cs
-E:\ITI\_Car4Egar\Car4EgarAPI\obj\Debug\net6.0\Car4EgarAPI.MvcApplicationPartsAssemblyInfo.cache
-E:\ITI\_Car4Egar\Car4EgarAPI\obj\Debug\net6.0\staticwebassets\msbuild.Car4EgarAPI.Microsoft.AspNetCore.StaticWebAssets.props
-E:\ITI\_Car4Egar\Car4EgarAPI\obj\Debug\net6.0\staticwebassets\msbuild.build.Car4EgarAPI.props
-E:\ITI\_Car4Egar\Car4EgarAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Car4EgarAPI.props
-E:\ITI\_Car4Egar\Car4EgarAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Car4EgarAPI.props
-E:\ITI\_Car4Egar\Car4EgarAPI\obj\Debug\net6.0\staticwebassets.pack.json
-E:\ITI\_Car4Egar\Car4EgarAPI\obj\Debug\net6.0\staticwebassets.build.json
-E:\ITI\_Car4Egar\Car4EgarAPI\obj\Debug\net6.0\staticwebassets.development.json
-E:\ITI\_Car4Egar\Car4EgarAPI\obj\Debug\net6.0\scopedcss\bundle\Car4EgarAPI.styles.css
-E:\ITI\_Car4Egar\Car4EgarAPI\obj\Debug\net6.0\Car4EgarAPI.csproj.CopyComplete
-E:\ITI\_Car4Egar\Car4EgarAPI\obj\Debug\net6.0\Car4EgarAPI.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\obj\Debug\net6.0\refint\Car4EgarAPI.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\obj\Debug\net6.0\Car4EgarAPI.pdb
-E:\ITI\_Car4Egar\Car4EgarAPI\obj\Debug\net6.0\Car4EgarAPI.genruntimeconfig.cache
-E:\ITI\_Car4Egar\Car4EgarAPI\obj\Debug\net6.0\ref\Car4EgarAPI.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\ServiceStack.Client.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\ServiceStack.Interfaces.dll
-E:\ITI\_Car4Egar\Car4EgarAPI\bin\Debug\net6.0\ServiceStack.Text.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\obj\Debug\net6.0\Car4EgarAPI.csproj.AssemblyReference.cache
-E:\ITI\_Car4Egar\APISide\Car4Egar\obj\Debug\net6.0\Car4EgarAPI.GeneratedMSBuildEditorConfig.editorconfig
-E:\ITI\_Car4Egar\APISide\Car4Egar\obj\Debug\net6.0\Car4EgarAPI.AssemblyInfoInputs.cache
-E:\ITI\_Car4Egar\APISide\Car4Egar\obj\Debug\net6.0\Car4EgarAPI.AssemblyInfo.cs
-E:\ITI\_Car4Egar\APISide\Car4Egar\obj\Debug\net6.0\Car4EgarAPI.csproj.CoreCompileInputs.cache
-E:\ITI\_Car4Egar\APISide\Car4Egar\obj\Debug\net6.0\Car4EgarAPI.MvcApplicationPartsAssemblyInfo.cs
-E:\ITI\_Car4Egar\APISide\Car4Egar\obj\Debug\net6.0\Car4EgarAPI.MvcApplicationPartsAssemblyInfo.cache
-E:\ITI\_Car4Egar\APISide\Car4Egar\obj\Debug\net6.0\Car4EgarAPI.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\obj\Debug\net6.0\refint\Car4EgarAPI.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\obj\Debug\net6.0\Car4EgarAPI.pdb
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\appsettings.Development.json
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\appsettings.json
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Car4EgarAPI.exe
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Car4EgarAPI.deps.json
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Car4EgarAPI.runtimeconfig.json
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Car4EgarAPI.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Car4EgarAPI.pdb
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Humanizer.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Microsoft.Identity.Client.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Microsoft.OpenApi.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\ServiceStack.Client.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\ServiceStack.Interfaces.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\ServiceStack.Text.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\System.Drawing.Common.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\System.Runtime.Caching.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\System.Security.Permissions.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\System.Windows.Extensions.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\obj\Debug\net6.0\Car4EgarAPI.csproj.CopyComplete
-E:\ITI\_Car4Egar\APISide\Car4Egar\obj\Debug\net6.0\Car4EgarAPI.genruntimeconfig.cache
-E:\ITI\_Car4Egar\APISide\Car4Egar\obj\Debug\net6.0\ref\Car4EgarAPI.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\obj\Debug\net6.0\Car4EgarAPI.RazorTargetAssemblyInfo.cache
-E:\ITI\_Car4Egar\APISide\Car4Egar\obj\Debug\net6.0\staticwebassets\Car4EgarAPI.StaticWebAssets.Manifest.cache
-E:\ITI\_Car4Egar\APISide\Car4Egar\obj\Debug\net6.0\staticwebassets\Car4EgarAPI.StaticWebAssets.xml
 D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\appsettings.Development.json
 D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\appsettings.json
 D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\Car4EgarAPI.exe
@@ -249,6 +6,10 @@ D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\n
 D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\Car4EgarAPI.dll
 D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\Car4EgarAPI.pdb
 D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\Humanizer.dll
+D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -257,6 +18,8 @@ D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\n
 D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
 D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\Microsoft.Identity.Client.dll
 D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
 D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
@@ -272,6 +35,7 @@ D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\n
 D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
 D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\System.Drawing.Common.dll
 D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
 D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\System.Runtime.Caching.dll
@@ -306,15 +70,3 @@ D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\obj\Debug\n
 D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\obj\Debug\net6.0\Car4EgarAPI.pdb
 D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\obj\Debug\net6.0\Car4EgarAPI.genruntimeconfig.cache
 D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\obj\Debug\net6.0\ref\Car4EgarAPI.dll
-D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
-<<<<<<< HEAD
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
-E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
-=======
-D:\Programing\0_ITI 3M\courses\00_Fainl Project\API_Part\V3\Car4Egar\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
->>>>>>> afd65f371f83bcd8c34a5b622f643e433b0e7986
