@@ -2,9 +2,15 @@
 using Car4EgarAPI.Models.Entities;
 using Car4EgarAPI.Models.ViewModels;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
 using System.Numerics;
+using System.Security.Claims;
 using System.Security.Cryptography;
+using System.Text;
 using static Car4EgarAPI.BL.Validations;
 using static Car4EgarAPI.BL.JWTFunction;//JWT -------------
 using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
@@ -616,5 +622,16 @@ namespace Car4EgarAPI.Controllers
 
             return Ok(cars);
         }
+
+
+
+        /*********************************************/
+        /*********************************************/
+        /*Login*/
+        /*********************************************/
+        /*********************************************/
+
+
+
     }
 }
