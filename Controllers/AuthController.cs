@@ -1,4 +1,5 @@
-﻿using Car4EgarAPI.Models.Entities;
+﻿using Car4EgarAPI.Models.Context;
+using Car4EgarAPI.Models.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -15,12 +16,15 @@ namespace Car4EgarAPI.Controllers
         [ApiController]
         public class AuthController : ControllerBase
         {
+
+            private readonly Car4EgarContext db;
             private readonly UserManager<SystemUser> _userManager;
             private readonly SignInManager<SystemUser> _signInManager;
             private readonly IConfiguration _configuration;
 
-            public AuthController(UserManager<SystemUser> userManager, SignInManager<SystemUser> signInManager, IConfiguration configuration)
+            public AuthController(UserManager<SystemUser> userManager, SignInManager<SystemUser> signInManager, IConfiguration configuration, Car4EgarContext dataContext)
             {
+                db = dataContext;
                 _userManager = userManager;
                 _signInManager = signInManager;
                 _configuration = configuration;
@@ -57,7 +61,7 @@ namespace Car4EgarAPI.Controllers
                     Email = registerDto.Email,
                     NID = registerDto.NID
                 };
-
+                db.Add(user);
                 var result = await _userManager.CreateAsync(user, registerDto.Password);
 
                 if (!result.Succeeded)

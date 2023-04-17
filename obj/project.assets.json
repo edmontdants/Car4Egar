@@ -2,6 +2,35 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "AutoMapper/11.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/11.0.0": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper": "11.0.0",
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -15,7 +44,6 @@
           }
         }
       },
-<<<<<<< HEAD
       "Microsoft.AspNetCore.Authentication/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -90,8 +118,6 @@
           }
         }
       },
-=======
->>>>>>> afd65f371f83bcd8c34a5b622f643e433b0e7986
       "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.16": {
         "type": "package",
         "dependencies": {
@@ -111,7 +137,6 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-<<<<<<< HEAD
       "Microsoft.AspNetCore.Cryptography.Internal/6.0.16": {
         "type": "package",
         "compile": {
@@ -338,8 +363,6 @@
           }
         }
       },
-=======
->>>>>>> afd65f371f83bcd8c34a5b622f643e433b0e7986
       "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "compile": {
@@ -504,6 +527,18 @@
           "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Tools/6.0.16": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "6.0.16"
+        },
+        "compile": {
+          "lib/net6.0/_._": {}
+        },
+        "runtime": {
+          "lib/net6.0/_._": {}
         }
       },
       "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
@@ -1450,6 +1485,35 @@
     }
   },
   "libraries": {
+    "AutoMapper/11.0.0": {
+      "sha512": "+596AnKykYCk9RxXCEF4GYuapSebQtFVvIA1oVG1rrRkCLAC7AkWehJ0brCfYUbdDW3v1H/p0W3hob7JoXGjMw==",
+      "type": "package",
+      "path": "automapper/11.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.11.0.0.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.dll",
+        "lib/netstandard2.1/AutoMapper.xml"
+      ]
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/11.0.0": {
+      "sha512": "0asw5WxdCFh2OTi9Gv+oKyH9SzxwYQSnO8TV5Dd0GggovILzJW4UimP26JAcxc3yB5NnC5urooZ1BBs8ElpiBw==",
+      "type": "package",
+      "path": "automapper.extensions.microsoft.dependencyinjection/11.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+        "automapper.extensions.microsoft.dependencyinjection.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll"
+      ]
+    },
     "Humanizer.Core/2.8.26": {
       "sha512": "OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
       "type": "package",
@@ -1466,7 +1530,6 @@
         "logo.png"
       ]
     },
-<<<<<<< HEAD
     "Microsoft.AspNetCore.Authentication/2.2.0": {
       "sha512": "b0R9X7L6zMqNsssKDvhYHuNi5x0s4DyHTeXybIAyGaitKiW1Q5aAGKdV2codHPiePv9yHfC9hAMyScXQ/xXhPw==",
       "type": "package",
@@ -1519,8 +1582,6 @@
         "microsoft.aspnetcore.authentication.core.nuspec"
       ]
     },
-=======
->>>>>>> afd65f371f83bcd8c34a5b622f643e433b0e7986
     "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.16": {
       "sha512": "T4AkjPXOYDqDnfb8PRRHNbB2ozLg9J7CsRZ+jH1MfQGshkFosdwja9c4+QVbKm+1qeLPxul+3weSz+DEvFkA5w==",
       "type": "package",
@@ -1536,7 +1597,6 @@
         "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
-<<<<<<< HEAD
     "Microsoft.AspNetCore.Cryptography.Internal/6.0.16": {
       "sha512": "cx5MKNEfssekyGhZGFXCjkTHsBe5ZxYBc0LHDKOH7GmDYsYbNg9LhqL1/nWMzf81cjVoVQq7NevunUENdrVqNA==",
       "type": "package",
@@ -1720,8 +1780,6 @@
         "microsoft.aspnetcore.webutilities.nuspec"
       ]
     },
-=======
->>>>>>> afd65f371f83bcd8c34a5b622f643e433b0e7986
     "Microsoft.CSharp/4.7.0": {
       "sha512": "pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
       "type": "package",
@@ -1962,6 +2020,31 @@
         "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.xml",
         "microsoft.entityframeworkcore.sqlserver.6.0.16.nupkg.sha512",
         "microsoft.entityframeworkcore.sqlserver.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.Tools/6.0.16": {
+      "sha512": "0SGLgmBdpC8BdjlMAsnsxJUiF5+Qj9NuEE+ysA+Oau/3X1HZGpLqbIYlFPGoboBdi8uqO9CTO2KbEmVxS72Deg==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.tools/6.0.16",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/net6.0/_._",
+        "microsoft.entityframeworkcore.tools.6.0.16.nupkg.sha512",
+        "microsoft.entityframeworkcore.tools.nuspec",
+        "tools/EntityFrameworkCore.PS2.psd1",
+        "tools/EntityFrameworkCore.PS2.psm1",
+        "tools/EntityFrameworkCore.psd1",
+        "tools/EntityFrameworkCore.psm1",
+        "tools/about_EntityFrameworkCore.help.txt",
+        "tools/init.ps1",
+        "tools/net461/any/ef.exe",
+        "tools/net461/win-arm64/ef.exe",
+        "tools/net461/win-x86/ef.exe",
+        "tools/netcoreapp2.0/any/ef.dll",
+        "tools/netcoreapp2.0/any/ef.runtimeconfig.json"
       ]
     },
     "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
@@ -3412,34 +3495,38 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "AutoMapper.Extensions.Microsoft.DependencyInjection >= 11.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.16",
-<<<<<<< HEAD
       "Microsoft.AspNetCore.Identity >= 2.2.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.16",
-=======
->>>>>>> afd65f371f83bcd8c34a5b622f643e433b0e7986
+      "Microsoft.EntityFrameworkCore >= 6.0.16",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.16",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.16",
+      "Microsoft.EntityFrameworkCore.Tools >= 6.0.16",
       "Microsoft.NET.Sdk.Razor >= 3.1.32",
       "ServiceStack.Client >= 6.8.0",
-      "Swashbuckle.AspNetCore >= 6.2.3",
-      "System.IdentityModel.Tokens.Jwt >= 6.10.0"
+      "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Massoud\\.nuget\\packages\\": {}
+    "C:\\Users\\DELL\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programing\\0_ITI 3M\\courses\\00_Fainl Project\\API_Part\\V3\\Car4Egar\\Car4EgarAPI.csproj",
+      "projectUniqueName": "E:\\ITI\\_Car4Egar\\APISide\\Car4Egar\\Car4EgarAPI.csproj",
       "projectName": "Car4EgarAPI",
-      "projectPath": "D:\\Programing\\0_ITI 3M\\courses\\00_Fainl Project\\API_Part\\V3\\Car4Egar\\Car4EgarAPI.csproj",
-      "packagesPath": "C:\\Users\\Massoud\\.nuget\\packages\\",
-      "outputPath": "D:\\Programing\\0_ITI 3M\\courses\\00_Fainl Project\\API_Part\\V3\\Car4Egar\\obj\\",
+      "projectPath": "E:\\ITI\\_Car4Egar\\APISide\\Car4Egar\\Car4EgarAPI.csproj",
+      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+      "outputPath": "E:\\ITI\\_Car4Egar\\APISide\\Car4Egar\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Massoud\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3465,11 +3552,14 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+            "target": "Package",
+            "version": "[11.0.0, )"
+          },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
             "version": "[6.0.16, )"
           },
-<<<<<<< HEAD
           "Microsoft.AspNetCore.Identity": {
             "target": "Package",
             "version": "[2.2.0, )"
@@ -3478,8 +3568,10 @@
             "target": "Package",
             "version": "[6.0.16, )"
           },
-=======
->>>>>>> afd65f371f83bcd8c34a5b622f643e433b0e7986
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[6.0.16, )"
+          },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
@@ -3487,6 +3579,12 @@
             "version": "[6.0.16, )"
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {
+            "target": "Package",
+            "version": "[6.0.16, )"
+          },
+          "Microsoft.EntityFrameworkCore.Tools": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
             "target": "Package",
             "version": "[6.0.16, )"
           },
@@ -3501,10 +3599,6 @@
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.2.3, )"
-          },
-          "System.IdentityModel.Tokens.Jwt": {
-            "target": "Package",
-            "version": "[6.10.0, )"
           }
         },
         "imports": [
@@ -3526,7 +3620,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Programing\\0_ITI 3M\\courses\\00_Fainl Project\\API_Part\\V3\\Car4Egar\\Car4EgarAPI.csproj": {}
+    "E:\\ITI\\_Car4Egar\\APISide\\Car4Egar\\Car4EgarAPI.csproj": {}
   },
   "projects": {
-    "D:\\Programing\\0_ITI 3M\\courses\\00_Fainl Project\\API_Part\\V3\\Car4Egar\\Car4EgarAPI.csproj": {
+    "E:\\ITI\\_Car4Egar\\APISide\\Car4Egar\\Car4EgarAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programing\\0_ITI 3M\\courses\\00_Fainl Project\\API_Part\\V3\\Car4Egar\\Car4EgarAPI.csproj",
+        "projectUniqueName": "E:\\ITI\\_Car4Egar\\APISide\\Car4Egar\\Car4EgarAPI.csproj",
         "projectName": "Car4EgarAPI",
-        "projectPath": "D:\\Programing\\0_ITI 3M\\courses\\00_Fainl Project\\API_Part\\V3\\Car4Egar\\Car4EgarAPI.csproj",
-        "packagesPath": "C:\\Users\\Massoud\\.nuget\\packages\\",
-        "outputPath": "D:\\Programing\\0_ITI 3M\\courses\\00_Fainl Project\\API_Part\\V3\\Car4Egar\\obj\\",
+        "projectPath": "E:\\ITI\\_Car4Egar\\APISide\\Car4Egar\\Car4EgarAPI.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "E:\\ITI\\_Car4Egar\\APISide\\Car4Egar\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Massoud\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,11 +44,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[6.0.16, )"
             },
-<<<<<<< HEAD
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",
               "version": "[2.2.0, )"
@@ -53,8 +60,10 @@
               "target": "Package",
               "version": "[6.0.16, )"
             },
-=======
->>>>>>> afd65f371f83bcd8c34a5b622f643e433b0e7986
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.16, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -62,6 +71,12 @@
               "version": "[6.0.16, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.16, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.16, )"
             },
@@ -76,10 +91,6 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
-            },
-            "System.IdentityModel.Tokens.Jwt": {
-              "target": "Package",
-              "version": "[6.10.0, )"
             }
           },
           "imports": [
@@ -101,7 +112,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

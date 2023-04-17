@@ -34,18 +34,17 @@
     ".NETCoreApp,Version=v6.0": {
       "Car4EgarAPI/1.0.0": {
         "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "11.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.16",
-<<<<<<< HEAD
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.16",
-=======
->>>>>>> afd65f371f83bcd8c34a5b622f643e433b0e7986
+          "Microsoft.EntityFrameworkCore": "6.0.16",
           "Microsoft.EntityFrameworkCore.Design": "6.0.16",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.16",
+          "Microsoft.EntityFrameworkCore.Tools": "6.0.16",
           "Microsoft.NET.Sdk.Razor": "3.1.32",
           "ServiceStack.Client": "6.8.0",
           "Swashbuckle.AspNetCore": "6.2.3",
-          "System.IdentityModel.Tokens.Jwt": "6.10.0",
           "Microsoft.AspNetCore.Antiforgery": "6.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions.Reference": "6.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies.Reference": "6.0.0.0",
@@ -337,6 +336,35 @@
           "Car4EgarAPI.dll": {}
         }
       },
+      "AutoMapper/11.0.0": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {}
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/11.0.0": {
+        "dependencies": {
+          "AutoMapper": "11.0.0",
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "runtime": {
           "lib/netstandard2.0/Humanizer.dll": {
@@ -345,7 +373,6 @@
           }
         }
       },
-<<<<<<< HEAD
       "Microsoft.AspNetCore.Authentication/2.2.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.Core": "2.2.0",
@@ -376,8 +403,6 @@
           "Microsoft.AspNetCore.Http.Extensions": "2.2.0"
         }
       },
-=======
->>>>>>> afd65f371f83bcd8c34a5b622f643e433b0e7986
       "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.16": {
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.10.0"
@@ -392,7 +417,6 @@
           "lib/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {}
         }
       },
-<<<<<<< HEAD
       "Microsoft.AspNetCore.Cryptography.Internal/6.0.16": {
         "runtime": {
           "lib/net6.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {
@@ -502,8 +526,6 @@
           "System.Text.Encodings.Web": "4.5.0"
         }
       },
-=======
->>>>>>> afd65f371f83bcd8c34a5b622f643e433b0e7986
       "Microsoft.CSharp/4.7.0": {},
       "Microsoft.Data.SqlClient/2.1.4": {
         "dependencies": {
@@ -638,6 +660,11 @@
         },
         "compile": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Tools/6.0.16": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "6.0.16"
         }
       },
       "Microsoft.Extensions.ApiDescription.Server/3.0.0": {},
@@ -2852,6 +2879,20 @@
       "serviceable": false,
       "sha512": ""
     },
+    "AutoMapper/11.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+596AnKykYCk9RxXCEF4GYuapSebQtFVvIA1oVG1rrRkCLAC7AkWehJ0brCfYUbdDW3v1H/p0W3hob7JoXGjMw==",
+      "path": "automapper/11.0.0",
+      "hashPath": "automapper.11.0.0.nupkg.sha512"
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/11.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0asw5WxdCFh2OTi9Gv+oKyH9SzxwYQSnO8TV5Dd0GggovILzJW4UimP26JAcxc3yB5NnC5urooZ1BBs8ElpiBw==",
+      "path": "automapper.extensions.microsoft.dependencyinjection/11.0.0",
+      "hashPath": "automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512"
+    },
     "Humanizer.Core/2.8.26": {
       "type": "package",
       "serviceable": true,
@@ -2859,7 +2900,6 @@
       "path": "humanizer.core/2.8.26",
       "hashPath": "humanizer.core.2.8.26.nupkg.sha512"
     },
-<<<<<<< HEAD
     "Microsoft.AspNetCore.Authentication/2.2.0": {
       "type": "package",
       "serviceable": true,
@@ -2888,8 +2928,6 @@
       "path": "microsoft.aspnetcore.authentication.core/2.2.0",
       "hashPath": "microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512"
     },
-=======
->>>>>>> afd65f371f83bcd8c34a5b622f643e433b0e7986
     "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.16": {
       "type": "package",
       "serviceable": true,
@@ -2897,7 +2935,6 @@
       "path": "microsoft.aspnetcore.authentication.jwtbearer/6.0.16",
       "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.6.0.16.nupkg.sha512"
     },
-<<<<<<< HEAD
     "Microsoft.AspNetCore.Cryptography.Internal/6.0.16": {
       "type": "package",
       "serviceable": true,
@@ -2989,8 +3026,6 @@
       "path": "microsoft.aspnetcore.webutilities/2.2.0",
       "hashPath": "microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512"
     },
-=======
->>>>>>> afd65f371f83bcd8c34a5b622f643e433b0e7986
     "Microsoft.CSharp/4.7.0": {
       "type": "package",
       "serviceable": true,
@@ -3053,6 +3088,13 @@
       "sha512": "sha512-xqJXDqjq8ArJzwUZjSaBsbSFZIhsrTf1oLxoOWFN+p9itCeFJvJ0AZkbGuzKt6Vq/ZJ4YkkdIrCj451RAwM5Mw==",
       "path": "microsoft.entityframeworkcore.sqlserver/6.0.16",
       "hashPath": "microsoft.entityframeworkcore.sqlserver.6.0.16.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Tools/6.0.16": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0SGLgmBdpC8BdjlMAsnsxJUiF5+Qj9NuEE+ysA+Oau/3X1HZGpLqbIYlFPGoboBdi8uqO9CTO2KbEmVxS72Deg==",
+      "path": "microsoft.entityframeworkcore.tools/6.0.16",
+      "hashPath": "microsoft.entityframeworkcore.tools.6.0.16.nupkg.sha512"
     },
     "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
       "type": "package",
@@ -3214,7 +3256,6 @@
       "sha512": "sha512-qbf1NslutDB4oLrriYTJpy7oB1pbh2ej2lEHd2IPDQH9C74ysOdhU5wAC7KoXblldbo7YsNR2QYFOqQM/b0Rsg==",
       "path": "microsoft.identitymodel.tokens/6.10.0",
       "hashPath": "microsoft.identitymodel.tokens.6.10.0.nupkg.sha512"
-<<<<<<< HEAD
     },
     "Microsoft.Net.Http.Headers/2.2.0": {
       "type": "package",
@@ -3222,8 +3263,6 @@
       "sha512": "sha512-iZNkjYqlo8sIOI0bQfpsSoMTmB/kyvmV2h225ihyZT33aTp48ZpF6qYnXxzSXmHt8DpBAwBTX+1s1UFLbYfZKg==",
       "path": "microsoft.net.http.headers/2.2.0",
       "hashPath": "microsoft.net.http.headers.2.2.0.nupkg.sha512"
-=======
->>>>>>> afd65f371f83bcd8c34a5b622f643e433b0e7986
     },
     "Microsoft.NET.Sdk.Razor/3.1.32": {
       "type": "package",

@@ -1,6 +1,7 @@
 ﻿using Car4EgarAPI.Models.Configurations;
 using Car4EgarAPI.Models.Entities;
 using Car4EgarAPI.Models.ViewModels;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 
