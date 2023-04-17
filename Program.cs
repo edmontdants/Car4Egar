@@ -1,8 +1,15 @@
 using Car4EgarAPI.Models.Context;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Car4EgarAPI.Models;
+using Microsoft.Extensions.Hosting;
+using Car4EgarAPI.Models.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
-
+// Add configuration providers
+builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -10,6 +17,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<Car4EgarContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddIdentity<SystemUser, IdentityRole>(options =>
+{
+    options.Password.RequireDigit = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequiredLength = 8;
+}).AddEntityFrameworkStores<Car4EgarContext>();
 
 var app = builder.Build();
 
@@ -26,4 +41,19 @@ app.UseAuthorization();
 app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 app.MapControllers();
 
+app.UseRouting();
+
+app.UseAuthentication();
+
+
 app.Run();
+
+
+
+
+
+
+
+
+
+
