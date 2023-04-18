@@ -643,6 +643,7 @@ namespace Car4EgarAPI.Controllers
                 car.OwnerId = item.OwnerId;
                 car.OwnerName = item.OwnerName;
                 car.OwnerPic = item.OwnerPhoto;
+                car.OwnerPhone = item.OwnerPhone;
                 car.CostPerDay = item.CostPerDay;
                 car.VIN = item.VIN;
                 car.IsActivated = item.IsActivated;
