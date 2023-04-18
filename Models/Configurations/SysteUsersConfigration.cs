@@ -39,10 +39,10 @@ namespace Car4EgarAPI.Models.Configurations
             .HasMaxLength(40).IsUnicode();
 
             EntityBuilder.Property(B => B.Photo).IsRequired(false)
-                .HasMaxLength(400);
+                .HasMaxLength(int.MaxValue);
 
             EntityBuilder.Property(B => B.IdentityPhoto).IsRequired(false)
-                .HasMaxLength(400);
+                    .HasMaxLength(int.MaxValue);
 
             EntityBuilder.Property(B => B.DriverLicencePhoto).IsRequired(false)
                 .HasMaxLength(400);

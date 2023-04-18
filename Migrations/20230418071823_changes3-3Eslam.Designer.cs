@@ -4,6 +4,7 @@ using Car4EgarAPI.Models.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Car4EgarAPI.Migrations
 {
     [DbContext(typeof(Car4EgarContext))]
-    partial class Car4EgarContextModelSnapshot : ModelSnapshot
+    [Migration("20230418071823_changes3-3Eslam")]
+    partial class changes33Eslam
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -316,24 +318,9 @@ namespace Car4EgarAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("BorrowerImage")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("BorrowerName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CarBrand")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CarImage")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("CarYear")
-                        .HasColumnType("int");
 
                     b.Property<string>("OwnerId")
                         .IsRequired()
@@ -454,8 +441,8 @@ namespace Car4EgarAPI.Migrations
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("IdentityPhoto")
-                        .HasMaxLength(2147483647)
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
 
                     b.Property<bool>("IsActivated")
                         .ValueGeneratedOnAdd()
@@ -474,8 +461,8 @@ namespace Car4EgarAPI.Migrations
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Photo")
-                        .HasMaxLength(2147483647)
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
 
                     b.Property<decimal?>("Rate")
                         .ValueGeneratedOnAdd()

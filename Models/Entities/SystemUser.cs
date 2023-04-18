@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
 namespace Car4EgarAPI.Models.Entities
@@ -15,7 +16,9 @@ namespace Car4EgarAPI.Models.Entities
         public string PhoneNumber { get; set; }
         public string Gender { get; set; }          //
         public string BirthDate { get; set; }
-        public string Photo { get; set; } 
+        [StringLength(int.MaxValue)]
+        public string Photo { get; set; }
+        [StringLength(int.MaxValue)]
         public string IdentityPhoto { get; set; }    //
         public string DriverLicencePhoto { get; set; } //
         public string DriverLicenceNumber { get; set; } //
