@@ -14,6 +14,9 @@ using System.Text;
 using static Car4EgarAPI.BL.Validations;
 using static Car4EgarAPI.BL.JWTFunction;//JWT -------------
 using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
+using ServiceStack.Text;
+using Microsoft.Net.Http.Headers;
+using System.Net.Http.Headers;
 
 namespace Car4EgarAPI.Controllers
 {
@@ -294,6 +297,7 @@ namespace Car4EgarAPI.Controllers
                 car.OwnerId = owner.NID;
                 car.OwnerName = owner.UserName;
                 car.OwnerPhoto = owner.Photo;
+                car.OwnerPhone = owner.PhoneNumber;
                 owner.Cars.Add(car);
                 db.Cars.Add(car); // ?!?!?!?!?!?!
                 db.SaveChanges();
@@ -425,9 +429,10 @@ namespace Car4EgarAPI.Controllers
 
         [HttpGet]
         [Route("/Owner/GetAllRequests")]
-        public IActionResult GetAllOwnerRequests(string id)
+        public IActionResult GetAllOwnerRequests()
         {
-            return Ok(db.RentRequests.Where(o => o.OwnerId == id).ToList());
+            var list =  db.RentRequests.ToList();
+            return Ok(list);
         }
 
         [HttpDelete]
@@ -564,6 +569,10 @@ namespace Car4EgarAPI.Controllers
                 ownerRequest.BorrowerName = db.SystemUsers.Find(id).UserName;
                 ownerRequest.BorrowerAddress = db.SystemUsers.Find(id).Address;
                 ownerRequest.RentDays = Days;
+                ownerRequest.CarImage = car.Image;
+                ownerRequest.BorrowerImage = borrower.Photo;
+                ownerRequest.CarBrand = car.BrandName;
+                ownerRequest.CarYear = car.Year;
                 db.RentRequests.Add(ownerRequest);
                 
                 //Notification notification = new Notification();
@@ -768,6 +777,7 @@ namespace Car4EgarAPI.Controllers
                 car.OwnerId = item.OwnerId;
                 car.OwnerName = item.OwnerName;
                 car.OwnerPic = item.OwnerPhoto;
+                car.OwnerPhone = item.OwnerPhone;
                 car.CostPerDay = item.CostPerDay;
                 car.VIN = item.VIN;
                 car.IsActivated = item.IsActivated;
@@ -796,11 +806,71 @@ namespace Car4EgarAPI.Controllers
 
         /*********************************************/
         /*********************************************/
-        /*Login*/
+        /*upload Pictures*/
         /*********************************************/
         /*********************************************/
 
 
 
+
+        //[HttpGet("Admin/uploadPic")]
+        //public IActionResult UploadPicture([FromHeader] string NID ,[FromHeader] string Base64String, [FromHeader] string Filename)
+        //{
+        //    var bytes = Convert.FromBase64String(Base64String);
+        //    var filePath = Path.Combine("wwwroot","Imgs",Filename);
+        //    System.IO.File.WriteAllBytes(filePath, bytes);
+
+        //    // Save filename and other relevant information to database
+        //    SystemUser user = db.SystemUsers.Find(NID);
+        //    user.Photo = Filename;
+        //    user.IdentityPhoto = Filename;
+        //    db.Update(user);
+        //    db.SaveChanges();
+        //    return Ok();
+        //}
+
+        [HttpPut]
+        [Route("/Admin/UploadPicture")]
+        public IActionResult UploadPicture([FromHeader]string NID, [FromHeader]string Filename)
+        {
+            SystemUser user = db.SystemUsers.Find(NID);
+            user.Photo = Filename;
+            user.IdentityPhoto = Filename;
+            db.Update(user);
+            db.SaveChanges();
+            return Ok();
+        }
+
+        [HttpPost("/Admin/UploadPictureAndSave")]
+        public async Task<IActionResult> UploadPictureAndSave()
+        {
+            try
+            {
+                var file = Request.Form.Files[0];
+                var folderName = Path.Combine("E:\\ITI\\_Car4Egar\\FrontSide\\Car4Egar-Angular\\src\\", "assets");
+                var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
+                if(file.Length > 0)
+                {
+                    var fileName = System.Net.Http.Headers.ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                    var fullPath = Path.Combine(pathToSave, fileName);
+                    using (var stream = new FileStream(fullPath, FileMode.Create))
+                    {
+                        file.CopyTo(stream);
+                    }
+                    return Ok();
+
+                }
+                else
+                {
+                    return BadRequest();
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
+
+
 }

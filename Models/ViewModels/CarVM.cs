@@ -25,6 +25,7 @@ namespace Car4EgarAPI.Models.ViewModels
         public string OwnerId { get; set; }
         public string OwnerPic { get; set; }
         public string OwnerName { get; set; }
+        public string OwnerPhone { get; set; }
 
     }
 }
