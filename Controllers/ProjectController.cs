@@ -136,6 +136,38 @@ namespace Car4EgarAPI.Controllers
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         //------------------------------------------------
 
 
@@ -342,6 +374,54 @@ namespace Car4EgarAPI.Controllers
             db.SaveChanges();
             return Ok();
         }
+
+        //=======================================Moazzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz====
+
+        [HttpPost]
+        [Route("/Owner/RegisterMCar")]
+        public IActionResult RegisterNewCarMOaaz(MCar newCar)
+        {
+            //NID = "123456789123456";
+            SystemUser owner = db.SystemUsers.FirstOrDefault(x => x.NID == newCar.OwnerId);
+            if (owner != null)
+            {
+                if (owner.IsActivated)
+                {
+                    MCar car = new MCar();
+                    car.VIN = newCar.VIN;
+                    car.Color = newCar.Color;
+                    car.LicenseNumber = newCar.LicenseNumber;
+                    car.Seats = newCar.Seats;
+                    car.Insurance = newCar.Insurance;
+                    car.CarType = newCar.CarType;
+                    car.LicenseEXDate = newCar.LicenseEXDate;
+                    car.Year = newCar.Year;
+                    car.LocationOfRent = newCar.LocationOfRent;
+                    car.AvailableForRent = newCar.AvailableForRent;
+                    car.ModelName = newCar.ModelName;
+                    car.BrandName = newCar.BrandName;
+                    car.Mailage = newCar.Mailage;
+                    car.GearBoxType = newCar.GearBoxType;
+                    car.CostPerDay = newCar.CostPerDay;
+                    car.Image = newCar.Image;
+                    car.RegistrationDate = DateTime.Now;
+                    car.IsActivated = false;
+
+                    car.OwnerId = newCar.OwnerId;
+                    car.OwnerName = newCar.OwnerName;
+                    car.OwnerPhone = newCar.OwnerPhone;
+                    car.OwnerPhoto = newCar.OwnerPhoto;
+                    //owner.Cars.Add(car);
+                    db.MCars.Add(car); // ?!?!?!?!?!?!
+                    db.SaveChanges();
+                    return Ok();
+                }
+                else if (!owner.IsActivated) return BadRequest("Not Active User");
+            }
+            return BadRequest("Not Registered User");
+        }
+
+        //=========================================
 
         [HttpGet]
         [Route("/Owner/GetAllRequests")]
