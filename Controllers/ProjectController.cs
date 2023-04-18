@@ -77,7 +77,7 @@ namespace Car4EgarAPI.Controllers
         }
 
         [HttpGet]
-        [Route("/SystemUser/UsersNID")]
+        [Route("/SystemUser/UsersNID/{nid}")]
         public IActionResult GetSystemUserByNID(string nid)
         {
             SystemUser Sysuser = db.SystemUsers.Find(nid);
@@ -86,6 +86,51 @@ namespace Car4EgarAPI.Controllers
                 return Ok(Sysuser);
             }
             else return BadRequest("Not Register User");
+        }
+
+
+        [HttpPost]
+        [Route("/SystemUser/AccountInfo")]
+        public IActionResult EditUser(SystemUser user)
+        {
+            SystemUser users = db.SystemUsers.Where(a => a.NID == user.NID).FirstOrDefault();
+            if (users != null)
+            {
+                users.NID = user.NID;
+                users.UserName = user.UserName;
+                users.Password = user.Password;
+                users.Email = user.Email;
+                users.Role = user.Role;
+                users.IsActivated = user.IsActivated;
+                users.Address = user.Address;
+                users.PhoneNumber = user.PhoneNumber;
+                users.Gender = user.Gender;
+                users.BirthDate = user.BirthDate;
+                users.Photo = user.Photo;
+                users.IdentityPhoto = user.IdentityPhoto;
+                users.DriverLicencePhoto = user.DriverLicencePhoto;
+                users.DriverLicenceNumber = user.DriverLicenceNumber;
+                users.DriverLicenceEXDate = user.DriverLicenceEXDate;
+                users.Bank_AccountNumber = user.Bank_AccountNumber;
+                users.Bank_NID = user.Bank_NID;
+                users.Bank_Name = user.Bank_Name;
+                users.Bank_Branch = user.Bank_Branch;
+                users.Card_EXDate = user.Card_EXDate;
+                users.Card_Number = user.Card_Number;
+                users.Card_CVC = user.Card_CVC;
+                users.Card_HolderName = user.Card_HolderName;
+                users.Balance = user.Balance;
+                users.Fine = user.Fine;
+                users.Rate = user.Rate;
+                users.RatedPeople = user.RatedPeople;
+
+                db.SaveChanges();
+                return Ok(users);
+            }
+            else if (users == null) 
+                return BadRequest("This User Is Not Exist");
+            else return BadRequest("Bad Data Entered");
+
         }
 
 

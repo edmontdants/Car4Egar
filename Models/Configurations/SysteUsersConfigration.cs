@@ -16,7 +16,7 @@ namespace Car4EgarAPI.Models.Configurations
                 .HasMaxLength(20).IsUnicode();
 
             EntityBuilder.Property(B => B.Password).IsRequired(true)
-                .HasMaxLength(20).IsUnicode();
+                .HasMaxLength(40).IsUnicode();
 
             EntityBuilder.Property(B => B.Email).IsRequired(true)
                 .HasMaxLength(100).IsUnicode();
@@ -36,7 +36,7 @@ namespace Car4EgarAPI.Models.Configurations
                 .HasMaxLength(20).IsUnicode();
 
             EntityBuilder.Property(B => B.BirthDate).IsRequired(false)
-            .HasMaxLength(20).IsUnicode();
+            .HasMaxLength(40).IsUnicode();
 
             EntityBuilder.Property(B => B.Photo).IsRequired(false)
                 .HasMaxLength(400);
@@ -51,7 +51,7 @@ namespace Car4EgarAPI.Models.Configurations
             .HasMaxLength(20).IsUnicode();
 
             EntityBuilder.Property(B => B.DriverLicenceEXDate).IsRequired(false)
-            .HasMaxLength(20).IsUnicode();
+            .HasMaxLength(40).IsUnicode();
 
             EntityBuilder.Property(B => B.Bank_AccountNumber).IsRequired(false)
             .HasMaxLength(20).IsUnicode();
@@ -66,7 +66,7 @@ namespace Car4EgarAPI.Models.Configurations
             .HasMaxLength(20).IsUnicode();
 
             EntityBuilder.Property(B => B.Card_EXDate).IsRequired(false)
-            .HasMaxLength(20).IsUnicode();
+            .HasMaxLength(40).IsUnicode();
 
             EntityBuilder.Property(B => B.Card_Number).IsRequired(false)
             .HasMaxLength(20).IsUnicode();
