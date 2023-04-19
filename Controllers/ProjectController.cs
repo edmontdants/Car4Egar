@@ -354,7 +354,7 @@ namespace Car4EgarAPI.Controllers
         public IActionResult DeleteOwnerAccount(string NID)
         {
             SystemUser owner = db.SystemUsers.Find(NID);
-            db.SystemUsers.Remove(owner);
+            db.SystemUsers.Remove(owner); 
             db.SaveChanges();
             return Ok();
         }
@@ -424,6 +424,40 @@ namespace Car4EgarAPI.Controllers
             return BadRequest("Not Registered User");
         }
 
+
+
+        //GET All Car
+        //[HttpGet]
+        //[Route("/Admin/GetAllMCars")]
+        //public IActionResult GetAllCars()
+        //{
+        //    List<MCar> cars = new List<MCar>();
+        //    if (cars.Count == 0)
+        //        return BadRequest("No Cars In Data Base");
+        //    else return Ok(cars);
+        //}
+
+
+        //Get By ID//////
+        //[HttpGet]
+        //[Route("/Admin/GetAllMCars")]
+        //public IActionResult GetAllCars(string Vin)
+            
+        //MCar car = db.MCars.Find(Vin);
+
+        //{
+        //    List<MCar> cars = new List<MCar>();
+        //    if (cars.Count == 0)
+        //        return BadRequest("No Cars In Data Base");
+        //    else return Ok(cars);
+        //}
+
+
+
+
+
+
+
         //=========================================
 
         [HttpGet]
@@ -433,6 +467,8 @@ namespace Car4EgarAPI.Controllers
             var list =  db.RentRequests.ToList();
             return Ok(list);
         }
+
+
 
         [HttpDelete]
         [Route("/Owner/RefuseRequest")]
@@ -572,6 +608,7 @@ namespace Car4EgarAPI.Controllers
                 ownerRequest.BorrowerImage = borrower.Photo;
                 ownerRequest.CarBrand = car.ModelName;
                 ownerRequest.CarYear = car.Year;
+                    ownerRequest.Total = car.CostPerDay * Days;
                 db.RentRequests.Add(ownerRequest);
                 
                 //Notification notification = new Notification();
@@ -583,6 +620,49 @@ namespace Car4EgarAPI.Controllers
                 return Ok();
             
 
+        }
+
+        [HttpGet]
+        [Route("/Borrower/CarRentalRequestAcception/{vid}/{accept}")]
+        public IActionResult CarRentalRequestAcceptance( string vid, int accept)
+        {
+            RentRequest rent = db.RentRequests.FirstOrDefault(a => a.RequestedCarVIN == vid);
+            CarVM CarR =db.CarVM.FirstOrDefault(a=>a.VIN==vid);
+            if (rent != null) {
+                if (accept != 0)
+                {
+                    rent.RequestAcceptance = true;
+                    CarR.Available = false;
+                    db.SaveChanges();
+                    return Ok("Car Has Rented Succss");
+                }
+                else {
+                    rent.RequestAcceptance = false;
+                    CarR.Available = true;
+                    db.SaveChanges();
+                    return Ok("Car Has Not Rented");
+                     }
+            } else 
+                return BadRequest("Request Not Exist");
+        }
+
+        [HttpDelete]
+        [Route("/Borrower/CarRentalRequestDelete/{vid}")]
+        public IActionResult CarRentalRequestDelete(string vid)
+        {
+            RentRequest rent = db.RentRequests.FirstOrDefault(a => a.RequestedCarVIN == vid);
+            CarVM CarR = db.CarVM.FirstOrDefault(a => a.VIN == vid);
+            if (rent != null)
+            {
+
+                db.RentRequests.Remove(rent);
+                CarR.Available = true;
+                db.SaveChanges();
+                return Ok("Car Has Been Deleted");
+
+            }
+            else
+                return BadRequest("Request Not Exist");
         }
 
 
