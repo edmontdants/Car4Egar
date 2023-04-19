@@ -32,8 +32,8 @@ namespace Car4EgarAPI.Models.Configurations
             EntityBuilder.Property(B => B.Mailage).HasDefaultValue(0.0)
               .HasMaxLength(20);
 
-            EntityBuilder.Property(B => B.CarType).IsRequired(true)
-                .HasMaxLength(10).IsUnicode();
+            //EntityBuilder.Property(B => B.CarType).IsRequired(true)
+            //    .HasMaxLength(10).IsUnicode();
 
             EntityBuilder.Property(B => B.LicenseEXDate).IsRequired(true);
 
@@ -52,8 +52,8 @@ namespace Car4EgarAPI.Models.Configurations
             EntityBuilder.Property(B => B.LocationOfRent).IsRequired(true)
                             .HasMaxLength(20).IsUnicode();
 
-            EntityBuilder.Property(B => B.BrandName).IsRequired(true)
-                            .HasMaxLength(20).IsUnicode();
+            //EntityBuilder.Property(B => B.BrandName).IsRequired(true)
+            //                .HasMaxLength(20).IsUnicode();
 
             EntityBuilder.Property(B => B.CostPerDay).HasDefaultValue(0.0)
                 .HasColumnType("money").HasMaxLength(10);
@@ -61,7 +61,7 @@ namespace Car4EgarAPI.Models.Configurations
             EntityBuilder.Property(B => B.Image).IsRequired(false)
                 .HasMaxLength(20480);
 
-            EntityBuilder.Property(B => B.RegistrationDate).IsRequired(true);
+            //EntityBuilder.Property(B => B.RegistrationDate).IsRequired(true);
 
             EntityBuilder.Property(B => B.GearBoxType).IsRequired(true)
                            .HasMaxLength(20).IsUnicode();
