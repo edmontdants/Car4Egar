@@ -427,15 +427,15 @@ namespace Car4EgarAPI.Controllers
 
 
         //GET All Car
-        [HttpGet]
-        [Route("/Admin/GetAllMCars")]
-        public IActionResult GetAllCars()
-        {
-            List<MCar> cars = new List<MCar>();
-            if (cars.Count == 0)
-                return BadRequest("No Cars In Data Base");
-            else return Ok(cars);
-        }
+        //[HttpGet]
+        //[Route("/Admin/GetAllMCars")]
+        //public IActionResult GetAllCars()
+        //{
+        //    List<MCar> cars = new List<MCar>();
+        //    if (cars.Count == 0)
+        //        return BadRequest("No Cars In Data Base");
+        //    else return Ok(cars);
+        //}
 
 
         //Get By ID//////
