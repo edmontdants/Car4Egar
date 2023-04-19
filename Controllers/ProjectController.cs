@@ -270,40 +270,39 @@ namespace Car4EgarAPI.Controllers
 
         [HttpPost]
         [Route("/Owner/RegisterNewCar")]
-        public IActionResult RegisterNewCar(string NID, string color, string LicenseNumber, int Seats, double Mailage, string CarType, DateTime LicenseEXDate, int Year, bool AvailableForRent, string ModelName, string BrandName, string LocationOfRent, double CostPerDay, string Image, bool Insurance, string GearBoxType)
+        public IActionResult RegisterNewCar(string NID, string color, double Mailage, string EXYear, int Year, bool AvailableForRent, string ModelName,  string LocationOfRent, double CostPerDay, string Image, bool Insurance, string GearBoxType)
         {
             SystemUser owner = db.SystemUsers.Find(NID);
-            if (owner.IsActivated)
-            {
+
                 Car car = new Car();
                 car.Color = color;
-                car.LicenseNumber = LicenseNumber;
-                car.Seats = Seats;
+                //car.LicenseNumber = LicenseNumber;
+                //car.Seats = Seats;
                 car.Insurance = Insurance;
-                car.CarType = CarType;
-                car.LicenseEXDate = LicenseEXDate;
+                //car.CarType = CarType;
+                car.LicenseEXDate = EXYear;
                 car.Year = Year;
                 car.LocationOfRent = LocationOfRent;
                 car.AvailableForRent = AvailableForRent;
                 car.ModelName = ModelName;
-                car.BrandName = BrandName;
+                //car.BrandName = BrandName;
                 car.Mailage = Mailage;
                 car.GearBoxType = GearBoxType;
                 car.CostPerDay = CostPerDay;
                 car.Image = Image;
-                car.RegistrationDate = DateTime.Now;
-                car.IsActivated = false;
+                //car.RegistrationDate = DateTime.Now;
+                //car.IsActivated = false;
 
                 car.OwnerId = owner.NID;
                 car.OwnerName = owner.UserName;
                 car.OwnerPhoto = owner.Photo;
                 car.OwnerPhone = owner.PhoneNumber;
-                owner.Cars.Add(car);
+                
                 db.Cars.Add(car); // ?!?!?!?!?!?!
                 db.SaveChanges();
                 return Ok();
-            }
-            return BadRequest();
+     
+            
         }
 
         [HttpDelete]
@@ -372,7 +371,7 @@ namespace Car4EgarAPI.Controllers
 
             Notification notification = new Notification();
             notification.UserId = borrower.NID;
-            notification.Content = "Your Request About Car: " + car.BrandName + "Accepted From Owner, Admin Will Contact With You";
+            //notification.Content = "Your Request About Car: " + car.BrandName + "Accepted From Owner, Admin Will Contact With You";
             db.Notifications.Add(notification);
             db.Update(ownerRequest);
             db.SaveChanges();
@@ -560,10 +559,10 @@ namespace Car4EgarAPI.Controllers
         {
             SystemUser borrower = db.SystemUsers.Find(id);
 
-                Car car = db.Cars.Find(carVin);
-                SystemUser carOwner = db.SystemUsers.Where(o => o.Cars.Contains(car)).FirstOrDefault();
+                CarVM car = db.CarVM.Find(carVin);
+                //SystemUser carOwner = db.SystemUsers.Where(o => o.Cars.Contains(car)).FirstOrDefault();
                 RentRequest ownerRequest = new RentRequest();
-                ownerRequest.OwnerId = carOwner.NID;
+                ownerRequest.OwnerId = car.OwnerId;
                 ownerRequest.RequestedCarVIN = carVin;
                 ownerRequest.BorrowerId = id;
                 ownerRequest.BorrowerName = db.SystemUsers.Find(id).UserName;
@@ -571,7 +570,7 @@ namespace Car4EgarAPI.Controllers
                 ownerRequest.RentDays = Days;
                 ownerRequest.CarImage = car.Image;
                 ownerRequest.BorrowerImage = borrower.Photo;
-                ownerRequest.CarBrand = car.BrandName;
+                ownerRequest.CarBrand = car.ModelName;
                 ownerRequest.CarYear = car.Year;
                 db.RentRequests.Add(ownerRequest);
                 
@@ -657,7 +656,7 @@ namespace Car4EgarAPI.Controllers
         public IActionResult SendActivationRequestForACar(string CarVIN)
         {
             Car car = db.Cars.Find(CarVIN);
-            car.IsActivated = true;
+            //car.IsActivated = true;
             db.SaveChanges();
             return Ok("Activation Success");
         }
@@ -678,13 +677,13 @@ namespace Car4EgarAPI.Controllers
             return Ok(ActivatedUsers);
         }
 
-        [HttpGet]
-        [Route("/Admin/GetAllActivatedCars")]
-        public IActionResult GetAllActivatedCars()
-        {
-            var ActivatedCars = db.Cars.Where(c => c.IsActivated == true).ToList();
-            return Ok(ActivatedCars);
-        }
+        //[HttpGet]
+        //[Route("/Admin/GetAllActivatedCars")]
+        //public IActionResult GetAllActivatedCars()
+        //{
+            //var ActivatedCars = db.Cars.Where(c => c.IsActivated == true).ToList();
+            //return Ok(ActivatedCars);
+        //}
 
         [HttpGet]
         [Route("/Admin/GetAllRequestsToAccept")]
@@ -771,37 +770,77 @@ namespace Car4EgarAPI.Controllers
         public IActionResult GetAllCars()
         {
             List<CarVM> cars = new List<CarVM>();
-            foreach (var item in db.Cars.ToList())
+            foreach (var item in db.CarVM.ToList())
             {
                 CarVM car = new CarVM();
                 car.OwnerId = item.OwnerId;
                 car.OwnerName = item.OwnerName;
-                car.OwnerPic = item.OwnerPhoto;
+                car.OwnerPic = item.OwnerPic;
                 car.OwnerPhone = item.OwnerPhone;
+
                 car.CostPerDay = item.CostPerDay;
                 car.VIN = item.VIN;
-                car.IsActivated = item.IsActivated;
+                car.Mailage = item.Mailage;
                 car.Color = item.Color;
                 car.RatedPeople = item.RatedPeople;
                 car.Rate = item.Rate;
-                car.Available = item.AvailableForRent;
+                car.Available = item.Available;
                 car.Image = item.Image;
                 car.Year = item.Year;
-                car.BrandName = item.BrandName;
                 car.ModelName = item.ModelName;
                 car.GearBoxType = item.GearBoxType;
                 car.Insurance = item.Insurance;
                 car.LocationOfRent = item.LocationOfRent;
-                car.CarType = item.CarType;
-                car.Mailage = item.Mailage;
-
+                //car.CarType = item.CarType;
+                //car.BrandName = item.BrandName;
+                //car.IsActivated = item.IsActivated;
                 cars.Add(car);
 
             }
-
             return Ok(cars);
         }
 
+
+        [HttpPost]
+        [Route("/Admin/RegisterNewCarVM")]
+        public IActionResult RegisterNewCar( [FromBody]CarVM item)
+        {
+
+                CarVM car = new CarVM();
+            SystemUser systemUser = db.SystemUsers.Find(item.OwnerId);
+                car.OwnerId = item.OwnerId;
+                car.OwnerName = systemUser.UserName;
+            if (systemUser.Photo != null) {
+                car.OwnerPic = systemUser.Photo;
+
+            }
+            if (systemUser.PhoneNumber !=null)
+            {
+                car.OwnerPhone = systemUser.PhoneNumber;
+
+            }
+
+            car.CostPerDay = item.CostPerDay;
+                car.VIN = item.VIN;
+                car.Mailage = item.Mailage;
+                car.Color = item.Color;
+                car.RatedPeople = item.RatedPeople;
+                car.Rate = item.Rate;
+                car.Available = item.Available;
+                car.Image = item.Image;
+                car.Year = item.Year;
+                car.ModelName = item.ModelName;
+                car.GearBoxType = item.GearBoxType;
+                car.Insurance = item.Insurance;
+                car.LocationOfRent = item.LocationOfRent;
+                //car.CarType = item.CarType;
+                //car.BrandName = item.BrandName;
+                //car.IsActivated = item.IsActivated;
+                db.CarVM.Add(car);
+                db.SaveChanges();
+
+            return Ok();
+        }
 
 
         /*********************************************/
