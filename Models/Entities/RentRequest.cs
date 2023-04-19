@@ -13,6 +13,7 @@
         public string CarBrand { get; set; }
         public int CarYear { get; set; }
         public int RentDays { get; set; }
+        public double Total { get; set; }
 
         public bool RequestAcceptance { get; set; }
     }
