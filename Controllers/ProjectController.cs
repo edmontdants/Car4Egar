@@ -1011,51 +1011,51 @@ namespace Car4EgarAPI.Controllers
         }
 
 
-        [HttpGet]
-        [Route("/Borrower/CarRentalRequestAcception/{vid}/{accept}")]
-        public IActionResult CarRentalRequestAcceptance(string vid, int accept)
-        {
-            RentRequest rent = db.RentRequests.FirstOrDefault(a => a.RequestedCarVIN == vid);
-            CarVM CarR = db.CarVM.FirstOrDefault(a => a.VIN == vid);
-            if (rent != null)
-            {
-                if (accept != 0)
-                {
-                    rent.RequestAcceptance = true;
-                    CarR.Available = false;
-                    db.SaveChanges();
-                    return Ok("Car Has Rented Succss");
-                }
-                else
-                {
-                    rent.RequestAcceptance = false;
-                    CarR.Available = true;
-                    db.SaveChanges();
-                    return Ok("Car Has Not Rented");
-                }
-            }
-            else
-                return BadRequest("Request Not Exist");
-        }
+        //[HttpGet]
+        //[Route("/Borrower/CarRentalRequestAcception/{vid}/{accept}")]
+        //public IActionResult CarRentalRequestAcceptance(string vid, int accept)
+        //{
+        //    RentRequest rent = db.RentRequests.FirstOrDefault(a => a.RequestedCarVIN == vid);
+        //    CarVM CarR = db.CarVM.FirstOrDefault(a => a.VIN == vid);
+        //    if (rent != null)
+        //    {
+        //        if (accept != 0)
+        //        {
+        //            rent.RequestAcceptance = true;
+        //            CarR.Available = false;
+        //            db.SaveChanges();
+        //            return Ok("Car Has Rented Succss");
+        //        }
+        //        else
+        //        {
+        //            rent.RequestAcceptance = false;
+        //            CarR.Available = true;
+        //            db.SaveChanges();
+        //            return Ok("Car Has Not Rented");
+        //        }
+        //    }
+        //    else
+        //        return BadRequest("Request Not Exist");
+        //}
 
-        [HttpDelete]
-        [Route("/Borrower/CarRentalRequestDelete/{vid}")]
-        public IActionResult CarRentalRequestDelete(string vid)
-        {
-            RentRequest rent = db.RentRequests.FirstOrDefault(a => a.RequestedCarVIN == vid);
-            CarVM CarR = db.CarVM.FirstOrDefault(a => a.VIN == vid);
-            if (rent != null)
-            {
+        //[HttpDelete]
+        //[Route("/Borrower/CarRentalRequestDelete/{vid}")]
+        //public IActionResult CarRentalRequestDelete(string vid)
+        //{
+        //    RentRequest rent = db.RentRequests.FirstOrDefault(a => a.RequestedCarVIN == vid);
+        //    CarVM CarR = db.CarVM.FirstOrDefault(a => a.VIN == vid);
+        //    if (rent != null)
+        //    {
 
-                db.RentRequests.Remove(rent);
-                CarR.Available = true;
-                db.SaveChanges();
-                return Ok("Car Has Been Deleted");
+        //        db.RentRequests.Remove(rent);
+        //        CarR.Available = true;
+        //        db.SaveChanges();
+        //        return Ok("Car Has Been Deleted");
 
-            }
-            else
-                return BadRequest("Request Not Exist");
-        }
+        //    }
+        //    else
+        //        return BadRequest("Request Not Exist");
+        //}
     }
 
 
