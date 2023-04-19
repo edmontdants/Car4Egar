@@ -355,7 +355,7 @@ namespace Car4EgarAPI.Controllers
         public IActionResult DeleteOwnerAccount(string NID)
         {
             SystemUser owner = db.SystemUsers.Find(NID);
-            db.SystemUsers.Remove(owner);
+            db.SystemUsers.Remove(owner); 
             db.SaveChanges();
             return Ok();
         }
@@ -425,6 +425,40 @@ namespace Car4EgarAPI.Controllers
             return BadRequest("Not Registered User");
         }
 
+
+
+        //GET All Car
+        [HttpGet]
+        [Route("/Admin/GetAllMCars")]
+        public IActionResult GetAllCars()
+        {
+            List<MCar> cars = new List<MCar>();
+            if (cars.Count == 0)
+                return BadRequest("No Cars In Data Base");
+            else return Ok(cars);
+        }
+
+
+        //Get By ID//////
+        //[HttpGet]
+        //[Route("/Admin/GetAllMCars")]
+        //public IActionResult GetAllCars(string Vin)
+            
+        //MCar car = db.MCars.Find(Vin);
+
+        //{
+        //    List<MCar> cars = new List<MCar>();
+        //    if (cars.Count == 0)
+        //        return BadRequest("No Cars In Data Base");
+        //    else return Ok(cars);
+        //}
+
+
+
+
+
+
+
         //=========================================
 
         [HttpGet]
@@ -434,6 +468,8 @@ namespace Car4EgarAPI.Controllers
             var list =  db.RentRequests.ToList();
             return Ok(list);
         }
+
+
 
         [HttpDelete]
         [Route("/Owner/RefuseRequest")]
