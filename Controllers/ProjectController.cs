@@ -41,7 +41,7 @@ namespace Car4EgarAPI.Controllers
         [Route("/SystemUser/Register")]
         public IActionResult RegNewOwner(SystemUser user)
         {
-            SystemUser users = db.SystemUsers.Where(a=>a.NID==user.NID|| a.Email == user.Email).FirstOrDefault();
+            SystemUser users = db.SystemUsers.Where(a => a.NID == user.NID || a.Email == user.Email).FirstOrDefault();
             if (IsUserNameValid(user.UserName) && IsEmailValid(user.Email) && IsPasswordValid(user.Password) && IsNIDalid(user.NID) && users == null)
             {
                 SystemUser NewUser = new SystemUser();
@@ -70,8 +70,9 @@ namespace Car4EgarAPI.Controllers
 
         [HttpPost]
         [Route("/SystemUser/UsersEmail")]
-        public IActionResult GetSystemUserByEmail([FromBody]string EmailInput) {
-            SystemUser Sysuser = db.SystemUsers.FirstOrDefault(a=>a.Email==EmailInput);
+        public IActionResult GetSystemUserByEmail([FromBody] string EmailInput)
+        {
+            SystemUser Sysuser = db.SystemUsers.FirstOrDefault(a => a.Email == EmailInput);
             if (Sysuser != null)
             {
                 return Ok(Sysuser);
@@ -130,7 +131,7 @@ namespace Car4EgarAPI.Controllers
                 db.SaveChanges();
                 return Ok(users);
             }
-            else if (users == null) 
+            else if (users == null)
                 return BadRequest("This User Is Not Exist");
             else return BadRequest("Bad Data Entered");
 
@@ -186,7 +187,7 @@ namespace Car4EgarAPI.Controllers
         public IActionResult RegisterNewUser(SystemUser user)
         {
 
-            if (IsNIDalid(user.NID)&&IsEmailValid(user.Email) && IsMobileValid(user.PhoneNumber) && IsPasswordValid(user.Password) && IsUserNameValid(user.UserName) && user.Role != null)
+            if (IsNIDalid(user.NID) && IsEmailValid(user.Email) && IsMobileValid(user.PhoneNumber) && IsPasswordValid(user.Password) && IsUserNameValid(user.UserName) && user.Role != null)
             {
                 user.IsActivated = false;
                 db.SystemUsers.Add(user);
@@ -222,7 +223,7 @@ namespace Car4EgarAPI.Controllers
         /// </summary>
 
 
-       
+
 
         // Owners  Owners  Owners  Owners  Owners
 
@@ -270,39 +271,39 @@ namespace Car4EgarAPI.Controllers
 
         [HttpPost]
         [Route("/Owner/RegisterNewCar")]
-        public IActionResult RegisterNewCar(string NID, string color, double Mailage, string EXYear, int Year, bool AvailableForRent, string ModelName,  string LocationOfRent, double CostPerDay, string Image, bool Insurance, string GearBoxType)
+        public IActionResult RegisterNewCar(string NID, string color, double Mailage, string EXYear, int Year, bool AvailableForRent, string ModelName, string LocationOfRent, double CostPerDay, string Image, bool Insurance, string GearBoxType)
         {
             SystemUser owner = db.SystemUsers.Find(NID);
 
-                Car car = new Car();
-                car.Color = color;
-                //car.LicenseNumber = LicenseNumber;
-                //car.Seats = Seats;
-                car.Insurance = Insurance;
-                //car.CarType = CarType;
-                car.LicenseEXDate = EXYear;
-                car.Year = Year;
-                car.LocationOfRent = LocationOfRent;
-                car.AvailableForRent = AvailableForRent;
-                car.ModelName = ModelName;
-                //car.BrandName = BrandName;
-                car.Mailage = Mailage;
-                car.GearBoxType = GearBoxType;
-                car.CostPerDay = CostPerDay;
-                car.Image = Image;
-                //car.RegistrationDate = DateTime.Now;
-                //car.IsActivated = false;
+            Car car = new Car();
+            car.Color = color;
+            //car.LicenseNumber = LicenseNumber;
+            //car.Seats = Seats;
+            car.Insurance = Insurance;
+            //car.CarType = CarType;
+            car.LicenseEXDate = EXYear;
+            car.Year = Year;
+            car.LocationOfRent = LocationOfRent;
+            car.AvailableForRent = AvailableForRent;
+            car.ModelName = ModelName;
+            //car.BrandName = BrandName;
+            car.Mailage = Mailage;
+            car.GearBoxType = GearBoxType;
+            car.CostPerDay = CostPerDay;
+            car.Image = Image;
+            //car.RegistrationDate = DateTime.Now;
+            //car.IsActivated = false;
 
-                car.OwnerId = owner.NID;
-                car.OwnerName = owner.UserName;
-                car.OwnerPhoto = owner.Photo;
-                car.OwnerPhone = owner.PhoneNumber;
-                
-                db.Cars.Add(car); // ?!?!?!?!?!?!
-                db.SaveChanges();
-                return Ok();
-     
-            
+            car.OwnerId = owner.NID;
+            car.OwnerName = owner.UserName;
+            car.OwnerPhoto = owner.Photo;
+            car.OwnerPhone = owner.PhoneNumber;
+
+            db.Cars.Add(car); // ?!?!?!?!?!?!
+            db.SaveChanges();
+            return Ok();
+
+
         }
 
         [HttpDelete]
@@ -354,7 +355,7 @@ namespace Car4EgarAPI.Controllers
         public IActionResult DeleteOwnerAccount(string NID)
         {
             SystemUser owner = db.SystemUsers.Find(NID);
-            db.SystemUsers.Remove(owner); 
+            db.SystemUsers.Remove(owner);
             db.SaveChanges();
             return Ok();
         }
@@ -442,7 +443,7 @@ namespace Car4EgarAPI.Controllers
         //[HttpGet]
         //[Route("/Admin/GetAllMCars")]
         //public IActionResult GetAllCars(string Vin)
-            
+
         //MCar car = db.MCars.Find(Vin);
 
         //{
@@ -464,7 +465,7 @@ namespace Car4EgarAPI.Controllers
         [Route("/Owner/GetAllRequests")]
         public IActionResult GetAllOwnerRequests()
         {
-            var list =  db.RentRequests.ToList();
+            var list = db.RentRequests.ToList();
             return Ok(list);
         }
 
@@ -482,7 +483,7 @@ namespace Car4EgarAPI.Controllers
 
         [HttpPost]
         [Route("/Owner/RatingTheBorrowers")]
-        public IActionResult RatingTheBorrowers (string id, double RateDegree)
+        public IActionResult RatingTheBorrowers(string id, double RateDegree)
         {
             SystemUser borrower = db.SystemUsers.Find(id);
             if (RateDegree <= 5)
@@ -591,44 +592,62 @@ namespace Car4EgarAPI.Controllers
 
         [HttpPost]
         [Route("/Borrower/CarRentalRequest")]
-        public IActionResult CarRentalRequest([FromHeader]string id, [FromHeader] string carVin, [FromHeader] int Days)
+        public IActionResult CarRentalRequest([FromHeader] string id, [FromHeader] string carVin, [FromHeader] int Days)
         {
             SystemUser borrower = db.SystemUsers.Find(id);
 
-                CarVM car = db.CarVM.Find(carVin);
-                //SystemUser carOwner = db.SystemUsers.Where(o => o.Cars.Contains(car)).FirstOrDefault();
-                RentRequest ownerRequest = new RentRequest();
-                ownerRequest.OwnerId = car.OwnerId;
-                ownerRequest.RequestedCarVIN = carVin;
-                ownerRequest.BorrowerId = id;
-                ownerRequest.BorrowerName = db.SystemUsers.Find(id).UserName;
+            CarVM car = db.CarVM.Find(carVin);
+            //SystemUser carOwner = db.SystemUsers.Where(o => o.Cars.Contains(car)).FirstOrDefault();
+            RentRequest ownerRequest = new RentRequest();
+            ownerRequest.OwnerId = car.OwnerId;
+            ownerRequest.RequestedCarVIN = carVin;
+            ownerRequest.BorrowerId = id;
+            ownerRequest.BorrowerName = db.SystemUsers.Find(id).UserName;
+            if (db.SystemUsers.Find(id).Address != null)
+            {
                 ownerRequest.BorrowerAddress = db.SystemUsers.Find(id).Address;
-                ownerRequest.RentDays = Days;
-                ownerRequest.CarImage = car.Image;
-                ownerRequest.BorrowerImage = borrower.Photo;
-                ownerRequest.CarBrand = car.ModelName;
-                ownerRequest.CarYear = car.Year;
-                    ownerRequest.Total = car.CostPerDay * Days;
-                db.RentRequests.Add(ownerRequest);
-                
-                //Notification notification = new Notification();
-                //notification.UserId = carOwner.NID;
-                //notification.Content = "You Have a New car rental request made by " + ownerRequest.BorrowerName+ " on your car";
 
-                //db.Notifications.Add(notification);
-                db.SaveChanges();
-                return Ok();
+            }
+            else
+            {
+                ownerRequest.BorrowerAddress = "";
+            }
+            ownerRequest.RentDays = Days;
+            ownerRequest.CarImage = car.Image;
+            if (borrower.Photo !=null)
+            {
+            ownerRequest.BorrowerImage = borrower.Photo;
+
+            }
+            else
+            {
+                ownerRequest.BorrowerImage = "";
+            }
             
+            ownerRequest.CarBrand = car.ModelName;
+            ownerRequest.CarYear = car.Year;
+            ownerRequest.Total = car.CostPerDay * Days;
+            db.RentRequests.Add(ownerRequest);
+
+            //Notification notification = new Notification();
+            //notification.UserId = carOwner.NID;
+            //notification.Content = "You Have a New car rental request made by " + ownerRequest.BorrowerName+ " on your car";
+
+            //db.Notifications.Add(notification);
+            db.SaveChanges();
+            return Ok();
+
 
         }
 
         [HttpGet]
         [Route("/Borrower/CarRentalRequestAcception/{vid}/{accept}")]
-        public IActionResult CarRentalRequestAcceptance( string vid, int accept)
+        public IActionResult CarRentalRequestAcceptance(string vid, int accept)
         {
             RentRequest rent = db.RentRequests.FirstOrDefault(a => a.RequestedCarVIN == vid);
-            CarVM CarR =db.CarVM.FirstOrDefault(a=>a.VIN==vid);
-            if (rent != null) {
+            CarVM CarR = db.CarVM.FirstOrDefault(a => a.VIN == vid);
+            if (rent != null)
+            {
                 if (accept != 0)
                 {
                     rent.RequestAcceptance = true;
@@ -636,13 +655,15 @@ namespace Car4EgarAPI.Controllers
                     db.SaveChanges();
                     return Ok("Car Has Rented Succss");
                 }
-                else {
+                else
+                {
                     rent.RequestAcceptance = false;
                     CarR.Available = true;
                     db.SaveChanges();
                     return Ok("Car Has Not Rented");
-                     }
-            } else 
+                }
+            }
+            else
                 return BadRequest("Request Not Exist");
         }
 
@@ -763,15 +784,15 @@ namespace Car4EgarAPI.Controllers
         //[Route("/Admin/GetAllActivatedCars")]
         //public IActionResult GetAllActivatedCars()
         //{
-            //var ActivatedCars = db.Cars.Where(c => c.IsActivated == true).ToList();
-            //return Ok(ActivatedCars);
+        //var ActivatedCars = db.Cars.Where(c => c.IsActivated == true).ToList();
+        //return Ok(ActivatedCars);
         //}
 
         [HttpGet]
         [Route("/Admin/GetAllRequestsToAccept")]
-        public IActionResult GetAllRequestsToAccept() 
+        public IActionResult GetAllRequestsToAccept()
         {
-            var requests = db.RentRequests.Where(r => r.RequestAcceptance == true).ToList();    
+            var requests = db.RentRequests.Where(r => r.RequestAcceptance == true).ToList();
             return Ok(requests);
         }
 
@@ -827,13 +848,13 @@ namespace Car4EgarAPI.Controllers
 
             foreach (var item in db.CarVM.ToList())
             {
-                if(item.OwnerId == id)
+                if (item.OwnerId == id)
                 {
                     db.CarVM.Remove(item);
                 }
             }
-                db.SystemUsers.Remove(user);
-                db.SaveChanges();
+            db.SystemUsers.Remove(user);
+            db.SaveChanges();
 
             return Ok();
         }
@@ -842,7 +863,7 @@ namespace Car4EgarAPI.Controllers
 
         /*********************************************/
         /*********************************************/
-                        /*View Models*/
+        /*View Models*/
         /*********************************************/
         /*********************************************/
 
@@ -885,14 +906,15 @@ namespace Car4EgarAPI.Controllers
 
         [HttpPost]
         [Route("/Admin/RegisterNewCarVM")]
-        public IActionResult RegisterNewCar( [FromBody]CarVM item)
+        public IActionResult RegisterNewCar([FromBody] CarVM item)
         {
 
-                CarVM car = new CarVM();
+            CarVM car = new CarVM();
             SystemUser systemUser = db.SystemUsers.Find(item.OwnerId);
-                car.OwnerId = item.OwnerId;
-                car.OwnerName = systemUser.UserName;
-            if (systemUser.Photo != null) {
+            car.OwnerId = item.OwnerId;
+            car.OwnerName = systemUser.UserName;
+            if (systemUser.Photo != null)
+            {
                 car.OwnerPic = systemUser.Photo;
 
             }
@@ -900,7 +922,7 @@ namespace Car4EgarAPI.Controllers
             {
                 car.OwnerPic = "Null";
             }
-            if (systemUser.PhoneNumber !=null)
+            if (systemUser.PhoneNumber != null)
             {
                 car.OwnerPhone = systemUser.PhoneNumber;
 
@@ -911,23 +933,23 @@ namespace Car4EgarAPI.Controllers
             }
 
             car.CostPerDay = item.CostPerDay;
-                car.VIN = item.VIN;
-                car.Mailage = item.Mailage;
-                car.Color = item.Color;
-                car.RatedPeople = item.RatedPeople;
-                car.Rate = item.Rate;
-                car.Available = item.Available;
-                car.Image = item.Image;
-                car.Year = item.Year;
-                car.ModelName = item.ModelName;
-                car.GearBoxType = item.GearBoxType;
-                car.Insurance = item.Insurance;
-                car.LocationOfRent = item.LocationOfRent;
-                //car.CarType = item.CarType;
-                //car.BrandName = item.BrandName;
-                //car.IsActivated = item.IsActivated;
-                db.CarVM.Add(car);
-                db.SaveChanges();
+            car.VIN = item.VIN;
+            car.Mailage = item.Mailage;
+            car.Color = item.Color;
+            car.RatedPeople = item.RatedPeople;
+            car.Rate = item.Rate;
+            car.Available = item.Available;
+            car.Image = item.Image;
+            car.Year = item.Year;
+            car.ModelName = item.ModelName;
+            car.GearBoxType = item.GearBoxType;
+            car.Insurance = item.Insurance;
+            car.LocationOfRent = item.LocationOfRent;
+            //car.CarType = item.CarType;
+            //car.BrandName = item.BrandName;
+            //car.IsActivated = item.IsActivated;
+            db.CarVM.Add(car);
+            db.SaveChanges();
 
             return Ok();
         }
@@ -960,7 +982,7 @@ namespace Car4EgarAPI.Controllers
 
         [HttpPut]
         [Route("/Admin/UploadPicture")]
-        public IActionResult UploadPicture([FromHeader]string NID, [FromHeader]string Filename)
+        public IActionResult UploadPicture([FromHeader] string NID, [FromHeader] string Filename)
         {
             SystemUser user = db.SystemUsers.Find(NID);
             user.Photo = Filename;
@@ -988,7 +1010,7 @@ namespace Car4EgarAPI.Controllers
                 var file = Request.Form.Files[0];
                 var folderName = Path.Combine("E:\\ITI\\_Car4Egar\\FrontSide\\Car4Egar-Angular\\src\\", "assets");
                 var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
-                if(file.Length > 0)
+                if (file.Length > 0)
                 {
                     var fileName = System.Net.Http.Headers.ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
                     var fullPath = Path.Combine(pathToSave, fileName);
@@ -1011,51 +1033,7 @@ namespace Car4EgarAPI.Controllers
         }
 
 
-        //[HttpGet]
-        //[Route("/Borrower/CarRentalRequestAcception/{vid}/{accept}")]
-        //public IActionResult CarRentalRequestAcceptance(string vid, int accept)
-        //{
-        //    RentRequest rent = db.RentRequests.FirstOrDefault(a => a.RequestedCarVIN == vid);
-        //    CarVM CarR = db.CarVM.FirstOrDefault(a => a.VIN == vid);
-        //    if (rent != null)
-        //    {
-        //        if (accept != 0)
-        //        {
-        //            rent.RequestAcceptance = true;
-        //            CarR.Available = false;
-        //            db.SaveChanges();
-        //            return Ok("Car Has Rented Succss");
-        //        }
-        //        else
-        //        {
-        //            rent.RequestAcceptance = false;
-        //            CarR.Available = true;
-        //            db.SaveChanges();
-        //            return Ok("Car Has Not Rented");
-        //        }
-        //    }
-        //    else
-        //        return BadRequest("Request Not Exist");
-        //}
 
-        //[HttpDelete]
-        //[Route("/Borrower/CarRentalRequestDelete/{vid}")]
-        //public IActionResult CarRentalRequestDelete(string vid)
-        //{
-        //    RentRequest rent = db.RentRequests.FirstOrDefault(a => a.RequestedCarVIN == vid);
-        //    CarVM CarR = db.CarVM.FirstOrDefault(a => a.VIN == vid);
-        //    if (rent != null)
-        //    {
-
-        //        db.RentRequests.Remove(rent);
-        //        CarR.Available = true;
-        //        db.SaveChanges();
-        //        return Ok("Car Has Been Deleted");
-
-        //    }
-        //    else
-        //        return BadRequest("Request Not Exist");
-        //}
     }
 
 
