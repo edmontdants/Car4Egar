@@ -646,30 +646,35 @@ namespace Car4EgarAPI.Controllers
         {
             RentRequest rent = db.RentRequests.FirstOrDefault(a => a.RequestedCarVIN == vid);
             CarVM CarR = db.CarVM.FirstOrDefault(a => a.VIN == vid);
-            if (rent != null)
-            {
-                if (accept != 0)
-                {
+            
                     rent.RequestAcceptance = true;
                     CarR.Available = false;
+            db.CarVM.Update(CarR);
                     db.SaveChanges();
-                    return Ok("Car Has Rented Succss");
-                }
-                else
-                {
-                    rent.RequestAcceptance = false;
-                    CarR.Available = true;
-                    db.SaveChanges();
-                    return Ok("Car Has Not Rented");
-                }
+                    return Ok();
+        }
+
+        [HttpDelete]
+        [Route("/Borrower/CarRentalRequestDelete/{vid}")]
+        public IActionResult CarRentalRequestDelete(string vid)
+        {
+            RentRequest rent = db.RentRequests.FirstOrDefault(a => a.RequestedCarVIN == vid);
+            CarVM CarR = db.CarVM.FirstOrDefault(a => a.VIN == vid);
+            if (rent != null)
+            {
+
+                db.RentRequests.Remove(rent);
+                db.SaveChanges();
+                return Ok("Car Has Been Deleted");
+
             }
             else
                 return BadRequest("Request Not Exist");
         }
 
         [HttpDelete]
-        [Route("/Borrower/CarRentalRequestDelete/{vid}")]
-        public IActionResult CarRentalRequestDelete(string vid)
+        [Route("/Borrower/CarRentalRequestCancel/{vid}")]
+        public IActionResult CarRentalRequestCancel(string vid)
         {
             RentRequest rent = db.RentRequests.FirstOrDefault(a => a.RequestedCarVIN == vid);
             CarVM CarR = db.CarVM.FirstOrDefault(a => a.VIN == vid);
@@ -933,7 +938,7 @@ namespace Car4EgarAPI.Controllers
             }
 
             car.CostPerDay = item.CostPerDay;
-            car.VIN = item.VIN;
+            car.VIN = "Car"+item.VIN;
             car.Mailage = item.Mailage;
             car.Color = item.Color;
             car.RatedPeople = item.RatedPeople;
@@ -1032,6 +1037,36 @@ namespace Car4EgarAPI.Controllers
             }
         }
 
+
+
+        [HttpPost("/Borrower/RateCar")]
+        public async Task<IActionResult> RateCar([FromHeader] int value, [FromHeader] string carVin, [FromHeader] string borrowerNid)
+        {
+            RatedFrom car = new RatedFrom();
+            car.CarVIN = carVin;
+            car.BorroweNID = borrowerNid;
+            car.RatedOrNot = true;
+
+            CarVM carVM = db.CarVM.Find(carVin);
+            if (carVM.RatedPeople == 0)
+            {
+                carVM.RatedPeople += 1;
+                carVM.Rate = value;
+            }
+            else
+            {
+                
+                for (int i = 0; i < carVM.RatedPeople; i++)
+                {
+                    carVM.Rate = carVM.Rate + value;
+                }
+                carVM.Rate = Math.Round((double)(carVM.Rate / (carVM.RatedPeople+1)));
+                carVM.RatedPeople += 1;
+            }
+            
+            db.SaveChanges();
+            return Ok();
+        }
 
 
     }

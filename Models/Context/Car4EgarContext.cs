@@ -47,6 +47,7 @@ namespace Car4EgarAPI.Models.Context
         public virtual DbSet<AdminRequest> AdminRequests { get; set; }
         public virtual DbSet<RentRequest> RentRequests { get; set; }
         public virtual DbSet<CarVM> CarVM { get; set; }
+        public virtual DbSet<RatedFrom> RatedFrom { get; set; }
 
 
     }
