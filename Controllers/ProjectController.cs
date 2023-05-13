@@ -1013,7 +1013,7 @@ namespace Car4EgarAPI.Controllers
             try
             {
                 var file = Request.Form.Files[0];
-                var folderName = Path.Combine("..\\Clent\\src\\", "assets");
+                var folderName = Path.Combine("Client\\src", "assets");
                 var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
                 if (file.Length > 0)
                 {
