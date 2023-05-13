@@ -1,0 +1,22 @@
+<!-- <p>
+  list-car-publish works!
+</p> -->
+
+<div class="maindiv container-fluid">
+  <h3 class="text-center mb-5">PUBLISH</h3>
+  <div style="height: 500px;"></div>
+  <div class="row mt-4">
+    <div class="col-2">
+      <button class="m-1 w-75" style="height: 45px;" mat-fab extended color="accent" (click)="leavePage()">FINISH
+        LATER</button>
+    </div>
+    <div class="col-4"></div>
+    <div class="col-3">
+      <button class="m-1 float-end w-75" mat-fab extended color="primary" (click)="goBack(stepper)">BACK</button>
+    </div>
+    <div class="col-3">
+      <button class="m-1 w-75" mat-fab extended color="primary" (click)="goForward(stepper)">PUBLISH</button>
+    </div>
+  </div>
+</div>
+<mat-stepper #stepper></mat-stepper>

@@ -1,0 +1,124 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <!-- <mat-toolbar color="primary" class="fixed-top">
+
+    <span>Car 4 Egar</span>
+    <span class="spacer"></span>
+    <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="isLoggedIn">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" >
+      <button mat-menu-item>Profile</button>
+      <button mat-menu-item>Settings</button>
+
+      <button mat-menu-item (click)="onLogoutClick()" *ngIf="isLoggedIn">Logout</button>
+    </mat-menu>
+
+    <button color="primary" (click)="onLoginClick()" *ngIf="!isLoggedIn">Login</button>
+
+    <button mat-fab extended color="accent"(click)="openLoginDialog()" >
+      <mat-icon>login</mat-icon>
+      Login
+    </button>
+
+    <button mat-fab extended color="accent"(click)="openRegistrationDialog()" >
+      <mat-icon>app_registration</mat-icon>
+      Sign Up
+    </button>
+
+  </mat-toolbar> -->
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" routerLink="/">Car <span style="color:#E71853;" >4</span> Egar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/SearchACar">Cars</a>
+          </li>
+
+          <!-- <li class="nav-item">
+            <a class="nav-link"  (click)="onLoginClick()" *ngIf="!isLoggedIn">LoginDemo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  (click)="onLogoutClick()" *ngIf="isLoggedIn">LogoutDemo</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link"  (click)="openLoginDialog()" *ngIf="!isLoggedIn" type="button">Login</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link"  (click)="openRegistrationDialog()"  *ngIf="!isLoggedIn" type="button" >Register</a>
+          </li>
+
+          <li class="nav-item dropdown" *ngIf="isLoggedIn">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              User Account
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="Role != 'Admin'">
+              <li><a class="dropdown-item" routerLink="/UserDashBoard">My Profile</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" (click)="onLogoutClick()" *ngIf="isLoggedIn" type="button">LogOut</a></li>
+            </ul>
+
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="NID == '01232012023564'">
+              <li><a class="dropdown-item" routerLink="/Admin">My Dashboard</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" (click)="onLogoutClick()" *ngIf="isLoggedIn" type="button">LogOut</a></li>
+            </ul>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+
+
+
+  <div class="body">
+    <router-outlet></router-outlet>
+</div>
+
+  <!-- <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" >
+      <mat-toolbar>Menu</mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/">Home</a>
+        <a mat-list-item routerLink="/SearchACar">Cars</a>
+        <a mat-list-item routerLink="/about">About Us</a>
+        <a mat-list-item routerLink="/contact">Contact Us</a>
+      </mat-nav-list>
+    </mat-sidenav>
+  </mat-sidenav-container> -->
+
+
+
+
+
+  <div class="watsapp_api" >
+    <a href="https://api.whatsapp.com/send/?phone=201068321388&text&type=phone_number&app_absent=0"target="_blank">
+      <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  </div>
+</body>
+</html>
+

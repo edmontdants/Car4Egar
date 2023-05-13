@@ -1,0 +1,240 @@
+<div class="container">
+  <div class="row">
+    <button type="button" class="btn btn-success d-block mt-5" data-bs-toggle="modal" href="#exampleModal3" >Registeration Form</button>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+  <div class="modal-dialog">
+
+
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Register Car Form</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="p-3">
+        <h6 class="text-warning">
+          Here are some tips for car registration.
+        <br>
+        1 - The data must be completely correct and in conformity with reality, in order for the renter to know the actual specifications of the car.
+        <br>
+        2 - If the car was insured by the competent authorities, this must also be true, so that you send us these documents at the time of the request.
+        <br>
+        3 - You can only register the car at the present time and make it not currently rentable and change that at a later time.
+        <br>
+        4 - You can easily upload a picture of the car after registering it by logging into your profile.
+        </h6>
+
+      </div>
+      <hr>
+      <div class="modal-body">
+        <form (ngSubmit)="SubmitNewCar()" [noValidate]="false">
+          <div class="mb-2">
+            <label for="vin" class="col-form-label">Car VIN: </label>
+            <input type="text" class="form-control" id="vin" name="vin" [(ngModel)]="car.vin" required>
+          </div>
+
+
+
+          <div class="form-group mb-2">
+            <label for="modelName">Make:</label>
+            <select class="form-control" id="modelName" name="modelName" [(ngModel)]="car.modelName" required>
+              <option value="">-- Select Make --</option>
+
+              <option value="Abarth">Abarth</option>
+              <option value="Acura">Acura</option>
+              <option value="AlfaRomeo">Alfa Romeo</option>
+              <option value="AstonMartin">Aston Martin</option>
+              <option value="Audi">Audi</option>
+              <option value="Bentley">Bentley</option>
+              <option value="BMW">BMW</option>
+              <option value="Buick">Buick</option>
+              <option value="Cadillac">Cadillac</option>
+              <option value="Chevrolet">Chevrolet</option>
+              <option value="Chrysler">Chrysler</option>
+              <option value="Citroen">Citroen</option>
+              <option value="Dacia">Dacia</option>
+              <option value="Dodge">Dodge</option>
+              <option value="Ferrari">Ferrari</option>
+              <option value="Fiat">Fiat</option>
+              <option value="Ford">Ford</option>
+              <option value="GMC">GMC</option>
+              <option value="Honda">Honda</option>
+              <option value="Hummer">Hummer</option>
+              <option value="Hyundai">Hyundai</option>
+              <option value="Infiniti">Infiniti</option>
+              <option value="Isuzu">Isuzu</option>
+              <option value="Jaguar">Jaguar</option>
+              <option value="Jeep">Jeep</option>
+              <option value="Kia">Kia</option>
+              <option value="Lamborghini">Lamborghini</option>
+              <option value="Lancia">Lancia</option>
+              <option value="LandRover">Land Rover</option>
+              <option value="Lexus">Lexus</option>
+              <option value="Lincoln">Lincoln</option>
+              <option value="Lotus">Lotus</option>
+              <option value="Maserati">Maserati</option>
+              <option value="Mazda">Mazda</option>
+              <option value="Mercedes">Mercedes</option>
+              <option value="Mercury">Mercury</option>
+              <option value="Mini">Mini</option>
+              <option value="Mitsubishi">Mitsubishi</option>
+              <option value="Nissan">Nissan</option>
+              <option value="Opel">Opel</option>
+              <option value="Peugeot">Peugeot</option>
+              <option value="Pontiac">Pontiac</option>
+              <option value="Porsche">Porsche</option>
+              <option value="Ram">Ram</option>
+              <option value="Renault">Renault</option>
+              <option value="Saab">Saab</option>
+              <option value="Saturn">Saturn</option>
+              <option value="Scion">Scion</option>
+              <option value="Seat">Seat</option>
+              <option value="Skoda">Skoda</option>
+              <option value="Smart">Smart</option>
+              <option value="SsangYong">SsangYong</option>
+              <option value="Subaru">Subaru</option>
+              <option value="Suzuki">Suzuki</option>
+              <option value="Tesla">Tesla</option>
+              <option value="Toyota">Toyota</option>
+              <option value="Volkswagen">Volkswagen</option>
+              <option value="Volvo">Volvo</option>
+              <option value="Wiesmann">Wiesmann</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group mb-2">
+            <label for="color">Color:</label>
+            <select class="form-control" id="color" name="color" [(ngModel)]="car.color" required>
+              <option value="">-- Select Color --</option>
+
+              <option value="White">White</option>
+              <option value="Black">Black</option>
+              <option value="Gray">Gray</option>
+              <option value="Silver">Silver</option>
+              <option value="Blue">Blue</option>
+              <option value="Red">Red</option>
+              <option value="Brown">Brown</option>
+              <option value="Green">Green</option>
+              <option value="Orange">Orange</option>
+              <option value="Beige">Beige</option>
+              <option value="Purple">Purple</option>
+              <option value="Gold">Gold</option>
+              <option value="Yellow">Yellow</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group mb-2">
+            <label for="locationOfRent">Location:</label>
+            <select class="form-control" id="locationOfRent" name="locationOfRent" [(ngModel)]="car.locationOfRent" required>
+              <option value="">-- Select Location --</option>
+
+              <option value="Alexandria">Alexandria</option>
+              <option value="Aswan">Aswan</option>
+              <option value="Asyut">Asyut</option>
+              <option value="Beheira">Beheira</option>
+              <option value="Beni Suef">Beni Suef</option>
+              <option value="Cairo">Cairo</option>
+              <option value="Dakahlia">Dakahlia</option>
+              <option value="Damietta">Damietta</option>
+              <option value="Faiyum">Faiyum</option>
+              <option value="Gharbia">Gharbia</option>
+              <option value="Giza">Giza</option>
+              <option value="Ismailia">Ismailia</option>
+              <option value="Kafr ElSheikh">Kafr El-Sheikh</option>
+              <option value="Luxor">Luxor</option>
+              <option value="Matruh">Matruh</option>
+              <option value="Minya">Minya</option>
+              <option value="Monufia">Monufia</option>
+              <option value="New Valley">New Valley</option>
+              <option value="North Sinai">North Sinai</option>
+              <option value="Port Said">Port Said</option>
+              <option value="Qalyubia">Qalyubia</option>
+              <option value="Qena">Qena</option>
+              <option value="Red Sea">Red Sea</option>
+              <option value="Sharqia">Sharqia</option>
+              <option value="Sohag">Sohag</option>
+              <option value="South Sinai">South Sinai</option>
+              <option value="Suez">Suez</option>
+              <option value="Any Government">Any Government</option>
+            </select>
+          </div>
+
+          <div class="form-group mb-2">
+            <label for="year">Model Year: </label>
+            <select class="form-control" id="year" name="year" [(ngModel)]="car.year" required>
+              <option value="">-- Select Year --</option>
+              <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+            </select>
+          </div>
+
+          <div class="form-group mb-2">
+            <label for="gearBoxType">Gear Box Type:</label>
+            <select class="form-control" id="gearBoxType" name="gearBoxType" [(ngModel)]="car.gearBoxType" required>
+              <option value="">-- Select Transmission --</option>
+              <option value="Automatic">Automatic</option>
+              <option value="Manual">Manual</option>
+            </select>
+          </div>
+
+
+          <div class="mb-2">
+            <label for="mailage" class="col-form-label">Current Car Milage:</label>
+            <input type="text" class="form-control" id="mailage" name="mailage" [(ngModel)]="car.mailage" >
+          </div>
+
+
+          <div class="mb-2">
+            <label for="costPerDay" class="col-form-label">Car Cost Per Day</label>
+            <!-- <input type="number" class="form-control" id="costPerDay" name="costPerDay" [(ngModel)]="car.costPerDay" required> -->
+            <select class="form-control" id="costPerDay" name="costPerDay" [(ngModel)]="car.costPerDay" required>
+              <option value="" >-- Select available value --</option>
+              <option *ngFor="let price of PricePerDayAvailableValues" [value]="price">{{ price }}</option>
+            </select>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div>
+                <label for="insurance" class="col-form-label label-container">The Car Is Insured
+                  <input checked="checked" type="checkbox" id="insurance" name="insurance" [(ngModel)]="car.insurance" required>
+                  <div class="checkmark"></div>
+                </label>
+                <!-- <input type="checkbox" class="" id="insurance" name="insurance" [(ngModel)]="car.insurance" required> -->
+              </div>
+
+            </div>
+            <div class="col-md-6">
+              <div >
+                <label for="available" class="col-form-label label-container">Available For Rent Now
+                  <input checked="checked" type="checkbox" id="available" name="available" [(ngModel)]="car.available" required>
+                  <div class="checkmark"></div>
+                </label>
+
+                <!-- <input type="checkbox" class="" id="available" name="available" [(ngModel)]="car.available" required> -->
+              </div>
+            </div>
+          </div>
+
+
+          <br>
+          <button type="submit" class="btn btn-success d-block w-100" >Done !</button>
+
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        <!-- <button type="submit" class="btn btn-primary">Done !</button> -->
+      </div>
+    </div>
+
+  </div>
+</div>

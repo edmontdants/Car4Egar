@@ -1,0 +1,67 @@
+.watsapp_api{
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 5;
+
+}
+.watsapp_api svg{
+  font-size: 3em;
+  color: #E71853;
+  animation: watsLogo 1s ease-in-out 0s infinite both ;
+  animation-direction: alternate-reverse;
+}
+@media (max-width:700px) {
+  .watsapp_api{
+    bottom: 5px;
+    right: 5px;
+  }
+  .watsapp_api svg{
+    font-size: 2.5em;
+  }
+}
+
+@keyframes watsLogo {
+  0%{
+    font-size: 3em;
+  }
+  100%{
+    font-size: 3.5em;
+    color: #63041f !important;
+  }
+}
+
+
+
+
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.mat-toolbar-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bg-light{
+  background-color: #35296D !important;
+
+}
+.navbar-brand , .nav-link{
+    color: white !important;
+}
+.navbar-toggler{
+  color: #E71853 !important;
+}
+.navbar-toggler-icon span{
+  color: white !important;
+}

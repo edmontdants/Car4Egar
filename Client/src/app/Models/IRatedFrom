@@ -1,0 +1,5 @@
+export interface IRatedFrom{
+  carVin:string,
+  borrowerNid:string,
+  ratedOrNot:boolean
+}

@@ -1,0 +1,154 @@
+<!-- <p>
+  list-car-info works!
+</p> -->
+
+<div class="maindiv container-fluid">
+  <h3 class="text-center mb-5">CAR INFORMATION</h3>
+  <form>
+    <div class="row">
+      <div class="col-2">
+        <mat-label class="text-muted">Car Title</mat-label>
+        <mat-form-field class="d-block mt-2" appearance="outline">
+          <input matInput #title [formControl]="titleControl" maxlength=50>
+          <mat-error *ngIf="titleControl.hasError('required')">* Please enter Title for your Car</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <mat-label class="text-muted">Make</mat-label>
+        <mat-form-field class="d-block mt-2" appearance="outline">
+          <mat-select #make disabled [value]="default.value">
+            <mat-option #default selected value="default.value">Audi</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-label class="text-muted">Model</mat-label>
+        <mat-form-field class="d-block mt-2" appearance="outline">
+          <mat-select #model disabled [value]="default.value">
+            <mat-option #default selected value="default.value">A1</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-label class="text-muted">Year</mat-label>
+        <mat-form-field class="d-block mt-2" appearance="outline">
+          <mat-select #year disabled [value]="default.value">
+            <mat-option #default selected value="default.value">2023</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col">
+        <mat-label class="text-muted">Number of Seats</mat-label>
+        <mat-form-field class="d-block mt-2 mb-2" appearance="outline">
+          <mat-select #seats [formControl]="seatsControl" required placeholder="Select Seats No *">
+            <div style="height: 235px; margin-top: -8px;">
+              <mat-option style="font-size: large;" *ngFor="let seatsNo of SeatsNo" [value]="seatsNo">{{seatsNo}}</mat-option>
+            </div>
+          </mat-select>
+          <mat-error *ngIf="makeControl.hasError('required')">* Please select your car Seats No</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-label class="text-muted">Number of Doors</mat-label>
+        <mat-form-field class="d-block mt-2 mb-2" appearance="outline">
+          <mat-select #doors [formControl]="doorsControl" required placeholder="Select Doors No *">
+            <div style="height: 185px; margin-top: -8px;">
+              <mat-option *ngFor="let doors of DoorsNo" [value]="doors" selected>{{doors}}</mat-option>
+            </div>
+          </mat-select>
+          <mat-error *ngIf="modelControl.hasError('required')">* Please select your car Doors No</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-label class="text-muted">Fuel Type</mat-label>
+        <mat-form-field class="d-block mt-2 mb-2" appearance="outline">
+          <mat-select [formControl]="fuelControl" required placeholder="Select Fuel Type *">
+            <div style="height: 185px; margin-top: -8px;">
+              <mat-option *ngFor="let fuelType of Fuel" [value]="fuelType">{{fuelType}}</mat-option>
+            </div>
+          </mat-select>
+          <mat-error *ngIf="yearControl.hasError('required')">* Please select your car Fuel Type</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <mat-label class="text-muted">Transmission Gearbox</mat-label>
+        <mat-form-field class="d-block mt-2 mb-2" appearance="outline">
+          <mat-select #gearbox [formControl]="gearboxControl" placeholder="Select Gearbox Type *" required>
+            <div style="height: 137px; margin-top: -8px;">
+              <mat-option *ngFor="let gearbox of Gearbox" [value]="gearbox">{{gearbox}}</mat-option>
+            </div>
+          </mat-select>
+          <mat-error *ngIf="makeControl.hasError('required')">* Please select your car Transmission Gearbox
+            Type</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-label class="text-muted">Mileage</mat-label>
+        <mat-form-field class="d-block mt-2 mb-2" appearance="outline">
+          <mat-select #mileage [formControl]="mileageControl" required placeholder="Select Mileage Range *">
+            <div style="height: 185px; margin-top: -8px;">
+              <mat-option *ngFor="let mileage of Mileage"
+                [value]="mileage">{{mileage}}</mat-option>
+            </div>
+          </mat-select>
+          <mat-error *ngIf="modelControl.hasError('required')">* Please select your car Motor Mileage Range</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-label class="text-muted">Color</mat-label>
+        <mat-form-field class="d-block mt-2 mb-2" appearance="outline">
+          <mat-select #color [formControl]="colorControl" required placeholder="Select Car Color *">
+            <div style="height: 185px; margin-top: -8px;">
+              <mat-option *ngFor="let color of Color" [value]="color">{{color}}</mat-option>
+            </div>
+          </mat-select>
+          <mat-error *ngIf="yearControl.hasError('required')">* Please select your Car Color</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <div class="col-2">
+          <mat-label class="text-muted">Car Type</mat-label>
+          <mat-form-field class="d-block mt-2" appearance="outline">
+            <mat-select #type [formControl]="typeControl" required placeholder="Select Vehicle Type*">
+              <div style="height: 235px; margin-top: -8px;">
+                <mat-option *ngFor="let type of Type"
+                  [value]="type">{{type}}</mat-option>
+              </div>
+            </mat-select>
+            <mat-error *ngIf="makeControl.hasError('required')">* Please select your Car Type</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col">
+        <mat-label class="text-muted fw-bold">CAR DESCRIPTION</mat-label>
+        <mat-form-field class="w-100" appearance="outline">
+          <textarea matInput placeholder="General state, extras and accessories, minor issues to take in account."
+            rows="4" spellcheck="false"></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+  <div class="row mt-4">
+    <div class="col-2">
+      <button class="m-1 w-75" style="height: 45px;" mat-fab extended color="accent" (click)="leavePage()">FINISH LATER</button>
+    </div>
+    <div class="col-4"></div>
+    <div class="col-3">
+      <button class="m-1 float-end w-75" mat-fab extended color="primary" (click)="goBack(stepper)">BACK</button>
+    </div>
+    <div class="col-3">
+      <button class="m-1 w-75" mat-fab extended color="primary" (click)="goForward(stepper)">NEXT</button>
+    </div>
+  </div>
+</div>
+<mat-stepper #stepper></mat-stepper>

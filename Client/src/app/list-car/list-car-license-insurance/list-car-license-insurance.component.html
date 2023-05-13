@@ -1,0 +1,170 @@
+<!-- <p>
+  list-car-license-insurance works!
+</p> -->
+
+<div class="maindiv container-fluid">
+  <h3 class="text-center mb-5">LICENSE & INSURANCE</h3>
+  <form>
+    <div class="row">
+      <div class="text-muted">
+        <span><strong>Car License:</strong></span>
+      </div><br><br>
+      <div class="col">
+        <mat-label class="text-muted">Country of Registeration</mat-label>
+        <mat-form-field class="d-block mt-2 mb-2" appearance="outline">
+          <mat-select #country [value]="default.value">
+            <div style="height: 40px; margin-top: -5px;">
+              <mat-option #default selected value="default.value">Egypt</mat-option>
+              <!-- <mat-option style="font-size: 16px;" *ngFor="let country of Countries" [value]="country">{{country}}</mat-option> -->
+            </div>
+          </mat-select>
+          <!-- <mat-error *ngIf="cityControl.hasError('required')">* Please select your Residence Country. we only serve
+            these countries</mat-error> -->
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-label class="text-muted">City</mat-label>
+        <mat-form-field class="d-block mt-2 mb-2" appearance="outline">
+          <mat-select [formControl]="cityControl" required placeholder="Select *">
+            <div style="height: 185px; margin-top: -5px;">
+              <mat-option style="font-size: 16px;" *ngFor="let governorate of Governorates"
+                [value]="governorate">{{governorate}}</mat-option>
+            </div>
+          </mat-select>
+          <mat-error *ngIf="plateNoControl.hasError('required')">* Please select the City in which your car is usually
+            available</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-label class="text-muted">Plate Code</mat-label>
+        <mat-form-field class="d-block mt-2 mb-2" appearance="outline">
+          <input matInput required maxlength="10" [formControl]="plateNoControl" placeholder="اري-1234 *">
+          <mat-error *ngIf="plateNoControl.hasError('required')">* Please enter specified Car Plate Code from Car
+            License</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-label class="text-muted">License Expire date</mat-label>
+        <mat-form-field class="d-block mt-2 mb-2" appearance="outline">
+          <input matInput [matDatepicker]="picker" [formControl]="dateControl" placeholder="MM/DD/YY *">
+          <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="dateControl.hasError('required')">* Please select your License Expiration Date</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="m-4 text-muted">
+      <span class="d-block"><strong>Upload Papers:</strong></span>
+      <span>Please upload your Car License in a PDF or JPG format with maximum file size 5 MB.</span>
+    </div>
+    <div class="m-4 text-muted">
+      <mat-label class="text-muted"><strong>Car License</strong></mat-label>
+      <div class="mt-3">
+        <!-- <mat-form-field class="d-block mt-2 mb-2"> -->
+        <button mat-fab extended color="primary">UPLOAD CAR LICENSE</button>
+        <!-- <input type="file"> -->
+        <!-- </mat-form-field> -->
+      </div>
+      <div class="mt-2 text-danger">
+        <!-- <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon> -->
+        <mat-label class="m-3">Information required</mat-label>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="text-muted">
+        <span><strong>Insurance:</strong></span>
+      </div><br><br>
+      <div class="col">
+        <mat-label class="text-muted">Insurance yearly cost</mat-label>
+        <mat-form-field class="d-block mt-2 mb-2" appearance="outline">
+          <input type="number" min="0" matInput value="0" pattern="(?<=\s|^)\d+(?=\s|$)">
+          <span matSuffix class="input-group-text" style="height: 55px; border-radius: 0px 5px 5px 0px; border-color: white;">&nbsp; EGP</span>
+          <!-- <span matSuffix>EGP &nbsp;</span> -->
+          <mat-error *ngIf="insuranceYearlyCostControl.hasError('required')">* Please select your Insurance yearly cost</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-label class="text-muted">Insurance excess value</mat-label>
+        <mat-form-field class="d-block mt-2 mb-2" appearance="outline">
+          <input type="number" min="0" matInput value="0" pattern="(?<=\s|^)\d+(?=\s|$)">
+          <span matSuffix class="input-group-text" style="height: 55px; border-radius: 0px 5px 5px 0px; border-color: white;">&nbsp; EGP</span>
+          <mat-error *ngIf="insuranceExcessValueControl.hasError('required')">* Please select your Insurance excess value</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="m-4 text-muted">
+      <span class="d-block"><strong>Upload Papers:</strong></span>
+      <span>Please upload your Car Insurance Policy in a PDF or JPG format with maximum file size 5 MB.</span>
+    </div>
+    <div class="m-4 text-muted">
+      <mat-label class="text-muted"><strong>Insurance policy</strong></mat-label>
+      <div class="mt-3">
+        <!-- <mat-form-field class="d-block mt-2 mb-2"> -->
+        <button mat-fab extended color="primary">UPLOAD INSURANCE POLICY</button>
+        <!-- <input type="file"> -->
+        <!-- </mat-form-field> -->
+      </div>
+      <div class="mt-2 text-danger">
+        <!-- <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon> -->
+        <mat-label class="m-3">Information required</mat-label>
+      </div>
+    </div>
+    <hr>
+    <div class="m-4 text-muted">
+      <span class="d-block"><strong>Upload Papers:</strong></span>
+      <span>Please upload your National ID or Passport in a PDF or JPG format with maximum file size 5 MB.</span>
+    </div>
+    <div class="m-4 text-muted">
+      <mat-label class="text-muted"><strong>Personal Identity</strong></mat-label>
+      <div class="mt-3">
+        <!-- <mat-form-field class="d-block mt-2 mb-2"> -->
+        <button mat-fab extended color="primary">UPLOAD IDENTITY</button>
+        <!-- <input type="file"> -->
+        <!-- </mat-form-field> -->
+      </div>
+      <div class="mt-2 text-danger">
+        <!-- <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon> -->
+        <mat-label class="m-3">Information required</mat-label>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col">
+
+      </div>
+      <div class="col">
+
+      </div>
+      <div class="col">
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+
+      </div>
+      <div class="col">
+
+      </div>
+      <div class="col">
+
+      </div>
+    </div>
+  </form>
+  <div class="row mt-4">
+    <div class="col-2">
+      <button class="m-1 w-75" style="height: 45px;" mat-fab extended color="accent" (click)="leavePage()">FINISH
+        LATER</button>
+    </div>
+    <div class="col-4"></div>
+    <div class="col-3">
+      <button class="m-1 float-end w-75" mat-fab extended color="primary" (click)="goBack(stepper)">BACK</button>
+    </div>
+    <div class="col-3">
+      <button class="m-1 w-75" mat-fab extended color="primary" (click)="goForward(stepper)">NEXT</button>
+    </div>
+  </div>
+</div>
+<mat-stepper #stepper></mat-stepper>

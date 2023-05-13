@@ -1,0 +1,46 @@
+<!-- <p>
+  list-car-dialog works!
+</p> -->
+<div class="m-5 d-block" style="width: 500px;">
+  <div class="text-center">
+    <mat-label class="d-block mb-1 fw-bold" style="color: #35296D; font-size: 28px;">LISTING YOUR CAR</mat-label>
+    <mat-label class="d-block mb-4 text-muted" style="font-size: 18px;">Provide us your car details</mat-label>
+  </div>
+  <mat-label style="font-size: 16px;">Make</mat-label>
+  <mat-form-field class="d-block mt-2 mb-2" appearance="outline">
+    <mat-select #brand [formControl]="makeControl" placeholder="Select *" required>
+      <div style="height: 235px; margin-top: -5px;">
+        <mat-option>Select</mat-option>
+        <mat-option style="height: 40px; font-size: large;" *ngFor="let carBrands of CarMakeModels" [value]="carBrands">{{carBrands.make}}</mat-option>
+        <mat-option>Other</mat-option>
+      </div>
+    </mat-select>
+    <mat-error *ngIf="makeControl.hasError('required')">* Please select your Car Brand</mat-error>
+  </mat-form-field>
+  <mat-label style="font-size: 16px;">Model</mat-label>
+  <mat-form-field class="d-block mt-2 mb-2" appearance="outline">
+    <mat-select #model placeholder="Model *" [formControl]="modelControl" required>
+      <div style="height: 185px; margin-top: -5px;">
+        <mat-option>Select</mat-option>
+        <mat-option style="font-size: 16px;" *ngFor="let carModels of CarMakeModels[9].model" [value]="carModels">{{carModels}}</mat-option>
+          <mat-option>Other</mat-option>
+      </div>
+    </mat-select>
+    <mat-error *ngIf="modelControl.hasError('required')">* Please choose Brand Model</mat-error>
+  </mat-form-field>
+  <mat-label style="font-size: 16px;">Year</mat-label>
+  <mat-form-field class="d-block mt-2 mb-2" appearance="outline">
+    <mat-select #year placeholder="Year *" [formControl]="yearControl" required>
+      <div style="height: 185px; margin-top: -5px;">
+        <mat-option>Select</mat-option>
+        <mat-option style="font-size: 16px;" *ngFor="let carYears of Years" [value]="carYears">{{carYears}}</mat-option>
+        <mat-option>Other</mat-option>
+      </div>
+    </mat-select>
+    <mat-error *ngIf="yearControl.hasError('required')">* Please select which Year Model</mat-error>
+  </mat-form-field>
+  <div class="col text-center">
+    <button mat-fab extended class="mt-4 w-75" style="height: 45px;"
+      routerLink="">CONTINUE</button>
+  </div>
+</div>

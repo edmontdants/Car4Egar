@@ -1,0 +1,20 @@
+.stepper{
+    /* margin: auto !important; */
+    /* margin: 20px !important; */
+    /* width: 800px; */
+    width: auto;
+    min-height: 400px;
+    /* background-color: #f8f8f8; */
+    /* padding: 10px; */
+    border-radius: 5px;
+    /* box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22); */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.22);
+}
+
+/* .mdc-checkbox__ripple {
+    display: none;
+} */
+
+/* ::ng-deep .mat-horizontal-stepper-content[aria-expanded="false"] {
+    width: 500px !important;
+} */

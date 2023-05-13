@@ -1,0 +1,111 @@
+<div class="my-4">
+  <mat-tab-group backgroundColor="primary" color="accent">
+
+
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        ALL REQUESTS
+      </ng-template>
+      <div class="container-fluid my-5">
+        <div *ngFor="let req of BorrowerRequests" class="row mt-5">
+          <hr>
+          <div class="col-12 col-md-6 col-lg-3" style="text-align: right;" we4>
+            <img src="assets/{{req.carImage}}" alt="CarImg" class="rounded" width="250" height="250">
+          </div>
+          <div class="col-12 col-md-6 col-lg-3" style="text-align: left;">
+            <h2 style="color:#35296D;">{{req.carBrand}} - {{req.carYear}} / <span style="color:#ff4081;">For:
+                {{req.rentDays}} Days</span><br>
+            </h2>
+            <mat-divider></mat-divider>
+
+            <div class="text-center">
+              <img src="assets/{{req.borrowerImage}}" alt="" class="rounded-circle mt-3" height="60" width="60"><br>
+
+              <p class="text-black-50">Borrower Name: {{req.borrowerName}}</p>
+              <p class="text-black-50">Borrower Location: {{req.borrowerAddress}}</p>
+            </div>
+
+            <hr>
+            <div class="text-center">
+              <button class="btn btn-danger me-2" (click)="deletereq (req.requestedCarVIN)"><i class="fa-solid fa-xmark" type="button"
+                  ></i> Remove Request </button>
+              <!-- <button class="btn btn-success" type="button" (click)="Acceptedreq(req.requestedCarVIN,1)"><i
+                  class="fa-solid fa-check"></i> Agree </button>-->
+             </div>
+
+          </div>
+        </div>
+      </div>
+      <mat-divider class="Row_divider"></mat-divider>
+    </mat-tab>
+
+
+
+
+
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        CONFIRMED REQUESTS
+      </ng-template>
+      <div class="container-fluid my-5">
+
+        <div class="container mt-5">
+
+</div>
+
+
+        <div *ngFor="let req of BorrowerRequestsConfirmed" class="row mt-5">
+
+            <hr>
+            <div class="col-12 col-md-6 col-lg-3" style="text-align: right;" we4>
+              <img src="assets/{{req.carImage}}" alt="CarImg" class="rounded" width="250" height="250">
+            </div>
+            <div class="col-12 col-md-6 col-lg-3" style="text-align: left;">
+              <h2 style="color:#35296D;">{{req.carBrand}} - {{req.carYear}} / <span style="color:#ff4081;">For:
+                  {{req.rentDays}} Days</span><br>
+              </h2>
+              <mat-divider></mat-divider>
+
+              <div class="text-center">
+                <img src="assets/{{req.borrowerImage}}" alt="" class="rounded-circle mt-3" height="60" width="60"><br>
+
+                <p class="text-black-50">Borrower Name: {{req.borrowerName}}</p>
+                <p class="text-black-50">Borrower Location: {{req.borrowerAddress}}</p>
+              </div>
+
+              <hr>
+              <p class="text-black-50">Rate This Car</p>
+              <form (ngSubmit)="CarRating(value,req.requestedCarVIN,req.borrowerId)" [noValidate]="false">
+                <!-- <input type="number" name="value" [(ngModel)]="value" required > -->
+                <div class="rate">
+                  <input type="radio" id="star5" name="value" value="5" [(ngModel)]="value" />
+                  <label for="star5" title="text">5 stars</label>
+                  <input type="radio" id="star4" name="value" value="4" [(ngModel)]="value" />
+                  <label for="star4" title="text">4 stars</label>
+                  <input type="radio" id="star3" name="value" value="3" [(ngModel)]="value"/>
+                  <label for="star3" title="text">3 stars</label>
+                  <input type="radio" id="star2" name="value" value="2" [(ngModel)]="value"/>
+                  <label for="star2" title="text">2 stars</label>
+                  <input type="radio" id="star1" name="value" value="1" [(ngModel)]="value"/>
+                  <label for="star1" title="text">1 star</label>
+                </div>
+
+                <input type="text" name="carVin" value="{{req.requestedCarVIN}}" hidden>
+                <input type="text" name="borrowerId" value="{{req.borrowerId}}" hidden>
+                <!-- <button type="submit"> Rate This Car </button> -->
+                <button type="submit" (click)="pay(req.requestedCarVIN,req.total)" class="btn btn-success d-block w-100  mb-1">Pay Now {{req.total}} L.E</button>
+              </form>
+              <div class="text-center">
+
+                <button class="btn btn-danger d-block w-100" type="button" (click)="deletereq(req.requestedCarVIN)">
+                  Remove Request </button>
+              </div>
+
+            </div>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

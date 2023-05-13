@@ -1,0 +1,20 @@
+.maindiv {
+    /* box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22); */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+h3 {
+    font-weight: bold;
+    color: #35296D;
+    margin: 0px auto 10px auto;
+    border-style: solid;
+    width: fit-content;
+    border-width: 0px 0px 4px 0px;
+    border-color: #f44336;
+    padding: 10px;
+}
+
+mat-label {
+    font-weight: 500;
+    font-size: 16px;
+}

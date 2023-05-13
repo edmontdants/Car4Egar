@@ -1,0 +1,38 @@
+<h2 mat-dialog-title style="color: #35296D;">Login </h2>
+<form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+  <mat-dialog-content>
+    <div class="row justify-content-center align-items-center g-2">
+        <mat-form-field>
+          <input #Emailinp="ngModel" matInput name="email" placeholder="aa@aa.aa" [(ngModel)]="useremail" required
+            pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$">
+          <mat-label>Email</mat-label>
+          <mat-icon matSuffix>email</mat-icon>
+          <mat-hint *ngIf="Emailinp.errors?.['pattern']">Must be Email Format aa@aa.aa</mat-hint>
+        </mat-form-field>
+        <div class="row justify-content-center align-items-center g-2">
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input #passin1="ngModel" matInput [type]="hide1 ? 'password' : 'text'" name="password"
+            [(ngModel)]="userpass" placeholder="At Last 8 Char" required pattern="^.{8,}$">
+          <mat-hint *ngIf="passin1.errors?.['pattern']">At Last 8 Char</mat-hint>
+          <mat-hint *ngIf="inviledpass">Password Not Correct</mat-hint>
+          <button mat-icon-button matSuffix type="button" (click)="hide1 = !hide1" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide1">
+            <mat-icon>{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions class="row justify-content-center align-items-center ">
+    <button mat-fab extended color="accent" type="submit"
+      [disabled]="!loginForm.valid">
+      <mat-icon>app_registration</mat-icon>
+      Login
+    </button>
+    <button mat-fab extended color="accent" mat-dialog-close>
+      <mat-icon>clear</mat-icon>
+      Cancel
+    </button>
+</mat-dialog-actions>
+</form>

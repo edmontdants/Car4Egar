@@ -1,0 +1,103 @@
+h3 {
+  font-weight: bold;
+  color: #35296D;
+  margin: 0px auto 10px auto;
+  border-style: solid;
+  width: fit-content;
+  border-width: 0px 0px 4px 0px;
+  border-color: #f44336;
+  padding: 10px;
+}
+
+mat-label {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.carTitle:hover {
+  border-style: solid;
+  border-width: 6px;
+}
+
+file-name {
+  margin-left: 1rem;
+}
+
+
+
+
+
+
+
+/* Hide the default checkbox */
+.label-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.label-container {
+  display: flex;
+  gap: 10px;
+}
+
+
+/* Create a custom checkbox */
+.checkmark {
+  position: relative;
+  box-shadow: rgb(229, 8, 218) 0px 0px 0px 2px;
+  background-color: rgba(81, 1, 192, 0.5);
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+  flex-shrink: 0;
+  margin-top: -1px;
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+  transform-origin: 0px 10px;
+  border-radius: 4px;
+  margin: -1px 10px 0px 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.label-container input:checked ~ .checkmark {
+  box-shadow: rgb(209, 11, 149) 0px 0px 0px 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+  flex-shrink: 0;
+  margin-top: -1px;
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+  transform-origin: 0px 10px;
+  border-radius: 4px;
+  margin: -1px 10px 0px 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.label-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.label-container .checkmark:after {
+  left: 0.45em;
+  top: 0.25em;
+  width: 0.25em;
+  height: 0.7em;
+  border: solid rgb(224, 14, 158);
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+  transition: all 500ms ease-in-out;
+}

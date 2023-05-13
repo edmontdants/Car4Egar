@@ -1,0 +1,385 @@
+<div class="my-4 justify-content-center align-items-center">
+  <mat-tab-group backgroundColor="primary" color="accent">
+    <!-- ----------------------------------------Tab1---------------------------------------------------------- -->
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon>account_box</mat-icon>&nbsp; Personal Information
+      </ng-template>
+      <!-- -------------------form 1------------------------------------- -->
+      <div>
+
+        <form #PersonalInfo="ngForm" (ngSubmit)="saveinfo()">
+          <div class="container-fluid my-5">
+            <div class="row ">
+              <div class="col-12 col-md-6 col-lg-3">
+                <div style="text-align: left;margin-bottom: 20px; font-size: large;">
+                  <h2 style="color: #35296D;"> <i class="fa-solid fa-circle-user"></i>&nbsp;Account Picture:
+                    <mat-divider></mat-divider>
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-center align-items-center g-2">
+              <div class="col-12 col-md-6 col-lg-3">
+                <div class="mx-5">
+                  <app-profile-pic [UserImg]="UsarLogine.photo"></app-profile-pic>
+                </div>
+              </div>
+            </div>
+            <br>
+            <br>
+            <div class="row ">
+              <div class="col-12 col-md-6 col-lg-3">
+                <div style="text-align: left;margin-bottom: 20px; font-size: large;">
+                  <h2 style="color: #35296D;"> <i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp; Account Informations:
+                    <mat-divider></mat-divider>
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-center align-items-center g-2">
+              <div class="col-12 col-md-6 col-lg-3">
+                <p>
+                  <mat-form-field>
+                    <input #userNameInp="ngModel" matInput name="username" placeholder="Letters Only"
+                      [(ngModel)]="UsarLogine.userName" required pattern="[A-Za-z]{3,}">
+                    <mat-label>User Name</mat-label>
+                    <mat-icon matSuffix>perm_identity</mat-icon>
+                    <mat-hint *ngIf="userNameInp.errors?.['pattern']&&userNameInp.touched">Must be alphabet at least 3
+                      letters</mat-hint>
+                  </mat-form-field>
+                </p>
+              </div>
+              <div class="col-12 col-md-6 col-lg-3">
+                <p>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input #Emailinp="ngModel" matInput name="email" placeholder="aa@aa.aa"
+                      [(ngModel)]="UsarLogine.email" disabled>
+                    <mat-icon matSuffix>email</mat-icon>
+                    <mat-hint>Can Modified IN Account Setting </mat-hint>
+                  </mat-form-field>
+                </p>
+              </div>
+              <div class="col-12 col-md-6 col-lg-3">
+                <p>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Phone</mat-label>
+                    <input #PhoneNum="ngModel" name="Phone" matInput placeholder="011/012/010/015/12345678"
+                      [(ngModel)]="UsarLogine.phoneNumber" required pattern="^(011|012|010|015)\d{8}$">
+                    <mat-icon matSuffix>phone</mat-icon>
+                    <mat-hint *ngIf="PhoneNum.errors?.['pattern']&&PhoneNum.touched">Must be (01)1/2/0/5/12345678
+                    </mat-hint>
+                  </mat-form-field>
+                </p>
+              </div>
+            </div>
+            <div class="row justify-content-center align-items-center g-2">
+              <div class="col-12 col-md-6 col-lg-3">
+                <p>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Address</mat-label>
+                    <input matInput #Address="ngModel" name="Address" matInput placeholder="Address"
+                      [(ngModel)]="UsarLogine.address" required>
+                    <mat-icon matSuffix>location_on</mat-icon>
+                    <mat-hint *ngIf="Address.errors?.['required']&&Address.touched">Must be Entered</mat-hint>
+                  </mat-form-field>
+                </p>
+              </div>
+              <div class="col-12 col-md-6 col-lg-3">
+                <mat-form-field appearance="fill">
+                  <mat-label>Birth date</mat-label>
+                  <input matInput [matDatepicker]="picker" #BirthDate="ngModel" name="BirthDate"
+                    [(ngModel)]="UsarLogine.birthDate" required>
+                  <mat-hint *ngIf="BirthDate.errors?.['required']&&BirthDate.touched">MM/DD/YYYY Must Entered</mat-hint>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div class="col-12 col-md-6 col-lg-3">
+                <p>
+                  <mat-form-field appearance="fill" style="width: 250px;">
+                    <mat-label><b>
+                        <mat-icon>person_search</mat-icon> Gender
+                      </b></mat-label>
+                    <mat-select #Gander="ngModel" [(ngModel)]="UsarLogine.gender" name="Gander" required>
+                      <mat-option value="Male"><i class="fa fa-male" aria-hidden="true"></i> Male</mat-option>
+                      <mat-option value="Female"><i class="fa fa-female" aria-hidden="true"></i> Female</mat-option>
+                    </mat-select>
+                    <mat-hint *ngIf="Gander.errors?.['required']&&Gander.touched">Must Chosen</mat-hint>
+                  </mat-form-field>
+                </p>
+              </div>
+              <div class="row justify-content-center align-items-center g-2">
+                <div class="col-12 col-md-6 col-lg-3">
+                  <p>
+                    <mat-form-field appearance="fill">
+                      <mat-label>National ID</mat-label>
+                      <input matInput #NID="ngModel" [(ngModel)]="UsarLogine.nid" placeholder="14 Numbers" name="NID"
+                        disabled>
+                      <mat-icon matSuffix>featured_play_list</mat-icon>
+                      <mat-hint>Can`t Modified</mat-hint>
+                    </mat-form-field>
+                  </p>
+                </div>
+              </div>
+              <div class="row justify-content-center  align-items-start g-2 ">
+                <div class="col-12 col-md-6 col-lg-3">
+                  <p>
+                    <button mat-fab extended color="accent" type="submit" [disabled]="!PersonalInfo.valid">
+                      <mat-icon>change_circle</mat-icon>
+                      Save Changes
+                    </button>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-tab>
+    <!-- ----------------------------------------Tab2---------------------------------------------------------- -->
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon>verified_user</mat-icon>&nbsp; Borrowing Verification
+      </ng-template>
+      <!-- -------------------form 2------------------------------------- -->
+      <div>
+        <form #BorrowingV="ngForm" (ngSubmit)="VeryfiBorrower()">
+          <div class="container-fluid my-5">
+            <div class="row ">
+              <div class="col-12 col-md-6 col-lg-3">
+                <div style="text-align: left;margin-bottom: 20px; font-size: large;">
+                  <h2 style="color: #35296D;">
+                    <mat-icon>verified_user</mat-icon>&nbsp; Borrowing
+                    Verification:
+                    <mat-divider></mat-divider>
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-center align-items-center g-2">
+              <div class="col-12  col-lg-6">
+                <mat-form-field style="width: 350px;">
+                  <div>
+                    <mat-toolbar>
+                      <!-- Display files names -->
+                      <input matInput [(ngModel)]="fileAttr" readonly name="name" />
+                      <!-- Browse Button -->
+                      <button mat-fab extended color="primary" type="button">
+                        <mat-icon>upload</mat-icon>Upload
+                      </button>
+                    </mat-toolbar>
+                    <!-- Fetch selected filed on change -->
+                    <input type="file" #fileInput id="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile"
+                      multiple="multiple" accept="image/*" />
+                  </div>
+                </mat-form-field>
+              </div>
+              <div class="col-12  col-lg-6">
+                <mat-form-field style="width: 350px;">
+                  <div>
+                    <mat-toolbar>
+                      <!-- Display files names -->
+                      <input matInput [(ngModel)]="fileAttr2" readonly name="name2" />
+                      <!-- Browse Button -->
+                      <button mat-fab extended color="primary" type="button">
+                        <mat-icon>upload</mat-icon>Upload
+                      </button>
+                    </mat-toolbar>
+                    <!-- Fetch selected filed on change -->
+                    <input type="file" #fileInput2 id="uploadFile" (change)="uploadFileEvt2($event)" name="uploadFile"
+                      multiple="multiple" accept="image/*" />
+                  </div>
+                </mat-form-field>
+              </div>
+              <!-- --------------------------------------after Photo----------------------------------------------- -->
+              <div class="row justify-content-center align-items-center g-2">
+                <div class="col-12 col-md-6 col-lg-3">
+                  <p>
+                    <mat-form-field appearance="fill">
+                      <mat-label>License Number</mat-label>
+                      <input matInput name="LicenNum" #LicenNum="ngModel" [(ngModel)]="UsarLogine.driverLicenceNumber"
+                        placeholder="License Number" required pattern="^.{3,20}$">
+                      <mat-icon matSuffix>fact_check</mat-icon>
+                      <mat-hint *ngIf="LicenNum.errors?.['pattern']&&LicenNum.touched">Please Enter Number 3->20
+                      </mat-hint>
+                    </mat-form-field>
+                  </p>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Birth date</mat-label>
+                    <input matInput name="BirthDate" #BirthDateL="ngModel" [(ngModel)]="UsarLogine.birthDate"
+                      [matDatepicker]="picker1" disabled>
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                  </mat-form-field>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Expiration Date</mat-label>
+                    <input matInput name="ExpirationDate" #ExpirationDate="ngModel"
+                      [(ngModel)]="UsarLogine.driverLicenceEXDate" [matDatepicker]="picker2" required>
+                    <mat-hint *ngIf="ExpirationDate.errors?.['required']&&ExpirationDate.touched">Please Enter
+                    </mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row justify-content-center  align-items-start g-2 ">
+                <div class="col-12 col-md-6 col-lg-3">
+                  <p>
+                    <button mat-fab extended color="accent" type="submit" [disabled]="!BorrowingV.valid">
+                      <mat-icon>verified_user</mat-icon>&nbsp;
+                      Verify&nbsp;&nbsp;&nbsp;
+                    </button>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-tab>
+    <!-- ----------------------------------------Tab3---------------------------------------------------------- -->
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon>settings</mat-icon>&nbsp; Account Settings
+      </ng-template>
+      <!-- -------------------form Chang Email------------------------------------- -->
+      <div class="m-4 justify-content-center  align-items-start g-2 ">
+        <form #AccountSetting="ngForm" (ngSubmit)="AccountSetting1()">
+          <div class="container-fluid my-5">
+            <div class="row ">
+              <div class="col-12 col-md-6 col-lg-3">
+                <div style="text-align: left;margin-bottom: 20px; font-size: large;">
+                  <h2 style="color: #35296D;"> <i class="fa-solid fa-envelope"></i>&nbsp; Change Email:
+                    <mat-divider></mat-divider>
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-center  align-items-start g-2 ">
+              <div class="col-12 col-md-6 col-lg-3">
+                <p>
+                  <mat-form-field>
+                    <input #NewEmail2="ngModel" matInput name="email" placeholder="aa@aa.aa" [(ngModel)]="NewEmail"
+                      required pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$">
+                    <mat-label>New Email</mat-label>
+                    <mat-icon matSuffix>email</mat-icon>
+                    <mat-hint *ngIf="NewEmail2.errors?.['pattern']">Must be Email Format aa@aa.aa</mat-hint>
+                  </mat-form-field>
+                </p>
+              </div>
+            </div>
+            <br>
+            <br>
+            <div class="row justify-content-center  align-items-start g-2 ">
+              <div class="col-12 col-md-6 col-lg-3">
+                <p>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Current Password</mat-label>
+                    <input #passinCurrent="ngModel" matInput [type]="hide1 ? 'password' : 'text'" name="password"
+                      [(ngModel)]="CurrentPass" placeholder="At Last 8 Char" required pattern="^.{8,40}$">
+                    <mat-hint *ngIf="passinCurrent.errors?.['pattern']">At Last 8 Char</mat-hint>
+                    <button mat-icon-button matSuffix type="button" (click)="hide1 = !hide1"
+                      [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide1">
+                      <mat-icon>{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                  </mat-form-field>
+                </p>
+              </div>
+            </div>
+            <div class="row justify-content-center  align-items-start g-2 ">
+              <div class="col-12 col-md-6 col-lg-3">
+                <p>
+                  <button mat-fab extended color="accent" [disabled]="!AccountSetting.valid">
+                    <mat-icon>change_circle</mat-icon>
+                    Change Email
+                  </button>
+                </p>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <!-- -------------------------formChange Password----------------- -->
+        <div class="row ">
+          <div class="col-12 col-md-6 col-lg-3">
+            <div style="text-align: left;margin-bottom: 20px; font-size: large;">
+              <h2 style="color: #35296D;"><i class="fa fa-key" aria-hidden="true"></i>&nbsp; Change Password:
+                <mat-divider></mat-divider>
+              </h2>
+            </div>
+          </div>
+        </div>
+        <form #AccountSetting2="ngForm" (ngSubmit)="AccountSettingPass()">
+          <div class="row justify-content-center  align-items-start g-2 ">
+            <div class="col-12 col-md-6 col-lg-3">
+              <p>
+                <mat-form-field appearance="fill">
+                  <mat-label>Current Password</mat-label>
+                  <input #passinCurrent2="ngModel" matInput [type]="hide2 ? 'password' : 'text'" name="password"
+                    [(ngModel)]="CurrentPass" placeholder="At Last 8 Char" required pattern="^.{8,40}$">
+                  <mat-hint *ngIf="passinCurrent2.errors?.['pattern']">At Last 8 Char</mat-hint>
+                  <button mat-icon-button matSuffix type="button" (click)="hide2 = !hide2"
+                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide2">
+                    <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                </mat-form-field>
+              </p>
+            </div>
+            <div class="row justify-content-center  align-items-start g-2 ">
+              <div class="col-12 col-md-6 col-lg-3">
+                <p>
+                  <mat-form-field appearance="fill">
+                    <mat-label>New Password</mat-label>
+                    <input #passinConfirm="ngModel" matInput [type]="hide3 ? 'password' : 'text'" name="newPassword"
+                      [(ngModel)]="NewPassword" required pattern="^.{8,40}$" placeholder="At Last 8 Char">
+                    <mat-hint *ngIf="passinConfirm.errors?.['pattern']">At Last 8 Cha
+                    </mat-hint>
+                    <button mat-icon-button matSuffix type="button" (click)="hide3 = !hide3"
+                      [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide3">
+                      <mat-icon>{{hide3 ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                  </mat-form-field>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center  align-items-start g-2 ">
+            <div class="col-12 col-md-6 col-lg-3">
+              <p>
+                <mat-form-field appearance="fill">
+                  <mat-label>Confirm Password</mat-label>
+                  <input #passinConfirm2="ngModel" matInput [type]="hide4 ? 'password' : 'text'" name="confirmPassword"
+                    [(ngModel)]="confirmPassword" required placeholder="At Last 8 Char">
+                  <mat-hint *ngIf="passinConfirm2.value!=passinConfirm.value&&passinConfirm2.dirty">Password Not
+                    Match</mat-hint>
+                  <button mat-icon-button matSuffix type="button" (click)="hide4 = !hide4"
+                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide4">
+                    <mat-icon>{{hide4 ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                </mat-form-field>
+              </p>
+            </div>
+          </div>
+          <div class="row justify-content-center  align-items-start g-2 ">
+            <div class="col-12 col-md-6 col-lg-3">
+              <p>
+                <button mat-fab extended color="accent" type="submit"
+                  [disabled]="!AccountSetting2.valid||passinConfirm2.value!=passinConfirm.value&&passinConfirm2.dirty">
+                  <mat-icon>change_circle</mat-icon>
+                  Change Password
+                </button>
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

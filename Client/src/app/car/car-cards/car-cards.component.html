@@ -1,0 +1,279 @@
+<!-- <app-nav-car></app-nav-car> -->
+<div class="search-nav">
+
+
+  <div>
+    <mat-form-field appearance="fill" class="searchByLocation">
+      <mat-label><i class="fa-solid fa-location-dot"></i> Location</mat-label>
+      <mat-select [(ngModel)]="SearchByLocationValue">
+        <mat-option *ngFor="let location of Locations" [value]="location">{{location}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+
+    <mat-form-field appearance="fill">
+      <mat-label><i class="fa-solid fa-car-side"></i> Brand</mat-label>
+      <mat-select [(ngModel)]="SearchByBrand">
+        <mat-option *ngFor="let brand of Brands" [value]="brand">{{brand}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Car Owner</mat-label>
+      <input matInput [(ngModel)]="SearchByCarOwner">
+    </mat-form-field>
+    <!-- <div class="startDateSearch d-inline-block">
+      <input [matDatepicker]="picker" placeholder="MM/DD/YYYY" class="startDateSearchInput" placeholder="StartDate">
+      <mat-datepicker-toggle matIconSuffix [for]="picker" class="startDateSearchButton"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </div> -->
+
+    <!-- <div class="endDateSearch">
+        <input [matDatepicker]="picker" placeholder="MM/DD/YYYY" class="endDateSearchInput" placeholder="EndDate">
+        <mat-datepicker-toggle matIconSuffix [for]="picker" class="endDateSearchButton"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </div> -->
+
+  </div>
+
+
+  <button class="searchCarBtn"> <i class="fa-solid fa-magnifying-glass"></i> SEARCH </button>
+
+</div>
+
+
+<main>
+
+  <div class="container-fluid">
+    <div class="row">
+      <aside class="col-sm-12 col-md-3">
+        <div class="filterList">
+          <h2 class="text-center"><i class="fa-solid fa-bars-staggered"></i> Search Filters </h2>
+
+
+          <hr class="filter_hr">
+          <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Search Type
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <hr>
+              <mat-checkbox color="warn" class="example-margin" [(ngModel)]="filterByAvailableOnlyCheck">Available Cars
+                Only</mat-checkbox>
+              <!-- <mat-checkbox color="warn" class="example-margin" [(ngModel)]="filterByLocationOnlyCheck">Cars in your location only</mat-checkbox> -->
+              <mat-checkbox color="warn" class="example-margin" [(ngModel)]="filterByTopratedOnlyCheck">Top rated Cars
+                only</mat-checkbox>
+              <br>
+              <hr>
+              <span>Price Per Day</span>
+              <mat-slider min="0" max="3000" step="100" showTickMarks discrete [displayWith]="PricePerDay" color="warn">
+                <input matSliderThumb [(ngModel)]="filterByPricePerDaydOnlyValue">
+              </mat-slider>
+
+            </mat-expansion-panel>
+          </mat-accordion>
+
+          <hr>
+          <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Brand - Model's year
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <br>Brand:<br>
+              <mat-form-field appearance="fill" color="warn">
+                <mat-label>All</mat-label>
+                <mat-select [(ngModel)]="SearchByBrand">
+                  <mat-option *ngFor="let state of Brands" [value]="state">{{state}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <!-- <br>Model:<br>
+              <mat-form-field appearance="fill" color="warn">
+                <mat-label>All</mat-label>
+                <mat-select>
+
+                  <mat-option *ngFor="let state of Brands" [value]="state">{{state}}</mat-option>
+                </mat-select>
+              </mat-form-field> -->
+              <br><br>
+              <span>year Model</span>
+              <mat-slider min="2010" max="2024" step="1" showTickMarks discrete [displayWith]="yearModelSearch"
+                color="warn">
+                <input [(ngModel)]="MinModelyearValue" value="2010" matSliderStartThumb>
+                <input [(ngModel)]="MaxModelyearValue" value="2024" matSliderEndThumb>
+              </mat-slider>
+
+            </mat-expansion-panel>
+          </mat-accordion>
+
+
+          <hr>
+          <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Car Specifications
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+
+              <mat-checkbox [(ngModel)]="AutomaticGearbox" color="warn" class="example-margin">Automatic Gearbox
+              </mat-checkbox>
+              <mat-checkbox [(ngModel)]="ManualGearbox" color="warn" class="example-margin">Manual Gearbox
+              </mat-checkbox>
+
+              <!-- <br>Car type:<br>
+              <mat-form-field appearance="fill" color="warn">
+                <mat-label>All</mat-label>
+                <mat-select>
+
+                  <mat-option *ngFor="let state of Brands" [value]="state">{{state}}</mat-option>
+                </mat-select>
+              </mat-form-field> -->
+
+              <br>color<br>
+              <mat-form-field appearance="fill" color="warn">
+                <mat-label>All</mat-label>
+                <mat-select [(ngModel)]="SearchByCarcolorValue">
+                  <mat-option *ngFor="let color of Carscolors" [value]="color">{{color}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+            </mat-expansion-panel>
+          </mat-accordion>
+
+        </div>
+      </aside>
+
+      <div class="col-sm-12 col-md-9">
+        <div class="searchResult me-5">
+          <div class="row">
+            <div class="col-3">
+              <p><span class="NumberOfAvailableCarsOnly">{{NumberOfAvailableCarsOnly}}</span> Cars Availabe Now</p>
+            </div>
+            <div class="col">
+              <h2 class="text-black-50">RENT A CAR WITH BEST PRICE IN EGYPT</h2>
+            </div>
+            <div class="col-3"></div>
+          </div>
+
+          <div class="CarsCards">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let car of FilteredCars">
+
+                <a type="button" class="cardPopUp d-block" data-bs-toggle="modal" href='#{{car.vin}}'>
+                  <div class="car_card">
+                    <div class="carImgBox">
+                      <img src="../../../assets/{{car.image}}" alt="" height="200">
+                      <p class="CarPricePerDay"> {{car.costPerDay}} LE<span>Price Per Day</span></p>
+                    </div>
+                    <div class="OwnerInfo">
+                      <img src="../../../assets/{{car.ownerPic}}" class="rounded-circle" alt="" width="50">
+                      <span>{{car.ownerName}}</span>
+                    </div>
+                    <div class="CarInfo">
+                      <span class="fw-bold"> {{car.modelName}} </span>
+                      (<span class="yearModel fw-bold">{{car.year}}</span>)<br>
+                      <span class="fw-bold">Mailage: {{car.mailage}}</span><br>
+
+                      <div class="row">
+                        <div class="col-sm-8">
+                          <app-star class="d-inline" [rating]="car.rate"></app-star>
+                        </div>
+                        <div class="col-sm-4"><span>( {{car.rate}} )</span></div>
+                      </div>
+
+                    </div>
+                  </div>
+                </a>
+
+                <!-- Modal -->
+                <div class="modal fade" id="{{car.vin}}" data-bs-backdrop="static" data-bs-keyboard="false"
+                  tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-scrollable   modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h2 class="text-center" id="staticBackdropLabel">Car Informations</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+
+
+                        <img src="../../../assets/{{car.image}}" alt="" class="w-100" height="300">
+                        <hr>
+                        <div class="row">
+                          <div class="col-lg-9">
+                            <h2>Car Info:</h2>
+                            <p class="bg-light mb-2">Model: {{car.modelName}}</p>
+                            <!-- <p class="bg-light mb-2">Brand: {{car.brandName}}</p> -->
+                            <p class="bg-light mb-2">Model Year: {{car.year}}</p>
+                            <hr>
+                            <h2>Owner Info:</h2>
+                            <div class="OwnerInfo">
+                              <img src="../../../assets/{{car.ownerPic}}" class="rounded-circle" alt="" width="50">
+                              <p>Owner Name: {{car.ownerName}}</p>
+                            </div>
+                            <hr>
+                            <div class="row">
+                              <h2>Car Rating:</h2>
+                              <div class="col-sm-3">
+                                <app-star class="d-inline" [rating]="car.rate"></app-star>
+                              </div>
+                              <div class="col-sm-3"><span>( {{car.rate}} OF 5 )</span></div>
+                              <div class="col-sm-6"><span>(Rated By: {{car.ratedPeople}} Clients )</span></div>
+                            </div>
+                          </div>
+                          <hr>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <form #form="ngForm" class="w-100" [noValidate]="false"  (ngSubmit)="sendCarRequest(NID,car.vin)">
+                        <input hidden type="text" name="param1"  value="{{car.ownerId}}" [(ngModel)]="car.ownerId" >
+                        <input hidden type="text" name="param2"  value="{{car.vin}}" [(ngModel)]="car.vin" >
+
+                        <div class="row">
+                          <div class="col-md-6 col-sm-12">
+                            <mat-form-field class="w-100">
+                              <mat-label>How many days do you want to borrow the car?</mat-label>
+                              <input matInput name="param3"  [(ngModel)]="param3" type="number" min="7" max="365" required>
+                            </mat-form-field>
+                          </div>
+
+                          <div class="col-md-6 col-sm-12">
+                            <h2 class="totalPriceForRequest"><span>{{param3 * car.costPerDay}}</span> L.E Total For <span>{{param3}}</span> Days</h2>
+                          </div>
+                        </div>
+
+                          <!-- <input class="form-group" type="number"  > -->
+                          <button type="submit" class="btn btn-success w-100 SendRequestBtn">Send Request</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <mat-paginator [length]="this.Cars.length" [pageSize]="3" [pageSizeOptions]="[3,6,12,24,]"
+            aria-label="Select page" (page)="OnPageChanges($event)" class="mt-3">
+          </mat-paginator>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+</main>

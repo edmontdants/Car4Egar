@@ -1,0 +1,43 @@
+<!-- <p>
+list-car-side-stepper works!
+</p> -->
+<div class="stepper">
+  <mat-stepper #stepper orientation="vertical" linear [disableRipple]=true color="accent" [selectedIndex]="index">
+    <mat-step>
+      <ng-template matStepLabel>
+        CAR INFORMATION
+        <sub class="d-block mb-4 text-muted">Specifications, Features</sub>
+      </ng-template>
+      <ng-template matStepContent>
+        <!-- <p>This content was rendered lazily</p> -->
+        <list-car></list-car>
+        <button mat-button matStepperNext>Next</button>
+      </ng-template>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>LICENSE & INSURANCE
+        <sub class="d-block mb-4 text-muted">License Expiration, Plate Number</sub>
+      </ng-template>
+      <ng-template matStepContent>
+        <!-- <p>This content was also rendered lazily</p> -->
+        <!-- <button mat-button matStepperPrevious>Back</button> -->
+        <!-- <button mat-button matStepperNext>Next</button> -->
+      </ng-template>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>PHOTOS & PRICE
+        <sub class="d-block mb-4 text-muted">Car Photos, Prices, Short & Long rental</sub>
+      </ng-template>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>PARKING ADDRESS
+        <sub class="d-block mb-4 text-muted">Parked Address Locatoin for pickup</sub>
+      </ng-template>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>PUBLISH
+        <sub class="d-block mb-4 text-muted">Review the car information and publish</sub>
+      </ng-template>
+    </mat-step>
+  </mat-stepper>
+</div>

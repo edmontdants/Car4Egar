@@ -1,0 +1,83 @@
+<div class="my-4">
+  <mat-tab-group backgroundColor="primary" color="accent">
+
+
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        ALL REQUESTS
+      </ng-template>
+      <div class="container-fluid my-5">
+        <div *ngFor="let req of OnwerRequests" class="row mt-5">
+          <hr>
+          <div class="col-12 col-md-6 col-lg-3" style="text-align: right;" we4>
+            <img src="assets/{{req.carImage}}" alt="CarImg" class="rounded" width="250" height="250">
+          </div>
+          <div class="col-12 col-md-6 col-lg-3" style="text-align: left;">
+            <h2 style="color:#35296D;">{{req.carBrand}} - {{req.carYear}} / <span style="color:#ff4081;">For:
+                {{req.rentDays}} Days</span><br>
+            </h2>
+            <mat-divider></mat-divider>
+
+            <div class="text-center">
+              <img src="assets/{{req.borrowerImage}}" alt="" class="rounded-circle mt-3" height="60" width="60"><br>
+
+              <p class="text-black-50">Borrower Name: {{req.borrowerName}}</p>
+              <p class="text-black-50">Borrower Location: {{req.borrowerAddress}}</p>
+            </div>
+
+            <hr>
+            <div class="text-center">
+              <button class="btn btn-danger me-2" (click)="Cancelreq(req.requestedCarVIN)"><i class="fa-solid fa-xmark" type="button"
+                  ></i> Not Agree </button>
+              <button class="btn btn-success" type="button" (click)="Acceptedreq(req.requestedCarVIN,1)"><i
+                  class="fa-solid fa-check"></i> Agree </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <mat-divider class="Row_divider"></mat-divider>
+    </mat-tab>
+
+
+
+
+
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        CONFIRMED REQUESTS
+      </ng-template>
+      <div class="container-fluid my-5">
+        <div *ngFor="let req of ConfirmedRequests" class="row mt-5">
+
+          <hr>
+          <div class="col-12 col-md-6 col-lg-3" style="text-align: right;" we4>
+            <img src="assets/{{req.carImage}}" alt="CarImg" class="rounded" width="250" height="250">
+          </div>
+          <div class="col-12 col-md-6 col-lg-3" style="text-align: left;">
+            <h2 style="color:#35296D;">{{req.carBrand}} - {{req.carYear}} / <span style="color:#ff4081;">For:
+                {{req.rentDays}} Days</span><br>
+            </h2>
+            <mat-divider></mat-divider>
+
+            <div class="text-center">
+              <img src="assets/{{req.borrowerImage}}" alt="" class="rounded-circle mt-3" height="60" width="60"><br>
+
+              <p class="text-black-50">Borrower Name: {{req.borrowerName}}</p>
+              <p class="text-black-50">Borrower Location: {{req.borrowerAddress}}</p>
+            </div>
+
+            <hr>
+            <!-- <div class="text-center">
+              <button class="btn btn-success" type="button" (click)="deletereq(req.requestedCarVIN)"><i
+                  class="fa-solid fa-check"></i> Done </button>
+            </div> -->
+
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

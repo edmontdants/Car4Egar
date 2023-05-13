@@ -1,0 +1,79 @@
+<h2 mat-dialog-title style="color: #35296D;">SIGN UP </h2>
+<form #registrationForm="ngForm" (ngSubmit)="addnewuser()">
+  <mat-dialog-content class="custom-dialog">
+    <div class="row justify-content-center align-items-center g-2">
+      <div class="col-12 col-md-6 col-lg-6">
+        <mat-form-field>
+          <input #userNameInp="ngModel" matInput name="username" placeholder="Letters Only" [(ngModel)]="newUser.userName"
+            required pattern="[A-Za-z]{3,}">
+          <mat-label>User Name</mat-label>
+          <mat-icon matSuffix>perm_identity</mat-icon>
+          <mat-hint *ngIf="userNameInp.errors?.['pattern']">Must be alphabet at least 3 letters</mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="col-12 col-md-6 col-lg-6">
+        <mat-form-field>
+          <input #Emailinp="ngModel" matInput name="email" placeholder="aa@aa.aa" [(ngModel)]="newUser.email" required
+            pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$">
+          <mat-label>Email</mat-label>
+          <mat-icon matSuffix>email</mat-icon>
+          <mat-hint *ngIf="Emailinp.errors?.['pattern']">Must be Email Format aa@aa.aa</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row justify-content-center align-items-center g-2">
+      <div class="col-12 col-md-6 col-lg-6">
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input #passin1="ngModel" matInput [type]="hide1 ? 'password' : 'text'" name="password"
+            [(ngModel)]="newUser.password" placeholder="At Last 8 Char" required pattern="^.{8,40}$">
+          <mat-hint *ngIf="passin1.errors?.['pattern']">At Last 8 Char</mat-hint>
+          <button mat-icon-button matSuffix type="button" (click)="hide1 = !hide1" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide1">
+            <mat-icon>{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div class="col-12 col-md-6 col-lg-6">
+        <!-- ------------------------------ConfirmPass------------------ -->
+        <mat-form-field appearance="fill">
+          <mat-label>Confirm Password</mat-label>
+          <input #passin2="ngModel" matInput [type]="hide2 ? 'password' : 'text'" name="confirmPassword"
+            [(ngModel)]="confirmPassword" required
+            #confirmPasswordInput="ngModel" placeholder="At Last 8 Char">
+          <mat-hint *ngIf="passin1.value!=passin2.value&&passin2.dirty">Password Not Match</mat-hint>
+          <button mat-icon-button matSuffix type="button" (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide2">
+            <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <div class="row justify-content-center align-items-center g-2">
+      <div class="col-12 col-md-6 col-lg-6">
+        <mat-form-field>
+          <input #NIDin="ngModel" matInput name="nid" placeholder="14 Numbers" [(ngModel)]="newUser.nid" required
+            pattern="^\d{14}$">
+          <mat-label>National ID</mat-label>
+          <mat-icon matSuffix>featured_play_list</mat-icon>
+          <mat-hint *ngIf="NIDin.errors?.['pattern']">Must Be 14 Numbers</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions class="row justify-content-center align-items-center ">
+
+        <button mat-fab extended color="accent" type="submit"
+          [disabled]="!registrationForm.valid||passin1.value!=passin2.value&&passin2.dirty">
+          <mat-icon>app_registration</mat-icon>
+          Sign Up
+        </button>
+        <button mat-fab extended color="accent" mat-dialog-close>
+          <mat-icon>clear</mat-icon>
+          Cancel
+        </button>
+  </mat-dialog-actions>
+</form>

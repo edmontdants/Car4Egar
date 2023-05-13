@@ -1,0 +1,197 @@
+<div class="my-4">
+
+  <mat-tab-group backgroundColor="primary" color="accent">
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon"><i class="fa-solid fa-car"></i></mat-icon>&nbsp; Owner
+      </ng-template>
+
+      <div class="my-1">
+        <mat-tab-group backgroundColor="primary">
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <mat-icon>sync_alt</mat-icon>&nbsp; BALANCE
+            </ng-template>
+            <h2 class="m-5">No Transactions History</h2>
+          </mat-tab>
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <mat-icon>account_balance</mat-icon>&nbsp; BANK DETAILS
+            </ng-template>
+
+            <div class="container-fluid my-5">
+              <!-- ============================Bank Form========================== -->
+              <form #BankInfo="ngForm" (ngSubmit)="EditInfo()">
+                <div class="row ">
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div style="text-align: left;margin-bottom: 20px; font-size: large;">
+                      <h2 style="color: #35296D;">
+                        <mat-icon>account_balance</mat-icon>&nbsp; Bank Info:
+                        <mat-divider style="width: 185px;"></mat-divider>
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="row justify-content-center align-items-center g-2">
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <p>
+                      <mat-form-field>
+                        <input #HoulderNameInp="ngModel" matInput name="holdername" placeholder="Letters Only"
+                          [(ngModel)]="UsarLogine.userName" disabled="">
+                        <mat-label>Holder Name</mat-label>
+                        <mat-icon matSuffix>perm_identity</mat-icon>
+                        <mat-hint>Can Modified From Account Info
+                        </mat-hint>
+                      </mat-form-field>
+                    </p>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <p>
+                      <mat-form-field>
+                        <input #BankName="ngModel" matInput name="BankName" placeholder="Letters Only"
+                          [(ngModel)]="UsarLogine.bank_Name" required pattern="[A-Za-z]{3,}">
+                        <mat-label>Bank Name</mat-label>
+                        <mat-icon matSuffix>account_balance</mat-icon>
+                        <mat-hint *ngIf="BankName.errors?.['pattern']&&BankName.touched">Must be alphabet at least 3
+                          letters</mat-hint>
+                      </mat-form-field>
+                    </p>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <p>
+                      <mat-form-field appearance="fill">
+                        <mat-label>Account Number</mat-label>
+                        <input matInput name="AccountNumber" #AccountNumberin="ngModel"
+                          [(ngModel)]="UsarLogine.bank_AccountNumber" placeholder="License Number" required
+                          pattern="^.{3,20}$">
+                        <mat-icon matSuffix>numbers</mat-icon>
+                        <mat-hint *ngIf="AccountNumberin.errors?.['pattern']&&AccountNumberin.touched">Please Enter
+                          Number 3->20
+                        </mat-hint>
+                      </mat-form-field>
+                    </p>
+                  </div>
+                </div>
+                <div class="row justify-content-center align-items-center g-2">
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <p>
+                      <mat-form-field>
+                        <input #BankBranchin="ngModel" matInput name="BankBranch" placeholder="Letters Only"
+                          [(ngModel)]="UsarLogine.bank_Branch" required pattern="[A-Za-z]{3,}">
+                        <mat-label>Bank Branch</mat-label>
+                        <mat-icon matSuffix>location_on</mat-icon>
+                        <mat-hint *ngIf="BankBranchin.errors?.['pattern']&&BankBranchin.touched">Must be alphabet at
+                          least 3
+                          letters</mat-hint>
+                      </mat-form-field>
+                    </p>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <p>
+                      <mat-form-field>
+                        <input #NIDin="ngModel" matInput name="nid" placeholder="14 Numbers"
+                          [(ngModel)]="UsarLogine.bank_NID" required pattern="^\d{14}$">
+                        <mat-label>National ID</mat-label>
+                        <mat-icon matSuffix>featured_play_list</mat-icon>
+                        <mat-hint *ngIf="NIDin.errors?.['pattern']">Must Be 14 Numbers</mat-hint>
+                      </mat-form-field>
+                    </p>
+                  </div>
+
+                  <div class="row justify-content-center  align-items-start g-2 ">
+                    <div class="col-12 col-md-6 col-lg-3">
+                      <p>
+                        <button mat-fab extended color="accent" type="submit" [disabled]="!BankInfo.valid">
+                          <mat-icon>change_circle</mat-icon>
+                          Save Changes
+                        </button>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+
+      <!-- ----------------------------------------------Tab Brrower Card---------------------- -->
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">vpn_key</mat-icon>&nbsp; Borrower
+      </ng-template>
+      <div class="my-1">
+        <mat-tab-group backgroundColor="primary">
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <mat-icon>sync_alt</mat-icon>&nbsp; EXPENSES
+            </ng-template>
+            <h2 class="m-5">No Transactions History</h2>
+          </mat-tab>
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <mat-icon class="example-tab-icon">payment</mat-icon>&nbsp; PAYMENT
+            </ng-template>
+            <div class="m-5">
+              <mat-card class="card">
+                <mat-card-header>
+                  <mat-card-title>NEW CREDIT CARD</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                  <!-- ==========================Credit Form ==================== -->
+                  <form #CreditEdit="ngForm" (ngSubmit)="EditInfo()">
+                    <div class="form-row">
+                      <mat-form-field>
+                        <input #CHoulderNameInp="ngModel" matInput name="creditHname" placeholder="Letters Only"
+                          [(ngModel)]="UsarLogine.card_HolderName" required pattern="[A-Za-z]{3,}">
+                        <mat-label>Cardholder Name</mat-label>
+                        <mat-icon matSuffix>perm_identity</mat-icon>
+                        <mat-hint *ngIf="CHoulderNameInp.errors?.['pattern']&&CHoulderNameInp.touched">Must be alphabet
+                          at least 3
+                          letters</mat-hint>
+                      </mat-form-field>
+                      <mat-form-field appearance="fill">
+                        <mat-label>Account Number</mat-label>
+                        <input matInput name="AccountNumber" #AccountNumberin="ngModel" [(ngModel)]="UsarLogine.card_Number"
+                          placeholder="Account Number " required pattern="^.{3,20}$">
+                        <mat-icon matSuffix>numbers</mat-icon>
+                        <mat-hint *ngIf="AccountNumberin.errors?.['pattern']&&AccountNumberin.touched">Please Enter
+                          Number
+                        </mat-hint>
+                      </mat-form-field>
+                    </div>
+                    <div class="form-row">
+                      <mat-form-field appearance="fill">
+                        <mat-label>Expiration Date</mat-label>
+                        <input matInput [matDatepicker]="picker" #ExpirationDate="ngModel" name="ExpirationDate"
+                          [(ngModel)]="UsarLogine.card_EXDate" required>
+                        <mat-hint *ngIf="ExpirationDate.errors?.['required']&&ExpirationDate.touched">MM/DD/YYYY Must
+                          Entered</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field>
+                      <mat-form-field appearance="fill">
+                        <mat-label>CVC Number</mat-label>
+                        <input matInput name="CVCNumber" #CVCNumberin="ngModel" [(ngModel)]="UsarLogine.card_CVC"
+                          placeholder="CVC " required pattern="^.{3,20}$">
+                        <mat-icon matSuffix>numbers</mat-icon>
+                        <mat-hint *ngIf="CVCNumberin.errors?.['pattern']&&CVCNumberin.touched">Please Enter
+                          Number
+                        </mat-hint>
+                      </mat-form-field>
+                    </div>
+                    <button mat-raised-button color="primary" type="submit" [disabled]="!CreditEdit.valid">Add
+                      Card</button>
+                  </form>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

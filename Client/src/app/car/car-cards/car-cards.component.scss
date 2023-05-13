@@ -1,0 +1,251 @@
+:root {
+  --primary: #35296D;
+  --pink: #E71853;
+  --body: #F5F5F5;
+}
+
+.search-nav{
+  background-color: #35296D;
+  padding:0px 70px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+}
+@media (max-width:760px){
+  .search-nav{
+    padding:10px 10px;
+    justify-content: center;
+  }
+}
+.mat-mdc-form-field{
+  flex:auto;
+  position: relative;
+  bottom: -0.77em;
+  margin-left: 5px;
+  height: 4.5em;
+  min-width: 10em;
+}
+.searchByLocation{
+  min-width: 20em;
+}
+@media (max-width:760px){
+  .searchByLocation{
+    min-width: 10em;
+  }
+}
+.startDateSearch, .startDateSearchInput,
+.endDateSearch, .endDateSearchInput{
+  background-color: whitesmoke;
+  position: relative;
+  top: 9.2px;
+}
+.startDateSearch,
+.endDateSearch{
+    padding: 0px 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-left: 5px;
+}
+.startDateSearchInput,
+.endDateSearchInput{
+  outline: none;
+  border: none;
+  position: relative;
+  top: -0.5em;
+}
+@media (max-width:400px) {
+  .startDateSearchInput,
+.endDateSearchInput{
+  width: 70%;
+}
+}
+.startDateSearchButton, .endDateSearchButton
+{
+  color:#E71853;
+  width: 27px;
+  position: relative;
+  top: 0px;
+  right: 5px;
+}
+.searchCarBtn{
+  display: block;
+  background-color: #E71853;
+  width: 12em;
+  height: 3em;
+  color: whitesmoke;
+  border-radius: 20px;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  margin-left: 5px;
+}
+.searchCarBtn:hover{
+  color: rgb(37, 36, 36);
+  background-color:#9d002d;
+  transition: all .5s ease;
+}
+.searchCarBtn svg{
+  margin-right: 10px;
+}
+.searchCarBtn:hover svg{
+  color: whitesmoke;
+}
+@media (max-width:760px){
+  .searchCarBtn{
+    margin-top: 1em;
+  }
+}
+
+
+//****************************************//
+//****************************************//
+//****************************************//
+//****************************************//
+//****************************************//
+//****************************************//
+//****************************************//
+
+main{
+  background-color:#F5F5F5;
+  padding: 10px;
+}
+.filterList{
+  background-color: white;
+}
+.filterList, .searchResult{
+  padding: 15px;
+  margin-top: 20px;
+}
+.filterList h2{
+  color: #E71853;
+}
+.filterList h2::after{
+  content: '';
+  width: 50%;
+  display: block;
+  background-color: #9d002d;
+  height: 2px;
+  position: relative;
+  left: 25%;
+  top: 3px;
+  bottom: 5px;
+}
+// .filterList hr.filter_hr{
+//   color: #3c0011;
+//   width: 50%;
+//   height: 2px;
+//   font-weight: bold;
+//   margin-left: 25%;
+// }
+mat-slider {
+  width: 95%;
+}
+.searchResult p{
+  font-size: 20px;
+}
+.searchResult span.NumberOfAvailableCarsOnly{
+  color: #E71853;
+}
+
+//****************************************//
+//****************************************//
+//****************************************//
+
+.car_card{
+  background-color: white;
+}
+.CarsCards a{
+  text-decoration: none;
+  color: black;
+}
+.carImgBox{
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.CarPricePerDay{
+  position: absolute;
+  z-index: 2;
+  background-color: #E71853;
+  color: white;
+  width: 100px;
+  right: 0px;
+  top: 0px;
+  text-align: right;
+  border-bottom-left-radius: 20px;
+  opacity: .8;
+  padding: 4px;
+}
+.CarPricePerDay span{
+  font-size: 12px ;
+  display: block;
+}
+.carImgBox img{
+  width: 100%;
+}
+.car_card:hover .CarPricePerDay{
+  transform: scale(.8);
+  transition: all .3s linear;
+}
+.car_card:hover img:not(.OwnerInfo img){
+  transform: scale(1.2) rotate(-2deg);
+  transform-origin: center;
+  transition: all .2s linear;
+}
+.OwnerInfo{
+  display: inline-block;
+  padding-left: 10px;
+  position: relative;
+  top: -20px;
+}
+.OwnerInfo span{
+  background-color: whitesmoke;
+  padding: 5px 15px;
+  border-radius: 10px;
+  position: relative;
+  left: -5px;
+}
+.OwnerInfo img{
+  border:5px solid whitesmoke;
+}
+
+.CarInfo{
+  padding: 10px;
+  padding-top: 0px;
+  position: relative;
+}
+
+.car_card{
+  margin-bottom: 10px;
+}
+.yearModel{
+  color: #E71853;
+
+}
+.cardPopUp{
+  outline: none;
+  border: none;
+  padding: 0;
+}
+.SendRequestBtn{
+  background-color: #E71853 !important;
+  color: white !important;
+  font-size: 22px;
+  box-shadow: none;
+  outline: none;
+  border: none;
+}
+.SendRequestBtn:focus{
+  box-shadow: none;
+  outline: none;
+  border: none;
+}
+.totalPriceForRequest{
+  position: relative;
+  top: 18px;
+}
+.totalPriceForRequest span{
+  color: #E71853;
+}
