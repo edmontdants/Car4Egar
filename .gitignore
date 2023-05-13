@@ -6,3 +6,6 @@
 bin/
 obj/
 /Migrations
+bin/Debug/net6.0/Car4EgarAPI.dll
+obj/Debug/net6.0/Car4EgarAPI.pdb
+obj/Debug/net6.0/Car4EgarAPI.csproj.FileListAbsolute.txt

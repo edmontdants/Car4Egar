@@ -146,3 +146,9 @@ E:\ITI\_Car4Egar\APISide\Car4Egar\obj\Debug\net6.0\staticwebassets\Car4EgarAPI.S
 E:\ITI\_Car4Egar\APISide\Car4Egar\obj\Debug\net6.0\staticwebassets\Car4EgarAPI.StaticWebAssets.xml
 E:\ITI\_Car4Egar\APISide\Car4Egar\obj\Debug\net6.0\Car4EgarAPI.genruntimeconfig.cache
 E:\ITI\_Car4Egar\APISide\Car4Egar\obj\Debug\net6.0\ref\Car4EgarAPI.dll
+E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Client\angular.json
+E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Client\package-lock.json
+E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Client\package.json
+E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Client\tsconfig.app.json
+E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Client\tsconfig.json
+E:\ITI\_Car4Egar\APISide\Car4Egar\bin\Debug\net6.0\Client\tsconfig.spec.json
