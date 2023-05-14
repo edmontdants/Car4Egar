@@ -138,47 +138,7 @@ namespace Car4EgarAPI.Controllers
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         //------------------------------------------------
-
-
-
-
-
-
 
 
         // SystemUser  SystemUser  SystemUser  SystemUser  SystemUser
@@ -877,35 +837,32 @@ namespace Car4EgarAPI.Controllers
         [Route("/Admin/GetAllCars")]
         public IActionResult GetAllCars()
         {
-            List<CarVM> cars = new List<CarVM>();
-            foreach (var item in db.CarVM.ToList())
-            {
-                CarVM car = new CarVM();
-                car.OwnerId = item.OwnerId;
-                car.OwnerName = item.OwnerName;
-                car.OwnerPic = item.OwnerPic;
-                car.OwnerPhone = item.OwnerPhone;
+            //List<CarVM> cars = new List<CarVM>();
+            //foreach (var item in db.CarVM.ToList())
+            //{
+            //    CarVM car = new CarVM();
+            //    car.OwnerId = item.OwnerId;
+            //    car.OwnerName = item.OwnerName;
+            //    car.OwnerPic = item.OwnerPic;
+            //    car.OwnerPhone = item.OwnerPhone;
 
-                car.CostPerDay = item.CostPerDay;
-                car.VIN = item.VIN;
-                car.Mailage = item.Mailage;
-                car.Color = item.Color;
-                car.RatedPeople = item.RatedPeople;
-                car.Rate = item.Rate;
-                car.Available = item.Available;
-                car.Image = item.Image;
-                car.Year = item.Year;
-                car.ModelName = item.ModelName;
-                car.GearBoxType = item.GearBoxType;
-                car.Insurance = item.Insurance;
-                car.LocationOfRent = item.LocationOfRent;
-                //car.CarType = item.CarType;
-                //car.BrandName = item.BrandName;
-                //car.IsActivated = item.IsActivated;
-                cars.Add(car);
-
-            }
-            return Ok(cars);
+            //    car.CostPerDay = item.CostPerDay;
+            //    car.VIN = item.VIN;
+            //    car.Mailage = item.Mailage;
+            //    car.Color = item.Color;
+            //    car.RatedPeople = item.RatedPeople;
+            //    car.Rate = item.Rate;
+            //    car.Available = item.Available;
+            //    car.Image = item.Image;
+            //    car.Year = item.Year;
+            //    car.ModelName = item.ModelName;
+            //    car.GearBoxType = item.GearBoxType;
+            //    car.Insurance = item.Insurance;
+            //    car.LocationOfRent = item.LocationOfRent;
+            //    cars.Add(car);
+                
+            //}
+            return Ok(db.CarVM.OrderByDescending(n => n).ToList());
         }
 
 
@@ -944,7 +901,7 @@ namespace Car4EgarAPI.Controllers
             car.RatedPeople = item.RatedPeople;
             car.Rate = item.Rate;
             car.Available = item.Available;
-            car.Image = item.Image;
+            car.Image = "DefaultCarLogo.png";
             car.Year = item.Year;
             car.ModelName = item.ModelName;
             car.GearBoxType = item.GearBoxType;

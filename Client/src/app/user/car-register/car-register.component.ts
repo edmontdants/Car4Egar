@@ -56,10 +56,13 @@ ownerPhone:''
   SubmitNewCar(){
 
     this.service.RegisterCar(this.car).subscribe({
-      next: () => this.router.navigate(['/UserDashBoard']),
+      next: () => {
+        this.router.navigate(['/UserDashBoard'])
+      } ,
       error: (err) => console.log("err")
     });
-    document.getElementById("ModalClose")?.click();
+    // document.getElementById("ModalClose")?.click();
+
   }
 }
 

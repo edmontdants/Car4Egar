@@ -50,13 +50,15 @@ export class MyBorrowingsComponent implements AfterViewInit {
         // Get the token ID to your server-side code for use.
         console.log(token)
 
+
         alert('Payment Success !!');
-        this.service.DeleteCarRequest(vin).subscribe();
+
       }
 
     });
 
 
+    this.deletereq(vin);
     handler.open({
       name: 'Car 4 Egar Payment Card',
       description: 'all field are required',

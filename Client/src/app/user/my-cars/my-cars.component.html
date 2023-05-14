@@ -7,20 +7,28 @@
       <div class="container-fluid my-5">
         <div class="row " >
           <div class="col-md-6 col-lg-3" *ngFor="let c of MyCars">
-            <div class="avatar-container" >
+
+            <div class="mb-2 position-relative">
+              <button class="btn btn-danger position-absolute DeleteCarBtn" (click)="DeleteCar(c.vin)"> <i class="fa-solid fa-circle-xmark"></i></button>
+              <div class="avatar-container position-relative mb-2" >
                 <img src="assets/{{c.image}}" alt="CarImg" style="height: 200px;width: 100%;" class="rounded img-thumbnail mb-3">
-              <div>
-                <input type="file" id="avatar-input-file" accept="image/*" (change)="onChangeFile(c.vin,$event)" />
+              <div class="changeCarLogo">
+
+                <label  class="h5 d-block "><i class="fa-solid fa-images fa-lg"></i>
+                  <input type="file"  accept="image/*" (change)="onChangeFile(c.vin,$event)" hidden/>
+                </label>
               </div>
             </div>
             <h2 style="color:#35296D;">{{c.modelName}} - {{c.year}}</h2>
             <mat-divider></mat-divider>
-            <p class="text-black-50">Availabe For Renta: {{c.available}}</p>
+            <p class="text-black-50">Availabe For Current Rent: {{c.available}}</p>
             <p class="text-black-50">Car Location: {{c.locationOfRent}}</p>
             <p class="text-black-50">Car Gear Box Type: {{c.gearBoxType}}</p>
             <p class="text-black-50">Current Mailage in km : {{c.mailage}}</p>
             <p class="text-black-50">Cost Per Rent Day: {{c.costPerDay}}</p>
-            <button mat-fab extended color="warn" (click)="DeleteCar(c.vin)"> <i class="fa-solid fa-circle-xmark"></i> Remove The Car </button>
+
+
+            </div>
 
           </div>
 

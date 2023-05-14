@@ -12,3 +12,19 @@
   background-color: #35296D;
 }
 
+.changeCarLogo{
+  position: absolute;
+    z-index: 5;
+    bottom: -23px;
+    font-weight: bold;
+
+}
+.changeCarLogo svg{
+    cursor: pointer;
+    color: #8b1dcc;
+}
+.DeleteCarBtn{
+  z-index: 3;
+    right: 0;
+    top: -20px;
+}

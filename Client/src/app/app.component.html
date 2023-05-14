@@ -72,14 +72,13 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               User Account
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="Role != 'Admin'">
-              <li><a class="dropdown-item" routerLink="/UserDashBoard">My Profile</a></li>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="Role == 'Admin'">
+              <li><a class="dropdown-item" routerLink="/Admin">My Dashboard</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" (click)="onLogoutClick()" *ngIf="isLoggedIn" type="button">LogOut</a></li>
             </ul>
-
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="NID == '01232012023564'">
-              <li><a class="dropdown-item" routerLink="/Admin">My Dashboard</a></li>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="Role == 'User'">
+              <li><a class="dropdown-item" routerLink="/UserDashBoard">My Profile</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" (click)="onLogoutClick()" *ngIf="isLoggedIn" type="button">LogOut</a></li>
             </ul>

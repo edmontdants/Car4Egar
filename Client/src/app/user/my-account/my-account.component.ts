@@ -93,8 +93,15 @@ export class MyAccountComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    var element = document.getElementsByClassName("modal-backdrop")[0];
-    element?.remove();
+    var element = document.getElementsByClassName("modal-backdrop");
+    if(element.length>0){
+      for (let index = 0; index < element.length; index++) {
+        element[index].remove;
+        location.reload();
+      }
+    }
+    //element?.remove();
+
     this.userLoginNID = sessionStorage.getItem('userNID');
 
     const observer = {

@@ -9,15 +9,15 @@ namespace Car4EgarAPI.Models.Entities
         public string NID { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
-        public string Email { get; set; }   
-        public string Role { get; set; }
+        public string Email { get; set; }
+        public string Role { get; set; } = "User";
         public bool IsActivated { get; set; }
-        public string Address { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Gender { get; set; }          //
+        public string Address { get; set; } = "Un Defined";
+        public string PhoneNumber { get; set; } = "Un Defined";
+        public string Gender { get; set; } = "Un Defined";         
         public string BirthDate { get; set; }
         [StringLength(int.MaxValue)]
-        public string Photo { get; set; }
+        public string Photo { get; set; } = "avatar-placeholder.png";
         [StringLength(int.MaxValue)]
         public string IdentityPhoto { get; set; }    //
         public string DriverLicencePhoto { get; set; } //

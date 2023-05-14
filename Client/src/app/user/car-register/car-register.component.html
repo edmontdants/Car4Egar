@@ -1,37 +1,40 @@
 <div class="container">
-  <div class="row">
-    <button type="button" class="btn btn-success d-block mt-5" data-bs-toggle="modal" href="#exampleModal3" >Registeration Form</button>
+  <div class="p-3">
+    <h2 class="alert alert-warning">
+      Here are some tips for car registration.
+      <br>
+      1 - The data must be completely correct and in conformity with reality, in order for the renter to know the actual
+      specifications of the car.
+      <br>
+      2 - If the car was insured by the competent authorities, this must also be true, so that you send us these
+      documents at the time of the request.
+      <br>
+      3 - You can only register the car at the present time and make it not currently rentable and change that at a
+      later time.
+      <br>
+      4 - You can easily upload a picture of the car after registering it by logging into your profile.
+    </h2>
+
+    <div class="row">
+      <button type="button" class="btn btn-success d-block mt-5" data-bs-toggle="modal"
+        href="#exampleModal3">Registeration Form</button>
+    </div>
+
   </div>
+  <hr>
+
 </div>
-
-
 
 
 <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
   <div class="modal-dialog">
-
-
 
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title" id="exampleModalLabel">Register Car Form</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="p-3">
-        <h6 class="text-warning">
-          Here are some tips for car registration.
-        <br>
-        1 - The data must be completely correct and in conformity with reality, in order for the renter to know the actual specifications of the car.
-        <br>
-        2 - If the car was insured by the competent authorities, this must also be true, so that you send us these documents at the time of the request.
-        <br>
-        3 - You can only register the car at the present time and make it not currently rentable and change that at a later time.
-        <br>
-        4 - You can easily upload a picture of the car after registering it by logging into your profile.
-        </h6>
 
-      </div>
-      <hr>
       <div class="modal-body">
         <form (ngSubmit)="SubmitNewCar()" [noValidate]="false">
           <div class="mb-2">
@@ -133,7 +136,8 @@
 
           <div class="form-group mb-2">
             <label for="locationOfRent">Location:</label>
-            <select class="form-control" id="locationOfRent" name="locationOfRent" [(ngModel)]="car.locationOfRent" required>
+            <select class="form-control" id="locationOfRent" name="locationOfRent" [(ngModel)]="car.locationOfRent"
+              required>
               <option value="">-- Select Location --</option>
 
               <option value="Alexandria">Alexandria</option>
@@ -187,7 +191,7 @@
 
           <div class="mb-2">
             <label for="mailage" class="col-form-label">Current Car Milage:</label>
-            <input type="text" class="form-control" id="mailage" name="mailage" [(ngModel)]="car.mailage" >
+            <input type="text" class="form-control" id="mailage" name="mailage" [(ngModel)]="car.mailage">
           </div>
 
 
@@ -195,7 +199,7 @@
             <label for="costPerDay" class="col-form-label">Car Cost Per Day</label>
             <!-- <input type="number" class="form-control" id="costPerDay" name="costPerDay" [(ngModel)]="car.costPerDay" required> -->
             <select class="form-control" id="costPerDay" name="costPerDay" [(ngModel)]="car.costPerDay" required>
-              <option value="" >-- Select available value --</option>
+              <option value="">-- Select available value --</option>
               <option *ngFor="let price of PricePerDayAvailableValues" [value]="price">{{ price }}</option>
             </select>
           </div>
@@ -204,7 +208,8 @@
             <div class="col-md-6">
               <div>
                 <label for="insurance" class="col-form-label label-container">The Car Is Insured
-                  <input checked="checked" type="checkbox" id="insurance" name="insurance" [(ngModel)]="car.insurance" required>
+                  <input checked="checked" type="checkbox" id="insurance" name="insurance" [(ngModel)]="car.insurance"
+                    required>
                   <div class="checkmark"></div>
                 </label>
                 <!-- <input type="checkbox" class="" id="insurance" name="insurance" [(ngModel)]="car.insurance" required> -->
@@ -212,9 +217,10 @@
 
             </div>
             <div class="col-md-6">
-              <div >
+              <div>
                 <label for="available" class="col-form-label label-container">Available For Rent Now
-                  <input checked="checked" type="checkbox" id="available" name="available" [(ngModel)]="car.available" required>
+                  <input checked="checked" type="checkbox" id="available" name="available" [(ngModel)]="car.available"
+                    required>
                   <div class="checkmark"></div>
                 </label>
 
@@ -225,7 +231,7 @@
 
 
           <br>
-          <button type="submit" class="btn btn-success d-block w-100" >Done !</button>
+          <button type="submit" class="btn btn-success d-block w-100">Done !</button>
 
 
         </form>

@@ -38,7 +38,7 @@ export class PopLoginComponent {
             sessionStorage.setItem('role', this.userlogined.role);
             this.userRegister.login();
             this.router.navigateByUrl('/');
-
+            location.reload()
         }
         else this.inviledpass=true;
       },
@@ -57,5 +57,6 @@ export class PopLoginComponent {
       },
     };
     this.userRegister.getuserByEmail(this.useremail).subscribe(observer);
+
   }
 }
